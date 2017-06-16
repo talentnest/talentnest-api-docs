@@ -20,7 +20,7 @@ Welcome to the TalentNest API! Our API allows you to perform queries (both safe 
 
 The API is accessible through https://subdomain.talentnest.com/api/v1, where subdomain is the subdomain of your client on the TalentNest website. All API requests must be made via SSL (HTTPS). Non-SSL requests will be ignored. As well, all requests must be authenticated to succeed (see the [Authentication section](#authentication)).
 
-The API accepts resources and provides responses using JSON. The format may specified by the URI extension (ie. https://subdomain.talentnest.com/api/v1/employees.json), but is not required. If transmitting a JSON representation of a resource, the Content‐Type header must be set to application/json.
+The API accepts resources and provides responses using JSON. The format may be specified by the URI extension (ie. https://subdomain.talentnest.com/api/v1/employees.json), but is not required. If transmitting a JSON representation of a resource, the Content‐Type header must be set to application/json.
 
 The API is RESTful. Each request has an associated HTTP verb which must be used. Certain endpoints accept resources as a part of the request.
 
