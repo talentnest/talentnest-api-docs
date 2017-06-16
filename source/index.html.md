@@ -1,98 +1,89 @@
 ---
-title: API Reference
+title: TalentNest API
 
 language_tabs:
   - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - errors
+  - verbs
+  - response_codes
 
 search: true
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the TalentNest API! Our API allows you to perform queries (both safe and destructive) without having to interface with the TalentNest website. You can obtain an API key which will provide you with access to data belonging to your client.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+The API is accessible through https://subdomain.talentnest.com/api/v1, where subdomain is the subdomain of your client on the TalentNest website. All API requests must be made via SSL (HTTPS), and non-SSL requests will be ignored. As well, all requests must be authenticated to succeed (see the Authentication section).
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+The API accepts resources and provides responses using JSON. The format may specified by the URI extension (ie. https://subdomain.talentnest.com/api/v1/employees.json), but is not required. If transmitting a JSON representation of a resource, the Content‐Type header must be set to application/json.
+
+The API is RESTful. Each request has an associated HTTP verb which must be used. Certain endpoints accept resources as a part of the request.
+
+There is currently no request rate limit.
 
 # Authentication
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+```shell
+# Note the trailing after the username (API token)
+$ curl https://subdomain.talentnest.com/api/v1/employees -u TALENTNEST_API_KEY:
 ```
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
+> Alternatively, pass your API key within an Authorization header. Make sure to Base64 encode the token with the colon (:) appended.
 
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+$ curl https://subdomain.talentnest.com/api/v1/employees -H 'Authorization: Basic VEFMRU5UTkVTVF9BUElfS0VZOg=='
 ```
 
-```javascript
-const kittn = require('kittn');
+> Make sure to replace `TALENTNEST_API_KEY` with your API key and `subdomain` with your TalentNest subdomain.
 
-let api = kittn.authorize('meowmeowmeow');
-```
+Authentication to TalentNest's API is done with your API key.
 
-> Make sure to replace `meowmeowmeow` with your API key.
+Requests are authenticated using [HTTP Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication). Provide your API key as the basic auth username. You do not need to provide a password.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Alternatively, you can also pass your API key in an Authorization header.
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+<code>Authorization: Basic \<base64("TALENTNEST_API_KEY:")></code>
 
-`Authorization: meowmeowmeow`
+Since we only require an API key within the username portion of the basic auth, simply append a `:` to your TalentNest API token and then Base64 encode the resulting string.
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>TALENTNEST_API_KEY</code> with your personal API key.
 </aside>
 
-# Kittens
+# Endpoints
 
-## Get All Kittens
+All API requests should be made to the `https://subdomain.talentnest.com` base domain (where
+subdomain is your client's subdomain on TalentNest).
 
-```ruby
-require 'kittn'
+In any case that an endpoint is not constructed properly, or points to an invalid resource, the result will
+contain an InvalidParameter or ResourceNotFound error JSON object, which may refer to a specific
+parameter within the endpoint URL. These parameters are of the form `:parameter` (ie. a name preceded by
+a colon), as seen in the table below.
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
+<aside class="notice">In all cases of resources that have non-<code>GET</code> endpoints, only the parameters returned by a <code>GET</code> request
+for that resource are exposed for a <code>POST</code>, <code>PUT</code> or <code>PATCH</code> request.
+</aside>
 
-```python
-import kittn
+<aside class="warning">Destructive requests (ie. requests that modify or delete a resource) are the responsibility of the user
+of the TalentNest. Any data that is accidentally or inadvertently lost due to TalentNest API usage cannot
+be restored. Any destructive request can use the <code>dry_run=true</code> querystring parameter to try out a request
+without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=true</code>).
+</aside>
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+# Jobs
+
+## GET: All Jobs
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+curl "http://subdomain.talentnest.com/api/v1/jobs"
+  -u "TALENTNEST_API_KEY:"
 ```
 
 > The above command returns JSON structured like this:
@@ -100,90 +91,289 @@ let kittens = api.kittens.get();
 ```json
 [
   {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+    "id": 22625,
+    "title": "F&I Manager – Automotive",
+    "job_status": "Open",
+    "opens_at": "2016-09-05",
+    "closes_at": null,
+    "status_changed_at": "2015-12-16T14:31:30Z",
+    "last_application_at": "2016-11-25T13:38:19Z",
+    "created_at": "2015-12-16T14:31:18Z",
+    "updated_at": "2016-09-08T13:55:24Z",
+    "job_url": "https://subdomain.talentnest.com/en/posting/18502/location/22625",
+    "apply_url": "https://subdomain.talentnest.com/en/posting/18502/apply/22625",
+    "business_unit": {
+      "id": 7366,
+      "location": {
+        "country": "United States",
+        "address": null,
+        "postal": null,
+        "state": "Texas",
+        "city": "Austin"
+        }
+    }
   },
   {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "id": 23032,
+    "title": "Financial Services",
+    "job_status": "Closed",
+    "opens_at": "2016-01-13",
+    "closes_at": null,
+    "status_changed_at": "2016-02-03T13:58:05Z",
+    "last_application_at": null,
+    "created_at": "2016-01-13T19:39:14Z",
+    "updated_at": "2016-02-03T13:58:05Z",
+    "job_url": "https://subdomain.talentnest.com/en/posting/18801/location/23032",
+    "apply_url": "https://subdomain.talentnest.com/en/posting/18801/apply/23032",
+    "business_unit": {
+      "id": 2009,
+      "location": {
+        "country": "Canada",
+        "address": "3300 Bloor Street West",
+        "postal": "M9B 2C5",
+        "state": "Ontario",
+        "city": "Toronto"
+      }
+    }
   }
 ]
 ```
 
-This endpoint retrieves all kittens.
+List all jobs.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET https:://subodmain.talentnest.com/api/v1/jobs`
 
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+## GET: A Specific Job
 
 ```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+curl "http://subdomain.talentnest.com/api/v1/jobs/{id}"
+  -u "TALENTNEST_API_KEY:"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "id": 23819,
+  "title": "Program Manager",
+  "job_status": "Open",
+  "opens_at": "2016-02-03",
+  "closes_at": "2016-02-10",
+  "status_changed_at": "2016-02-03T21:46:57Z",
+  "last_application_at": null,
+  "created_at": "2016-02-03T21:46:16Z",
+  "updated_at": "2016-02-03T21:46:16Z",
+  "job_url": "https://subdomain.talentnest.com/en/posting/19252/location/23819",
+  "apply_url": "https://subdomain.talentnest.com/en/posting/19252/apply/23819",
+  "business_unit": {
+    "id": 2446,
+    "location": {
+      "country": "Canada",
+      "address": null,
+      "postal": null,
+      "state": "Alberta",
+      "city": "Edmonton"
+      }
+  },
+  "description": "Detailed job description",
+  "employment_type": null,
+  "posting_type": "External",
+  "job_applications_count": 30,
+  "completed_applications_count": 25,
+  "unreviewed_applications_count": 5,
+  "hires_count": 0,
+  "vacancies_count": 0,
+  "assessment": null
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET https:://subodmain.talentnest.com/api/v1/jobs/{id}`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+id | The ID of the job to retrieve
+
+# Applications
+
+## GET: All Job Applications
+
+```shell
+curl "http://subdomain.talentnest.com/api/v1/applications"
+  -u "TALENTNEST_API_KEY:"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1765253,
+    "candidate_id": 1148,
+    "job_id": 25668,
+    "job_title": "Parts Manager - Automotive",
+    "first_name": "Jake",
+    "last_name": "Joseph",
+    "email": "jj@talentnest.com",
+    "application_step": "Review Candidate",
+    "application_status": "Deselected",
+    "application_url": "https://subdomain.talentnest.com/en/job/25668/candidate/1148",
+    "status_changed_at": "2016-11-29T19:41:33Z",
+    "completed_at": "2016-10-28T17:47:15Z",
+    "created_at": "2016-09-23T20:31:53Z",
+    "updated_at": "2016-12-01T07:00:10Z"
+  },
+  {
+    "id": 1769005,
+    "candidate_id": 876140,
+    "job_id": 29696,
+    "job_title": "General Agent",
+    "first_name": "Lori",
+    "last_name": "Ham",
+    "email": "lori.ham@talentnest.com",
+    "application_step": "Review Candidate",
+    "application_status": "Deselected",
+    "application_url": "https://subdomain.talentnest.com/en/job/29696/candidate/876140",
+    "status_changed_at": "2016-11-11T15:16:25Z",
+    "completed_at": "2016-09-26T17:20:27Z",
+    "created_at": "2016-09-26T17:20:25Z",
+    "updated_at": "2016-11-11T15:16:25Z"
+  }
+]
+```
+
+Retrieves all job applications
+
+### HTTP Request
+
+`GET https:://subodmain.talentnest.com/api/v1/applications/`
+
+## GET: A Specific Application
+
+```shell
+curl "http://subdomain.talentnest.com/api/v1/applications/{id}"
+  -u "TALENTNEST_API_KEY:"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  {
+    "id": 1765253,
+    "candidate_id": 1148,
+    "job_id": 25668,
+    "job_title": "Parts Manager - Automotive",
+    "first_name": "Jake",
+    "last_name": "Joseph",
+    "email": "jj@talentnest.com",
+    "application_step": "Review Candidate",
+    "application_status": "Deselected",
+    "application_url": "https://subdomain.talentnest.com/en/job/25668/candidate/1148",
+    "status_changed_at": "2016-11-29T19:41:33Z",
+    "completed_at": "2016-10-28T17:47:15Z",
+    "created_at": "2016-09-23T20:31:53Z",
+    "updated_at": "2016-12-01T07:00:10Z",
+    "phone": "4167460444",
+    "deselect_reason": null,
+    "source": "Company Website",
+    "reviewed": true,
+    "passed_prescreen": true,
+    "golden_eagle": false,
+    "employee": false,
+    "prescreen_answers": [
+      {
+        "question": "Are you legally eligible to work in the United States?",
+        "answer": "Yes",
+        "passed": true
+      },
+      {
+        "question": "Do you have a good driving record and a valid driver’s license?",
+        "answer": "Yes",
+        "passed": true
+      },
+      {
+        "question": "Would you be able to pass a drug screen? ",
+        "answer": "Yes",
+        "passed": true
+      }
+    ],
+    "demographic_answers": [
+      {
+        "question": "If you were referred to our company by someone, who referred you:",
+        "answer": "Friend",
+        "type": "single"
+      },
+      {
+        "question": "If you were referred by an employee of our company, please list the name here:",
+        "answer": "",
+        "type": "text"
+      },
+      {
+        "question": "What days of the week are you available to work?",
+        "answer": [
+          "Tuesday",
+          "Friday"
+        ],
+        "type": "multi"
+      },
+      {
+        "question": "Are you available to work weekends?",
+        "answer": "Yes",
+        "type": "single"
+      },
+      {
+        "question": "What date are you available to start work?",
+        "answer": "",
+        "type": "text"
+      },
+      {
+        "question": "Are you available to travel on company business?  ",
+        "answer": "Yes",
+        "type": "single"
+      },
+      {
+      "question": "What is the highest level of education you have completed?",
+      "answer": "Trade School",
+      "type": "single"
+      },
+      {
+      "question": "List your computer skills.",
+      "answer": "",
+      "type": "text"
+      }
+    ],
+    "resume_url": "https://subdomain.talentnest.com/en/documents/79944/download?hash=95ab65073cd38427eeb69e827c4806d32f716c95",
+    "cover_url": null,
+    "candidate_location": {
+      "country": "Canada",
+      "address": "3300 Bloor Street West",
+      "postal": "M8X 2X3",
+      "state": "Ontario",
+      "city": "Toronto"
+    },
+    "future_consideration": false,
+    "candidate_tags": [
+      "future consideration",
+      "2018 Consideration"
+    ]
+  }
+}
+```
+
+### HTTP Request
+
+`GET https:://subodmain.talentnest.com/api/v1/jobs/{id}`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the application to retrieve
+
 
