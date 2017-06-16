@@ -18,7 +18,7 @@ search: true
 
 Welcome to the TalentNest API! Our API allows you to perform queries (both safe and destructive) without having to interface with the TalentNest website. You can obtain an API key which will provide you with access to data belonging to your client.
 
-The API is accessible through https://subdomain.talentnest.com/api/v1, where subdomain is the subdomain of your client on the TalentNest website. All API requests must be made via SSL (HTTPS), and non-SSL requests will be ignored. As well, all requests must be authenticated to succeed (see the Authentication section).
+The API is accessible through https://subdomain.talentnest.com/api/v1, where subdomain is the subdomain of your client on the TalentNest website. All API requests must be made via SSL (HTTPS). Non-SSL requests will be ignored. As well, all requests must be authenticated to succeed (see the [Authentication section](#authentication)).
 
 The API accepts resources and provides responses using JSON. The format may specified by the URI extension (ie. https://subdomain.talentnest.com/api/v1/employees.json), but is not required. If transmitting a JSON representation of a resource, the Content‐Type header must be set to application/json.
 
@@ -31,7 +31,7 @@ There is currently no request rate limit.
 > To authorize, use this code:
 
 ```shell
-# Note the trailing after the username (API token)
+# Note the trailing colon(:) after the username (API token)
 $ curl https://subdomain.talentnest.com/api/v1/employees -u TALENTNEST_API_KEY:
 ```
 
