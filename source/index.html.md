@@ -57,6 +57,50 @@ Since we only require an API key within the username portion of the basic auth, 
 You must replace <code>TALENTNEST_API_KEY</code> with your personal API key.
 </aside>
 
+# Pagination
+
+> An example pagination response header
+
+```shell
+HTTP/1.1 200 OK
+Status: 200 OK
+Link: <https://subdomain.talentnest.com/api/v1/applications?page=1>; rel="first",
+  <https://subdomain.talentnest.com/api/v1/applications?page=2>; rel="prev",
+  <https://subdomain.talentnest.com/api/v1/applications?page=17>; rel="last",
+  <https://subdomain.talentnest.com/api/v1/applications?page=4>; rel="next"
+X-Page: 3
+X-Per-Page: 50
+X-Total: 814
+```
+
+API methods that return a collection of results are always paginated. Paginated results will include a Link (see [RFC-5988](https://tools.ietf.org/html/rfc5988)) response header with the following information.
+
+Link | Description
+--------- | -----------
+next | The corresponding URL is the link to the next page.
+prev | The corresponding URL is the link to the previous page.
+last | The corresponding URL is the link to the last page.
+
+<aside class="notice">When this header is not set, there is only one page, the first page, of results.
+</aside>
+
+Paginated results will also include the following in the response header:
+
+Field | Description
+----- | -----------
+X-Page | The current page of results returned.
+X-Per-Page | The number of results per page. `Default is 50`.
+X-Total | The total number of results available.
+
+### Query string parameters
+
+API methods that return a collection of results accept the following query parameters:
+
+Parameter | Description
+--------- | -----------
+per_page *optional* | The requested number of results per page. `Default is 50` and the allowed `Maximum is 100`.
+page *optional* | The specific page requested.
+
 # Endpoints
 
 All API requests should be made to the `https://subdomain.talentnest.com` base domain (where
@@ -359,8 +403,8 @@ curl "http://subdomain.talentnest.com/api/v1/applications/{id}"
     },
     "future_consideration": false,
     "candidate_tags": [
-      "future consideration",
-      "2018 Consideration"
+      "automotive",
+      "technician"
     ]
   }
 }
