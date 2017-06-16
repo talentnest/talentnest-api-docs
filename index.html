@@ -4,106 +4,213 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>TalentNest API</title>
 
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
     <style>
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
-.highlight, .highlight .w {
-  color: #f8f8f2;
-  background-color: #272822;
-}
-.highlight .err {
-  color: #151515;
-  background-color: #ac4142;
-}
-.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
-  color: #505050;
-}
-.highlight .cp {
-  color: #f4bf75;
-}
-.highlight .nt {
-  color: #f4bf75;
-}
-.highlight .o, .highlight .ow {
-  color: #d0d0d0;
-}
-.highlight .p, .highlight .pi {
-  color: #d0d0d0;
-}
-.highlight .gi {
-  color: #90a959;
-}
-.highlight .gd {
-  color: #ac4142;
-}
 .highlight .gh {
-  color: #6a9fb5;
-  background-color: #151515;
-  font-weight: bold;
-}
-.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
-  color: #aa759f;
-}
-.highlight .kc {
-  color: #d28445;
-}
-.highlight .kt {
-  color: #d28445;
-}
-.highlight .kd {
-  color: #d28445;
-}
-.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
-  color: #90a959;
+  color: #999999;
 }
 .highlight .sr {
-  color: #75b5aa;
+  color: #f6aa11;
 }
-.highlight .si {
-  color: #8f5536;
+.highlight .go {
+  color: #888888;
 }
-.highlight .se {
-  color: #8f5536;
+.highlight .gp {
+  color: #555555;
 }
-.highlight .nn {
-  color: #f4bf75;
+.highlight .gs {
 }
-.highlight .nc {
-  color: #f4bf75;
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
 }
 .highlight .no {
-  color: #f4bf75;
+  color: #66d9ef;
 }
-.highlight .na {
-  color: #6a9fb5;
+.highlight .kt {
+  color: #66d9ef;
 }
-.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
-  color: #90a959;
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
 }
 .highlight .ss {
-  color: #90a959;
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
 }
     </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" />
+        <img src="images/navbar.png" alt="Navbar" />
       </span>
     </a>
     <div class="tocify-wrapper">
-      <img src="images/logo.png" />
+      <img src="images/logo.png" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -112,7 +219,6 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
             <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -121,147 +227,256 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the TalentNest API! Our API allows you to perform queries (both safe and destructive) without having to interface with the TalentNest website. You can obtain an API key which will provide you with access to data belonging to your client.</p>
 
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>The API is accessible through https://subdomain.talentnest.com/api/v1, where subdomain is the subdomain of your client on the TalentNest website. All API requests must be made via SSL (HTTPS), and non-SSL requests will be ignored. As well, all requests must be authenticated to succeed (see the Authentication section).</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&rsquo;s documentation.</p>
+<p>The API accepts resources and provides responses using JSON. The format may specified by the URI extension (ie. https://subdomain.talentnest.com/api/v1/employees.json), but is not required. If transmitting a JSON representation of a resource, the Content‐Type header must be set to application/json.</p>
+
+<p>The API is RESTful. Each request has an associated HTTP verb which must be used. Certain endpoints accept resources as a part of the request.</p>
+
+<p>There is currently no request rate limit.</p>
 
 <h1 id="authentication">Authentication</h1>
 
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
+<pre class="highlight shell tab-shell"><code><span class="c"># Note the trailing after the username (API token)</span>
+<span class="gp">$ </span>curl https://subdomain.talentnest.com/api/v1/employees -u TALENTNEST_API_KEY:
 </code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
-
 <blockquote>
-<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
+<p>Alternatively, pass your API key within an Authorization header. Make sure to Base64 encode the token with the colon (:) appended.</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl https://subdomain.talentnest.com/api/v1/employees -H <span class="s1">'Authorization: Basic VEFMRU5UTkVTVF9BUElfS0VZOg=='</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code class="prettyprint">TALENTNEST_API_KEY</code> with your API key and <code class="prettyprint">subdomain</code> with your TalentNest subdomain.</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>Authentication to TalentNest&rsquo;s API is done with your API key.</p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>Requests are authenticated using <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Auth</a>. Provide your API key as the basic auth username. You do not need to provide a password.</p>
 
-<p><code class="prettyprint">Authorization: meowmeowmeow</code></p>
+<p>Alternatively, you can also pass your API key in an Authorization header.</p>
+
+<p><code>Authorization: Basic &lt;base64(&quot;TALENTNEST_API_KEY:&quot;)&gt;</code></p>
+
+<p>Since we only require an API key within the username portion of the basic auth, simply append a <code class="prettyprint">:</code> to your TalentNest API token and then Base64 encode the resulting string.</p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>TALENTNEST_API_KEY</code> with your personal API key.
 </aside>
 
-<h1 id="kittens">Kittens</h1>
-
-<h2 id="get-all-kittens">Get All Kittens</h2>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre>
-<pre class="highlight shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
+<h1 id="pagination">Pagination</h1>
 
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>An example pagination response header</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-
-<p>This endpoint retrieves all kittens.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET http://example.com/api/kittens</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
+<pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
+Status: 200 OK
+Link: &lt;https://subdomain.talentnest.com/api/v1/applications?page<span class="o">=</span>1&gt;; <span class="nv">rel</span><span class="o">=</span><span class="s2">"first"</span>,
+  &lt;https://subdomain.talentnest.com/api/v1/applications?page<span class="o">=</span>2&gt;; <span class="nv">rel</span><span class="o">=</span><span class="s2">"prev"</span>,
+  &lt;https://subdomain.talentnest.com/api/v1/applications?page<span class="o">=</span>17&gt;; <span class="nv">rel</span><span class="o">=</span><span class="s2">"last"</span>,
+  &lt;https://subdomain.talentnest.com/api/v1/applications?page<span class="o">=</span>4&gt;; <span class="nv">rel</span><span class="o">=</span><span class="s2">"next"</span>
+X-Page: 3
+X-Per-Page: 50
+X-Total: 814
+</code></pre>
+<p>API methods that return a collection of results are always paginated. Paginated results will include a Link (see <a href="https://tools.ietf.org/html/rfc5988">RFC-5988</a>) response header with the following information.</p>
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Link</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>next</td>
+<td>The corresponding URL is the link to the next page.</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>prev</td>
+<td>The corresponding URL is the link to the previous page.</td>
+</tr>
+<tr>
+<td>last</td>
+<td>The corresponding URL is the link to the last page.</td>
 </tr>
 </tbody></table>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+<aside class="notice">When this header is not set, there is only one page, the first page, of results.
 </aside>
 
-<h2 id="get-a-specific-kitten">Get a Specific Kitten</h2>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>Paginated results will also include the following in the response header:</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>X-Page</td>
+<td>The current page of results returned.</td>
+</tr>
+<tr>
+<td>X-Per-Page</td>
+<td>The number of results per page. <code class="prettyprint">Default is 50</code>.</td>
+</tr>
+<tr>
+<td>X-Total</td>
+<td>The total number of results available.</td>
+</tr>
+</tbody></table>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
+<h3 id="query-string-parameters">Query string parameters</h3>
 
+<p>API methods that return a collection of results accept the following query parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>per_page <em>optional</em></td>
+<td>The requested number of results per page. <code class="prettyprint">Default is 50</code> and the allowed <code class="prettyprint">Maximum is 100</code>.</td>
+</tr>
+<tr>
+<td>page <em>optional</em></td>
+<td>The specific page requested.</td>
+</tr>
+</tbody></table>
+
+<h1 id="endpoints">Endpoints</h1>
+
+<p>All API requests should be made to the <code class="prettyprint">https://subdomain.talentnest.com</code> base domain (where
+subdomain is your client&rsquo;s subdomain on TalentNest).</p>
+
+<p>In any case that an endpoint is not constructed properly, or points to an invalid resource, the result will
+contain an InvalidParameter or ResourceNotFound error JSON object, which may refer to a specific
+parameter within the endpoint URL. These parameters are of the form <code class="prettyprint">:parameter</code> (ie. a name preceded by
+a colon), as seen in the table below.</p>
+
+<aside class="notice">In all cases of resources that have non-<code>GET</code> endpoints, only the parameters returned by a <code>GET</code> request
+for that resource are exposed for a <code>POST</code>, <code>PUT</code> or <code>PATCH</code> request.
+</aside>
+
+<aside class="warning">Destructive requests (ie. requests that modify or delete a resource) are the responsibility of the user
+of the TalentNest. Any data that is accidentally or inadvertently lost due to TalentNest API usage cannot
+be restored. Any destructive request can use the <code>dry_run=true</code> querystring parameter to try out a request
+without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=true</code>).
+</aside>
+
+<h1 id="jobs">Jobs</h1>
+
+<h2 id="get-all-jobs">GET: All Jobs</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/jobs"</span>
+  -u <span class="s2">"TALENTNEST_API_KEY:"</span>
+</code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22625</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F&amp;I Manager – Automotive"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"job_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"opens_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-05"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"closes_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status_changed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-16T14:31:30Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_application_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-25T13:38:19Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-16T14:31:18Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-08T13:55:24Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"job_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://subdomain.talentnest.com/en/posting/18502/location/22625"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"apply_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://subdomain.talentnest.com/en/posting/18502/apply/22625"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7366</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Texas"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Austin"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23032</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Financial Services"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"job_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Closed"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"opens_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-13"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"closes_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status_changed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-03T13:58:05Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_application_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-13T19:39:14Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-03T13:58:05Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"job_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://subdomain.talentnest.com/en/posting/18801/location/23032"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"apply_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://subdomain.talentnest.com/en/posting/18801/apply/23032"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2009</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3300 Bloor Street West"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M9B 2C5"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ontario"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toronto"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
-
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can&rsquo;t use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<p>List all jobs.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https:://subodmain.talentnest.com/api/v1/jobs</code></p>
+
+<h2 id="get-a-specific-job">GET: A Specific Job</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/jobs/{id}"</span>
+  -u <span class="s2">"TALENTNEST_API_KEY:"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23819</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Program Manager"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"job_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"opens_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-03"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"closes_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-10"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status_changed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-03T21:46:57Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_application_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-03T21:46:16Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-03T21:46:16Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"job_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://subdomain.talentnest.com/en/posting/19252/location/23819"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"apply_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://subdomain.talentnest.com/en/posting/19252/apply/23819"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2446</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alberta"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Edmonton"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Detailed job description"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"employment_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"posting_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"External"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"job_applications_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_applications_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"unreviewed_applications_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hires_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vacancies_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"assessment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https:://subodmain.talentnest.com/api/v1/jobs/{id}</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -272,75 +487,277 @@ Remember — a happy kitten is an authenticated kitten!
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>id</td>
+<td>The ID of the job to retrieve</td>
 </tr>
 </tbody></table>
 
-          <h1 id="errors">Errors</h1>
+<h1 id="applications">Applications</h1>
 
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
+<h2 id="get-all-job-applications">GET: All Job Applications</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/applications"</span>
+  -u <span class="s2">"TALENTNEST_API_KEY:"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1765253</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"candidate_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1148</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"job_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25668</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parts Manager - Automotive"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jake"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joseph"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jj@talentnest.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"application_step"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Review Candidate"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"application_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deselected"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"application_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://subdomain.talentnest.com/en/job/25668/candidate/1148"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status_changed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-29T19:41:33Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-28T17:47:15Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-23T20:31:53Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-01T07:00:10Z"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1769005</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"candidate_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">876140</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"job_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29696</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General Agent"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lori"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ham"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lori.ham@talentnest.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"application_step"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Review Candidate"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"application_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deselected"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"application_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://subdomain.talentnest.com/en/job/29696/candidate/876140"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status_changed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-11T15:16:25Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-26T17:20:27Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-26T17:20:25Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-11T15:16:25Z"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Retrieves all job applications</p>
 
-<p>The Kittn API uses the following error codes:</p>
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https:://subodmain.talentnest.com/api/v1/applications/</code></p>
+
+<h2 id="get-a-specific-application">GET: A Specific Application</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}"</span>
+  -u <span class="s2">"TALENTNEST_API_KEY:"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1765253</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"candidate_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1148</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"job_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25668</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parts Manager - Automotive"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jake"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joseph"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jj@talentnest.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"application_step"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Review Candidate"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"application_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deselected"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"application_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://subdomain.talentnest.com/en/job/25668/candidate/1148"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status_changed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-29T19:41:33Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-28T17:47:15Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-23T20:31:53Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-01T07:00:10Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4167460444"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"deselect_reason"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company Website"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reviewed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"passed_prescreen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"golden_eagle"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"employee"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"prescreen_answers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Are you legally eligible to work in the United States?"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"passed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do you have a good driving record and a valid driver’s license?"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"passed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Would you be able to pass a drug screen? "</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"passed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"demographic_answers"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"If you were referred to our company by someone, who referred you:"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Friend"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"single"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"If you were referred by an employee of our company, please list the name here:"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What days of the week are you available to work?"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"answer"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Tuesday"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Friday"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"multi"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Are you available to work weekends?"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"single"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What date are you available to start work?"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Are you available to travel on company business?  "</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"single"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What is the highest level of education you have completed?"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Trade School"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"single"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"List your computer skills."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"resume_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://subdomain.talentnest.com/en/documents/79944/download?hash=95ab65073cd38427eeb69e827c4806d32f716c95"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cover_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"candidate_location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3300 Bloor Street West"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M8X 2X3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ontario"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toronto"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"future_consideration"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"candidate_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"automotive"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"technician"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https:://subodmain.talentnest.com/api/v1/jobs/{id}</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
 
 <table><thead>
 <tr>
-<th>Error Code</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the application to retrieve</td>
+</tr>
+</tbody></table>
+
+          <h1 id="interacting-with-the-api">Interacting with the API</h1>
+
+<p>Five HTTP verbs are supported by the API: <code class="prettyprint">GET</code>, <code class="prettyprint">POST</code>, <code class="prettyprint">PUT</code>, <code class="prettyprint">PATCH</code> and <code class="prettyprint">DELETE</code>, though not every verb is
+accepted by every type of resource.</p>
+
+<table><thead>
+<tr>
+<th>Verb</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td>Requests a representation of the specified resource; requests using GET can only retrieve data</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Submits data to a new resource</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Uploads data to an existing resource, overriding the existing data</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>Applies a partial modification to a resource</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Deletes the specified resource</td>
+</tr>
+</tbody></table>
+
+          <h1 id="response-codes">Response Codes</h1>
+
+<p>The HTTP response code can be used to determine if the API request has succeeded. The API returns the
+following codes with the given circumstances:</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
 <th>Meaning</th>
 </tr>
 </thead><tbody>
 <tr>
+<td>200</td>
+<td>OK &ndash; Requet was successful</td>
+</tr>
+<tr>
+<td>201</td>
+<td>Created &ndash; POST request completed sucessfully</td>
+</tr>
+<tr>
 <td>400</td>
-<td>Bad Request &ndash; Your request sucks</td>
+<td>Bad Request &ndash; The request was invalid or malformed</td>
 </tr>
 <tr>
 <td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
+<td>Unauthorized &ndash; Your API key is invalid</td>
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
+<td>Forbidden &ndash; API Authentication failed</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
+<td>Not Found &ndash; The resource requested does not exist</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone &ndash; The kitten requested has been removed from our servers</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&rsquo;m a teapot</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
+<td>Method Not Allowed &ndash; The resource requested does not support the request&rsquo;s HTTP verb</td>
 </tr>
 </tbody></table>
+
+<p>In all cases other than <code class="prettyprint">401 Unauthorized</code>, a JSON response will accompany the status code.</p>
+
+<p>For <code class="prettyprint">200 OK</code> and <code class="prettyprint">201 Created</code>, the response will contain either the data requested for a <code class="prettyprint">GET</code> request, the data
+deleted for a <code class="prettyprint">DELETE</code> request, or the current state of the resource after a <code class="prettyprint">POST</code>, <code class="prettyprint">PUT</code> or <code class="prettyprint">PATCH</code> request.</p>
+
+<p>For all other status codes, the response will contain error details, which includes the error name, error
+description, and more specific details as applicable.</p>
+
+<p>You should not receive <code class="prettyprint">500 Internal Server Errors</code> from the API. Please contact TalentNest support if
+this occurs.</p>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
           </div>
       </div>
     </div>
