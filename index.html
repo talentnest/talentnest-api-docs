@@ -235,8 +235,6 @@
 
 <p>The API is RESTful. Each request has an associated HTTP verb which must be used. Certain endpoints accept resources as a part of the request.</p>
 
-<p>There is currently no request rate limit.</p>
-
 <h1 id="authentication">Authentication</h1>
 
 <blockquote>
@@ -434,6 +432,24 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 
 <p><code class="prettyprint">GET https:://subodmain.talentnest.com/api/v1/jobs</code></p>
 
+<h3 id="query-string-parameters">Query string parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>per_page</td>
+<td>The requested number of results per page. <code class="prettyprint">Default is 50</code> and the allowed <code class="prettyprint">Maximum is 100</code>.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>The specific page requested.</td>
+</tr>
+</tbody></table>
+
 <h2 id="get-a-specific-job">GET: A Specific Job</h2>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/jobs/{id}"</span>
   -u <span class="s2">"TALENTNEST_API_KEY:"</span>
@@ -541,6 +557,28 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET https:://subodmain.talentnest.com/api/v1/applications/</code></p>
+
+<h3 id="query-string-parameters">Query string parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>per_page</td>
+<td>The requested number of results per page. <code class="prettyprint">Default is 50</code> and the allowed <code class="prettyprint">Maximum is 100</code>.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>The specific page requested.</td>
+</tr>
+<tr>
+<td>job_id</td>
+<td>Return only applications belonging to this job.</td>
+</tr>
+</tbody></table>
 
 <h2 id="get-a-specific-application">GET: A Specific Application</h2>
 <pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}"</span>
@@ -666,6 +704,119 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 <tr>
 <td>id</td>
 <td>The ID of the application to retrieve</td>
+</tr>
+</tbody></table>
+
+<h1 id="business-units">Business Units</h1>
+
+<p>Business Units form the hierarchy of your company within TalentNest.</p>
+
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>parent_id</td>
+<td>The <code class="prettyprint">ID</code> that this business unit belongs to.</td>
+</tr>
+<tr>
+<td>major_unit_id <em>if available</em></td>
+<td>If major divisions are setup, the <code class="prettyprint">ID</code> of the major division that this business unit belongs to.</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-all-business-units">GET: All Business units</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/business_units"</span>
+  -u <span class="s2">"TALENTNEST_API_KEY:"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ Corp"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ Corp is a world leader in widgets."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"major_unit_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3300 Bloor Street West"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M8X 2X3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ontario"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toronto"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Finance"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"major_unit_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3300 Bloor Street West"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M8X 2X3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ontario"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toronto"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accounting"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"major_unit_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+
+</span></code></pre>
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https:://subodmain.talentnest.com/api/v1/business_units/</code></p>
+
+<h2 id="get-a-specific-business-unit">GET: A Specific Business Unit</h2>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ Corp"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ Corp is a world leader in widgets."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"major_unit_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3300 Bloor Street West"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M8X 2X3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ontario"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toronto"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+
+</span></code></pre>
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https:://subodmain.talentnest.com/api/v1/business_units/{id}</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the business unit to retrieve</td>
 </tr>
 </tbody></table>
 
