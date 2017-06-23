@@ -448,6 +448,14 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 <td>page</td>
 <td>The specific page requested.</td>
 </tr>
+<tr>
+<td>created_after</td>
+<td>Return only jobs that were created after this timestamp. Timestamp must be ISO 8601 format.</td>
+</tr>
+<tr>
+<td>updated_after</td>
+<td>Return only jobs that were updated after this timestamp. Timestamp must be ISO 8601 format.</td>
+</tr>
 </tbody></table>
 
 <h2 id="get-a-specific-job">GET: A Specific Job</h2>
@@ -577,6 +585,14 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 <tr>
 <td>job_id</td>
 <td>Return only applications belonging to this job.</td>
+</tr>
+<tr>
+<td>completed_after</td>
+<td>Return only applications that were completed after this timestamp. Timestamp must be ISO 8601 format.</td>
+</tr>
+<tr>
+<td>updated_after</td>
+<td>Return only applications that were updated after this timestamp. Timestamp must be ISO 8601 format.</td>
 </tr>
 </tbody></table>
 
