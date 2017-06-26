@@ -136,12 +136,12 @@ curl "http://subdomain.talentnest.com/api/v1/jobs"
     "id": 22625,
     "title": "F&I Manager – Automotive",
     "job_status": "Open",
-    "opens_at": "2016-09-05",
+    "opens_at": "2017-09-05",
     "closes_at": null,
     "status_changed_at": "2015-12-16T14:31:30Z",
-    "last_application_at": "2016-11-25T13:38:19Z",
+    "last_application_at": "2017-11-25T13:38:19Z",
     "created_at": "2015-12-16T14:31:18Z",
-    "updated_at": "2016-09-08T13:55:24Z",
+    "updated_at": "2017-09-08T13:55:24Z",
     "job_url": "https://subdomain.talentnest.com/en/posting/18502/location/22625",
     "apply_url": "https://subdomain.talentnest.com/en/posting/18502/apply/22625",
     "business_unit": {
@@ -159,12 +159,12 @@ curl "http://subdomain.talentnest.com/api/v1/jobs"
     "id": 23032,
     "title": "Financial Services",
     "job_status": "Closed",
-    "opens_at": "2016-01-13",
+    "opens_at": "2017-01-13",
     "closes_at": null,
-    "status_changed_at": "2016-02-03T13:58:05Z",
+    "status_changed_at": "2017-02-03T13:58:05Z",
     "last_application_at": null,
-    "created_at": "2016-01-13T19:39:14Z",
-    "updated_at": "2016-02-03T13:58:05Z",
+    "created_at": "2017-01-13T19:39:14Z",
+    "updated_at": "2017-02-03T13:58:05Z",
     "job_url": "https://subdomain.talentnest.com/en/posting/18801/location/23032",
     "apply_url": "https://subdomain.talentnest.com/en/posting/18801/apply/23032",
     "business_unit": {
@@ -185,7 +185,7 @@ List all jobs.
 
 ### HTTP Request
 
-`GET https:://subodmain.talentnest.com/api/v1/jobs`
+`GET https://subodmain.talentnest.com/api/v1/jobs`
 
 ### Query string parameters
 
@@ -210,12 +210,12 @@ curl "http://subdomain.talentnest.com/api/v1/jobs/{id}"
   "id": 23819,
   "title": "Program Manager",
   "job_status": "Open",
-  "opens_at": "2016-02-03",
-  "closes_at": "2016-02-10",
-  "status_changed_at": "2016-02-03T21:46:57Z",
+  "opens_at": "2017-02-03",
+  "closes_at": "2017-02-10",
+  "status_changed_at": "2017-02-03T21:46:57Z",
   "last_application_at": null,
-  "created_at": "2016-02-03T21:46:16Z",
-  "updated_at": "2016-02-03T21:46:16Z",
+  "created_at": "2017-02-03T21:46:16Z",
+  "updated_at": "2017-02-03T21:46:16Z",
   "job_url": "https://subdomain.talentnest.com/en/posting/19252/location/23819",
   "apply_url": "https://subdomain.talentnest.com/en/posting/19252/apply/23819",
   "business_unit": {
@@ -242,13 +242,76 @@ curl "http://subdomain.talentnest.com/api/v1/jobs/{id}"
 
 ### HTTP Request
 
-`GET https:://subodmain.talentnest.com/api/v1/jobs/{id}`
+`GET https://subodmain.talentnest.com/api/v1/jobs/{id}`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 id | The ID of the job to retrieve
+
+## GET: A Job's Employment Process
+
+```shell
+curl "http://subdomain.talentnest.com/api/v1/jobs/{id}/employment_process"
+  -u "TALENTNEST_API_KEY:"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "employment_process": {
+      "steps": [
+          {
+              "abbreviation": "RC",
+              "name": "Review Candidate",
+              "optional": false,
+              "sequence": 1,
+              "step_type": "New Application"
+          },
+          {
+              "abbreviation": "PI",
+              "name": "Phone Interview",
+              "optional": true,
+              "sequence": 2,
+              "step_type": "Interview"
+          },
+          {
+              "abbreviation": "MPP3",
+              "name": "Management Pro",
+              "optional": true,
+              "sequence": 3,
+              "step_type": "Assessment"
+          },
+          {
+              "abbreviation": "Int",
+              "name": "Interview",
+              "optional": true,
+              "sequence": 4,
+              "step_type": "Interview"
+          },
+          {
+              "abbreviation": "EO",
+              "name": "Employment Offer",
+              "optional": false,
+              "sequence": 5,
+              "step_type": "Employment Offer"
+          }
+      ]
+  }
+}
+```
+
+### HTTP Request
+
+`GET https://subodmain.talentnest.com/api/v1/jobs/{id}/employment_process`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the job to use
 
 # Applications
 
@@ -274,10 +337,10 @@ curl "http://subdomain.talentnest.com/api/v1/applications"
     "application_step": "Review Candidate",
     "application_status": "Deselected",
     "application_url": "https://subdomain.talentnest.com/en/job/25668/candidate/1148",
-    "status_changed_at": "2016-11-29T19:41:33Z",
-    "completed_at": "2016-10-28T17:47:15Z",
-    "created_at": "2016-09-23T20:31:53Z",
-    "updated_at": "2016-12-01T07:00:10Z"
+    "status_changed_at": "2017-11-29T19:41:33Z",
+    "completed_at": "2017-10-28T17:47:15Z",
+    "created_at": "2017-09-23T20:31:53Z",
+    "updated_at": "2017-12-01T07:00:10Z"
   },
   {
     "id": 1769005,
@@ -290,10 +353,10 @@ curl "http://subdomain.talentnest.com/api/v1/applications"
     "application_step": "Review Candidate",
     "application_status": "Deselected",
     "application_url": "https://subdomain.talentnest.com/en/job/29696/candidate/876140",
-    "status_changed_at": "2016-11-11T15:16:25Z",
-    "completed_at": "2016-09-26T17:20:27Z",
-    "created_at": "2016-09-26T17:20:25Z",
-    "updated_at": "2016-11-11T15:16:25Z"
+    "status_changed_at": "2017-11-11T15:16:25Z",
+    "completed_at": "2017-09-26T17:20:27Z",
+    "created_at": "2017-09-26T17:20:25Z",
+    "updated_at": "2017-11-11T15:16:25Z"
   }
 ]
 ```
@@ -302,7 +365,7 @@ Retrieves all job applications
 
 ### HTTP Request
 
-`GET https:://subodmain.talentnest.com/api/v1/applications/`
+`GET https://subodmain.talentnest.com/api/v1/applications/`
 
 ### Query string parameters
 
@@ -336,10 +399,10 @@ curl "http://subdomain.talentnest.com/api/v1/applications/{id}"
     "application_step": "Review Candidate",
     "application_status": "Deselected",
     "application_url": "https://subdomain.talentnest.com/en/job/25668/candidate/1148",
-    "status_changed_at": "2016-11-29T19:41:33Z",
-    "completed_at": "2016-10-28T17:47:15Z",
-    "created_at": "2016-09-23T20:31:53Z",
-    "updated_at": "2016-12-01T07:00:10Z",
+    "status_changed_at": "2017-11-29T19:41:33Z",
+    "completed_at": "2017-10-28T17:47:15Z",
+    "created_at": "2017-09-23T20:31:53Z",
+    "updated_at": "2017-12-01T07:00:10Z",
     "phone": "4167460444",
     "deselect_reason": null,
     "source": "Company Website",
@@ -422,14 +485,52 @@ curl "http://subdomain.talentnest.com/api/v1/applications/{id}"
     "candidate_tags": [
       "automotive",
       "technician"
-    ]
+    ],
+    "employment_process_history": [
+      {
+        "activated_at": "2017-05-27T15:54:31Z",
+        "completed_at": "2017-05-27T15:57:32Z",
+        "deselected_at": null,
+        "invited_at": null,
+        "rating": "4.0",
+        "status": "Completed",
+        "step_name": "Review Candidate"
+      },
+      {
+        "activated_at": null,
+        "completed_at": null,
+        "deselected_at": null,
+        "invited_at": null,
+        "rating": null,
+        "status": "Inactive",
+        "step_name": "Employment Offer"
+      },
+      {
+        "activated_at": null,
+        "completed_at": null,
+        "deselected_at": null,
+        "invited_at": null,
+        "rating": null,
+        "status": "Inactive",
+        "step_name": "Interview"
+      },
+      {
+        "activated_at": "2017-05-27T15:57:36Z",
+        "completed_at": "2017-10-21T21:10:33Z",
+        "deselected_at": null,
+        "invited_at": null,
+        "rating": null,
+        "status": "Completed",
+        "step_name": "Management Pro"
+      }
+    ],
   }
 }
 ```
 
 ### HTTP Request
 
-`GET https:://subodmain.talentnest.com/api/v1/jobs/{id}`
+`GET https://subodmain.talentnest.com/api/v1/jobs/{id}`
 
 ### URL Parameters
 
@@ -503,7 +604,7 @@ curl "http://subdomain.talentnest.com/api/v1/business_units"
 ```
 ### HTTP Request
 
-`GET https:://subodmain.talentnest.com/api/v1/business_units/`
+`GET https://subodmain.talentnest.com/api/v1/business_units/`
 
 ## GET: A Specific Business Unit
 
@@ -529,7 +630,7 @@ curl "http://subdomain.talentnest.com/api/v1/business_units"
 
 ### HTTP Request
 
-`GET https:://subodmain.talentnest.com/api/v1/business_units/{id}`
+`GET https://subodmain.talentnest.com/api/v1/business_units/{id}`
 
 ### URL Parameters
 
