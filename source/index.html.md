@@ -376,6 +376,8 @@ page | The specific page requested.
 job_id | Return only applications belonging to this job.
 completed_after | Return only applications that were completed after this timestamp. Timestamp must be ISO 8601 format.
 updated_after | Return only applications that were updated after this timestamp. Timestamp must be ISO 8601 format.
+application_status | Return only applications with this status. Allowed values are `active`, `deselected`, `hired`.
+status_changed_after | Return only applications whose status was changed after this timestamp. Timestamp must be ISO 8601 format.
 
 ## GET: A Specific Application
 
@@ -530,7 +532,7 @@ curl "http://subdomain.talentnest.com/api/v1/applications/{id}"
 
 ### HTTP Request
 
-`GET https://subodmain.talentnest.com/api/v1/jobs/{id}`
+`GET https://subodmain.talentnest.com/api/v1/applications/{id}`
 
 ### URL Parameters
 
