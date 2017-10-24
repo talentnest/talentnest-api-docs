@@ -661,6 +661,14 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 <td>updated_after</td>
 <td>Return only applications that were updated after this timestamp. Timestamp must be ISO 8601 format.</td>
 </tr>
+<tr>
+<td>application_status</td>
+<td>Return only applications with this status. Allowed values are <code class="prettyprint">active</code>, <code class="prettyprint">deselected</code>, <code class="prettyprint">hired</code>.</td>
+</tr>
+<tr>
+<td>status_changed_after</td>
+<td>Return only applications whose status was changed after this timestamp. Timestamp must be ISO 8601 format.</td>
+</tr>
 </tbody></table>
 
 <h2 id="get-a-specific-application">GET: A Specific Application</h2>
@@ -812,7 +820,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 </span></code></pre>
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://subodmain.talentnest.com/api/v1/jobs/{id}</code></p>
+<p><code class="prettyprint">GET https://subodmain.talentnest.com/api/v1/applications/{id}</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
