@@ -1052,7 +1052,8 @@ this occurs.</p>
 <p>TalentNest webhooks are events that you can subscribe to. When that event occurs, TalentNest will automatically notify you with a JSON <code>POST</code> request to a client specified target URL.</p>
 
 <p>To subscribe to an event, contact us at support@talentnest.com.</p>
-<h2 id='available-webhooks'>Available Webhooks</h2>
+<h2 id='available-webhooks'>Available Webhooks</h2><pre class="highlight shell tab-shell"><code>X-Event-Name: applicant_hired
+</code></pre>
 <table><thead>
 <tr>
 <th>Event</th>
@@ -1060,14 +1061,12 @@ this occurs.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td>New Application</td>
-<td>Notification of a new candidate job application</td>
-</tr>
-<tr>
-<td>New Hire</td>
-<td>Notification of a new hire made</td>
+<td>applicant_hired</td>
+<td>Notification when a candidate job application is hired</td>
 </tr>
 </tbody></table>
+
+<p>The name of the event will be sent as <code>X-Event-Name</code> header.</p>
 <h2 id='encryption'>Encryption</h2><pre class="highlight shell tab-shell"><code>X-Event-Signature: sha256 417a453d456ff29aabcdd5b68afdfbf8b2d160b8dd4818fdf34dc4940d509703
 </code></pre>
 <blockquote>
@@ -1093,7 +1092,7 @@ signature <span class="o">=</span> OpenSSL::HMAC.hexdigest<span class="o">(</spa
   </span><span class="s2">"business_unit_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">422342</span><span class="p">,</span><span class="w">
   </span><span class="s2">"business_unit_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marketing Department"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manager - Social Media"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"hired_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-12T14:23:10Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hired_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-12"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"manager_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">98644</span><span class="p">,</span><span class="w">
   </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Samantha"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Murphy"</span><span class="p">,</span><span class="w">
