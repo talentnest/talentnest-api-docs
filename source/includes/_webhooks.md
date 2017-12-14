@@ -69,6 +69,6 @@ The `X-Event-Signature` header contains: the SHA algorithm used to generate the 
 }
 ```
 
-The New Hire webhook will be sent eveytime a job candidate has been successfully hired in TalentNest.
+The Applicant Hired webhook will be sent evey time a job candidate has been successfully hired in TalentNest.
 
 
