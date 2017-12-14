@@ -287,7 +287,7 @@
                     <a href="#encryption" class="toc-h2 toc-link" data-title="Encryption">Encryption</a>
                   </li>
                   <li>
-                    <a href="#new-hire-webhook" class="toc-h2 toc-link" data-title="New Hire Webhook">New Hire Webhook</a>
+                    <a href="#applicant-hired-webhook" class="toc-h2 toc-link" data-title="Applicant Hired Webhook">Applicant Hired Webhook</a>
                   </li>
               </ul>
           </li>
@@ -1066,7 +1066,7 @@ this occurs.</p>
 </tr>
 </tbody></table>
 
-<p>The name of the event will be sent as <code>X-Event-Name</code> header.</p>
+<p>The name of the event will be sent as the <code>X-Event-Name</code> header.</p>
 <h2 id='encryption'>Encryption</h2><pre class="highlight shell tab-shell"><code>X-Event-Signature: sha256 417a453d456ff29aabcdd5b68afdfbf8b2d160b8dd4818fdf34dc4940d509703
 </code></pre>
 <blockquote>
@@ -1086,7 +1086,7 @@ signature <span class="o">=</span> OpenSSL::HMAC.hexdigest<span class="o">(</spa
 <p>The reqeusts from TalentNest to your system will be signed. The secret key is assigned when the webhook subscription is created. The algorithm used for creating the signature is HMAC SHA256 on the body of the request and the signature itself is sent as the <code>X-Event-Signature</code> header.</p>
 
 <p>The <code>X-Event-Signature</code> header contains: the SHA algorithm used to generate the signature, a space, and the signature. To verify the request came from TalentNest, compute the HMAC digest using your secret key and the body and compare it to the signature portion (after the space) contained in the header. If they match, you can be sure the web hook was sent from TalentNest.</p>
-<h2 id='new-hire-webhook'>New Hire Webhook</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<h2 id='applicant-hired-webhook'>Applicant Hired Webhook</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"employee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3234124</span><span class="p">,</span><span class="w">
   </span><span class="s2">"employee_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
   </span><span class="s2">"business_unit_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">422342</span><span class="p">,</span><span class="w">
