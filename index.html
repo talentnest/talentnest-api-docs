@@ -1087,27 +1087,27 @@ signature <span class="o">=</span> OpenSSL::HMAC.hexdigest<span class="o">(</spa
 <p>The reqeusts from TalentNest to your system will be signed. The secret key is assigned when the webhook subscription is created. The algorithm used for creating the signature is HMAC SHA256 on the body of the request and the signature itself is sent as the <code>X-Event-Signature</code> header.</p>
 
 <p>The <code>X-Event-Signature</code> header contains: the SHA algorithm used to generate the signature, a space, and the signature. To verify the request came from TalentNest, compute the HMAC digest using your secret key and the body and compare it to the signature portion (after the space) contained in the header. If they match, you can be sure the web hook was sent from TalentNest.</p>
-<h2 id='new-hire-webhook'>New Hire Webhook</h2><pre class="highlight shell tab-shell"><code><span class="o">{</span>
-  employee_id: 3234124,
-  employee_number: null,
-  business_unit_id: 422342,
-  business_unit_name: <span class="s2">"Marketing Department"</span>,
-  job_title: <span class="s2">"Manager - Social Media"</span>,
-  hired_on: <span class="s2">"2017-12-12T14:23:10Z"</span>,
-  manager_id: 98644,
-  first_name: <span class="s2">"Samantha"</span>,
-  last_name: <span class="s2">"Murphy"</span>,
-  email: <span class="s2">"samantha.murphy@talentnest.com"</span>,
-  phone: <span class="s2">"416-555-555"</span>,
-  location: <span class="o">{</span>
-    address: <span class="s2">"3300 Bloor St. West"</span>,
-    city: <span class="s2">"Toronto"</span>,
-    state: <span class="s2">"Ontario"</span>,
-    postal: <span class="s2">"M8X 2X2"</span>,
-    country: <span class="s2">"Canada"</span>
-  <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
+<h2 id='new-hire-webhook'>New Hire Webhook</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"employee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3234124</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"employee_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"business_unit_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">422342</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"business_unit_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marketing Department"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Manager - Social Media"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hired_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-12T14:23:10Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"manager_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">98644</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Samantha"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Murphy"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"samantha.murphy@talentnest.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"416-555-555"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3300 Bloor St. West"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toronto"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ontario"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"postal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M8X 2X2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p>The New Hire webhook will be sent eveytime a job candidate has been successfully hired in TalentNest.</p>
 
       </div>
