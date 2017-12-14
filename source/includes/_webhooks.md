@@ -41,25 +41,25 @@ The `X-Event-Signature` header contains: the SHA algorithm used to generate the 
 
 ## New Hire Webhook
 
-```shell
+```json
 {
-  employee_id: 3234124,
-  employee_number: null,
-  business_unit_id: 422342,
-  business_unit_name: "Marketing Department",
-  job_title: "Manager - Social Media",
-  hired_on: "2017-12-12T14:23:10Z",
-  manager_id: 98644,
-  first_name: "Samantha",
-  last_name: "Murphy",
-  email: "samantha.murphy@talentnest.com",
-  phone: "416-555-555",
-  location: {
-    address: "3300 Bloor St. West",
-    city: "Toronto",
-    state: "Ontario",
-    postal: "M8X 2X2",
-    country: "Canada"
+  "employee_id": 3234124,
+  "employee_number": null,
+  "business_unit_id": 422342,
+  "business_unit_name": "Marketing Department",
+  "job_title": "Manager - Social Media",
+  "hired_on": "2017-12-12T14:23:10Z",
+  "manager_id": 98644,
+  "first_name": "Samantha",
+  "last_name": "Murphy",
+  "email": "samantha.murphy@talentnest.com",
+  "phone": "416-555-555",
+  "location": {
+    "address": "3300 Bloor St. West",
+    "city": "Toronto",
+    "state": "Ontario",
+    "postal": "M8X 2X2",
+    "country": "Canada"
   }
 }
 ```
