@@ -7,10 +7,15 @@ To subscribe to an event, contact us at support@talentnest.com.
 
 ## Available Webhooks
 
+```shell
+X-Event-Name: applicant_hired
+```
+
 Event | Description
 ---------- | -------
-New Application | Notification of a new candidate job application
-New Hire | Notification of a new hire made
+applicant_hired | Notification when a candidate job application is hired
+
+The name of the event will be sent as `X-Event-Name` header.
 
 ## Encryption
 
@@ -48,7 +53,7 @@ The `X-Event-Signature` header contains: the SHA algorithm used to generate the 
   "business_unit_id": 422342,
   "business_unit_name": "Marketing Department",
   "job_title": "Manager - Social Media",
-  "hired_on": "2017-12-12T14:23:10Z",
+  "hired_on": "2017-12-12",
   "manager_id": 98644,
   "first_name": "Samantha",
   "last_name": "Murphy",
@@ -65,3 +70,5 @@ The `X-Event-Signature` header contains: the SHA algorithm used to generate the 
 ```
 
 The New Hire webhook will be sent eveytime a job candidate has been successfully hired in TalentNest.
+
+
