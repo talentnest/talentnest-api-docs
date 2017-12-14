@@ -15,7 +15,7 @@ Event | Description
 ---------- | -------
 applicant_hired | Notification when a candidate job application is hired
 
-The name of the event will be sent as `X-Event-Name` header.
+The name of the event will be sent as the `X-Event-Name` header.
 
 ## Encryption
 
@@ -44,7 +44,7 @@ The reqeusts from TalentNest to your system will be signed. The secret key is as
 
 The `X-Event-Signature` header contains: the SHA algorithm used to generate the signature, a space, and the signature. To verify the request came from TalentNest, compute the HMAC digest using your secret key and the body and compare it to the signature portion (after the space) contained in the header. If they match, you can be sure the web hook was sent from TalentNest.
 
-## New Hire Webhook
+## Applicant Hired Webhook
 
 ```json
 {
