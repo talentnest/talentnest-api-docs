@@ -892,7 +892,9 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+</span></code></pre>
+<p>Retrieve a specific application by its <code>id</code>.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://subodmain.talentnest.com/api/v1/applications/{id}</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -906,8 +908,6 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 <td>The ID of the application to retrieve</td>
 </tr>
 </tbody></table>
-
-<p>Retrieve a specific application by its <code>id</code>.</p>
 <h2 id='post-advance-application'>POST: Advance Application</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/advance"</span>
   -H <span class="s1">'Content-Type: application/json'</span>
   -u <span class="s2">"TALENTNEST_API_KEY:"</span>
@@ -1006,7 +1006,9 @@ applications, which are not currently at the last step of the employment process
     </span><span class="s2">"deselected_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-4'>HTTP Request</h3>
+</span></code></pre>
+<p>Retrieve a specific step of an application.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET https://subodmain.talentnest.com/api/v1/applications/{id}/step/{step_id}</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
@@ -1024,8 +1026,6 @@ applications, which are not currently at the last step of the employment process
 <td>The ID of the step to retrieve</td>
 </tr>
 </tbody></table>
-
-<p>Retrieve a specific step of an application.</p>
 <h2 id='put-activate-a-step-for-an-application'>PUT: Activate a Step for an Application</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/activate"</span>
   -u <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre>
@@ -1046,7 +1046,9 @@ applications, which are not currently at the last step of the employment process
     </span><span class="s2">"deselected_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
+</span></code></pre>
+<p>Activate a specific step of an application.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>PUT https://subodmain.talentnest.com/api/v1/applications/{id}/step/{step_id}/activate</code></p>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
@@ -1064,8 +1066,6 @@ applications, which are not currently at the last step of the employment process
 <td>The ID of the step to activate</td>
 </tr>
 </tbody></table>
-
-<p>Activate a specific step of an application.</p>
 <h2 id='put-complete-a-step-for-an-application'>PUT: Complete a Step for an Application</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/complete"</span>
   -u <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre>
@@ -1086,7 +1086,9 @@ applications, which are not currently at the last step of the employment process
     </span><span class="s2">"deselected_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
+</span></code></pre>
+<p>Complete a specific step of an application.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>PUT https://subodmain.talentnest.com/api/v1/applications/{id}/step/{step_id}/complete</code></p>
 <h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
@@ -1104,8 +1106,6 @@ applications, which are not currently at the last step of the employment process
 <td>The ID of the step to complete</td>
 </tr>
 </tbody></table>
-
-<p>Complete a specific step of an application.</p>
 <h1 id='business-units'>Business Units</h1>
 <p>Business Units form the hierarchy of your company within TalentNest.</p>
 
