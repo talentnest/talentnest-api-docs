@@ -261,6 +261,15 @@
                   <li>
                     <a href="#post-advance-application" class="toc-h2 toc-link" data-title="POST: Advance Application">POST: Advance Application</a>
                   </li>
+                  <li>
+                    <a href="#get-a-specific-step-for-an-application" class="toc-h2 toc-link" data-title="GET: A Specific Step for an Application">GET: A Specific Step for an Application</a>
+                  </li>
+                  <li>
+                    <a href="#put-activate-a-step-for-an-application" class="toc-h2 toc-link" data-title="PUT: Activate a Step for an Application">PUT: Activate a Step for an Application</a>
+                  </li>
+                  <li>
+                    <a href="#put-complete-a-step-for-an-application" class="toc-h2 toc-link" data-title="PUT: Complete a Step for an Application">PUT: Complete a Step for an Application</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -977,7 +986,7 @@ applications, which are not currently at the last step of the employment process
 <td>Text note to store with the step that the application is advancing from.</td>
 </tr>
 </tbody></table>
-<h3 id='get-a-specific-step-for-an-application'>GET: A Specific Step for an Application</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}"</span>
+<h2 id='get-a-specific-step-for-an-application'>GET: A Specific Step for an Application</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}"</span>
   -u <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre>
 <blockquote>
@@ -1017,7 +1026,7 @@ applications, which are not currently at the last step of the employment process
 </tbody></table>
 
 <p>Retrieve a specific step of an application.</p>
-<h3 id='put-activate-a-step-for-an-application'>PUT: Activate a Step for an Application</h3><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/activate"</span>
+<h2 id='put-activate-a-step-for-an-application'>PUT: Activate a Step for an Application</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/activate"</span>
   -u <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre>
 <blockquote>
@@ -1057,7 +1066,7 @@ applications, which are not currently at the last step of the employment process
 </tbody></table>
 
 <p>Activate a specific step of an application.</p>
-<h3 id='put-complete-a-step-for-an-application'>PUT: Complete a Step for an Application</h3><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/complete"</span>
+<h2 id='put-complete-a-step-for-an-application'>PUT: Complete a Step for an Application</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/complete"</span>
   -u <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre>
 <blockquote>
