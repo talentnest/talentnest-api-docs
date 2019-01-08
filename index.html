@@ -242,10 +242,10 @@
                     <a href="#get-all-jobs" class="toc-h2 toc-link" data-title="GET: All Jobs">GET: All Jobs</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-job" class="toc-h2 toc-link" data-title="GET: A Specific Job">GET: A Specific Job</a>
+                    <a href="#get-specific-job" class="toc-h2 toc-link" data-title="GET: Specific Job">GET: Specific Job</a>
                   </li>
                   <li>
-                    <a href="#get-a-job-39-s-employment-process" class="toc-h2 toc-link" data-title="GET: A Job's Employment Process">GET: A Job's Employment Process</a>
+                    <a href="#get-job-39-s-employment-process" class="toc-h2 toc-link" data-title="GET: Job's Employment Process">GET: Job's Employment Process</a>
                   </li>
               </ul>
           </li>
@@ -256,19 +256,19 @@
                     <a href="#get-all-job-applications" class="toc-h2 toc-link" data-title="GET: All Job Applications">GET: All Job Applications</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-application" class="toc-h2 toc-link" data-title="GET: A Specific Application">GET: A Specific Application</a>
+                    <a href="#get-specific-application" class="toc-h2 toc-link" data-title="GET: Specific Application">GET: Specific Application</a>
                   </li>
                   <li>
                     <a href="#post-advance-application" class="toc-h2 toc-link" data-title="POST: Advance Application">POST: Advance Application</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-step-for-an-application" class="toc-h2 toc-link" data-title="GET: A Specific Step for an Application">GET: A Specific Step for an Application</a>
+                    <a href="#get-specific-step-for-application" class="toc-h2 toc-link" data-title="GET: Specific Step for Application">GET: Specific Step for Application</a>
                   </li>
                   <li>
-                    <a href="#put-activate-a-step-for-an-application" class="toc-h2 toc-link" data-title="PUT: Activate a Step for an Application">PUT: Activate a Step for an Application</a>
+                    <a href="#put-activate-step-for-application" class="toc-h2 toc-link" data-title="PUT: Activate Step for Application">PUT: Activate Step for Application</a>
                   </li>
                   <li>
-                    <a href="#put-complete-a-step-for-an-application" class="toc-h2 toc-link" data-title="PUT: Complete a Step for an Application">PUT: Complete a Step for an Application</a>
+                    <a href="#put-complete-step-for-application" class="toc-h2 toc-link" data-title="PUT: Complete Step for Application">PUT: Complete Step for Application</a>
                   </li>
               </ul>
           </li>
@@ -276,10 +276,10 @@
             <a href="#business-units" class="toc-h1 toc-link" data-title="Business Units">Business Units</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-business-units" class="toc-h2 toc-link" data-title="GET: All Business units">GET: All Business units</a>
+                    <a href="#get-all-business-units" class="toc-h2 toc-link" data-title="GET: All Business Units">GET: All Business Units</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-business-unit" class="toc-h2 toc-link" data-title="GET: A Specific Business Unit">GET: A Specific Business Unit</a>
+                    <a href="#get-specific-business-unit" class="toc-h2 toc-link" data-title="GET: Specific Business Unit">GET: Specific Business Unit</a>
                   </li>
               </ul>
           </li>
@@ -526,7 +526,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 <td>Return only jobs that were updated after this timestamp. Timestamp must be ISO 8601 format.</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-job'>GET: A Specific Job</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/jobs/{id}"</span>
+<h2 id='get-specific-job'>GET: Specific Job</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/jobs/{id}"</span>
   -u <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre>
 <blockquote>
@@ -578,7 +578,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 <td>The ID of the job to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-job-39-s-employment-process'>GET: A Job&#39;s Employment Process</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/jobs/{id}/employment_process"</span>
+<h2 id='get-job-39-s-employment-process'>GET: Job&#39;s Employment Process</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/jobs/{id}/employment_process"</span>
   -u <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre>
 <blockquote>
@@ -729,7 +729,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 <td>Return only applications whose status was changed after this timestamp. Timestamp must be ISO 8601 format.</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-application'>GET: A Specific Application</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}"</span>
+<h2 id='get-specific-application'>GET: Specific Application</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}"</span>
   -u <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre>
 <blockquote>
@@ -925,25 +925,27 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 <p>The above returns JSON, structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"current_step"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2042</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3060537</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"step_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POP7"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"activated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:04:26Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"invited_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"deselected_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="s2">"application"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3060537</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"current_step"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2042</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sequence"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"step_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POP7"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"activated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-07T17:04:26Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"invited_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"deselected_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Advances this application from the <code>current_step</code> to the next step in the employment process. Only <code>Active</code> 
-applications, which are not currently at the last step of the employment process, can be advanced.</p>
+applications, and not already at the last step, can be advanced.</p>
 
 <p>The <code>current_step</code> will be <code>Completed</code> and the next step will be <code>Activated</code>. This newly activated step becomes the new 
-<code>current_step</code>. The response is the new <code>current_step</code>&#39;s information.</p>
+<code>current_step</code>. The response contains the new <code>current_step</code>&#39;s information.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST https://subodmain.talentnest.com/api/v1/applications/{id}/advance</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
@@ -976,17 +978,17 @@ applications, which are not currently at the last step of the employment process
 <tr>
 <td>rating</td>
 <td>No</td>
-<td>Integer or Float</td>
-<td>Rating value to store with the step that the application is advancing from. Include only if the step is <code>rated</code>.</td>
+<td>Integer</td>
+<td>Rating the candidate received at <code>current_step</code>. Applies only to <code>rated</code> steps.</td>
 </tr>
 <tr>
 <td>note</td>
 <td>No</td>
 <td>String</td>
-<td>Text note to store with the step that the application is advancing from.</td>
+<td>Optional note to store with the application.</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-step-for-an-application'>GET: A Specific Step for an Application</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}"</span>
+<h2 id='get-specific-step-for-application'>GET: Specific Step for Application</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}"</span>
   -u <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre>
 <blockquote>
@@ -1026,7 +1028,7 @@ applications, which are not currently at the last step of the employment process
 <td>The ID of the step to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='put-activate-a-step-for-an-application'>PUT: Activate a Step for an Application</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/activate"</span>
+<h2 id='put-activate-step-for-application'>PUT: Activate Step for Application</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/activate"</span>
   -u <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre>
 <blockquote>
@@ -1066,7 +1068,7 @@ applications, which are not currently at the last step of the employment process
 <td>The ID of the step to activate</td>
 </tr>
 </tbody></table>
-<h2 id='put-complete-a-step-for-an-application'>PUT: Complete a Step for an Application</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/complete"</span>
+<h2 id='put-complete-step-for-application'>PUT: Complete Step for Application</h2><pre class="highlight shell tab-shell"><code>curl -X PUT <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/complete"</span>
   -u <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre>
 <blockquote>
@@ -1124,7 +1126,7 @@ applications, which are not currently at the last step of the employment process
 <td>If major divisions are setup, the <code>ID</code> of the major division that this business unit belongs to.</td>
 </tr>
 </tbody></table>
-<h2 id='get-all-business-units'>GET: All Business units</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/business_units"</span>
+<h2 id='get-all-business-units'>GET: All Business Units</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/business_units"</span>
   -u <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre>
 <blockquote>
@@ -1176,7 +1178,7 @@ applications, which are not currently at the last step of the employment process
 </span><span class="p">]</span><span class="w">
 </span></code></pre><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://subodmain.talentnest.com/api/v1/business_units/</code></p>
-<h2 id='get-a-specific-business-unit'>GET: A Specific Business Unit</h2><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<h2 id='get-specific-business-unit'>GET: Specific Business Unit</h2><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ Corp"</span><span class="p">,</span><span class="w">
