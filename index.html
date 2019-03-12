@@ -1025,10 +1025,13 @@ applications can be advanced.</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Moves this application from the <code>current_step</code> to an arbitrary step ahead in the employment process. 
-The move is not allowed if there are any required steps in-between those two steps. Only <code>Active</code> applications can be moved.</p>
+<p>Moves this application from the <code>current_step</code> to an arbitrary step ahead in the employment process. The old
+<code>current_step</code> will be <code>Completed</code> and the new <code>current_step</code> will be <code>Activated</code>. The response contains the new 
+<code>current_step</code>&#39;s information.</p>
 
-<p>The old <code>current_step</code> will be <code>Completed</code> and the new <code>current_step</code> will be <code>Activated</code>. The response contains the new <code>current_step</code>&#39;s information.</p>
+<p>Only <code>Active</code> applications can be moved. </p>
+
+<p>The move is not allowed if there are any required steps in-between the two steps.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>POST https://subodmain.talentnest.com/api/v1/applications/{id}/move</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
