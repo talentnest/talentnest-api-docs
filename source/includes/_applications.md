@@ -285,7 +285,7 @@ curl -X POST "http://subdomain.talentnest.com/api/v1/applications/{id}/advance"
 ```
 
 Advances this application from the `current_step` to the next step in the employment process. Only `Active` 
-applications, and not already at the last step, can be advanced.
+applications can be advanced.
 
 The `current_step` will be `Completed` and the next step will be `Activated`. This newly activated step becomes the new 
 `current_step`. The response contains the new `current_step`'s information.
@@ -306,7 +306,74 @@ Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 from_step_id | Yes | Integer | The ID of the application's `current_step`.
 rating | No | Integer | Rating the candidate received at `current_step`. Range `1` to `5`. Applies only to `rated` steps.
-note | No | String | Optional note to store with the application.
+note | No | String | Optional note to store when completing the `current_step`.
+
+## POST: Move Application
+
+```shell
+curl -X POST "http://subdomain.talentnest.com/api/v1/applications/{id}/move"
+  -H 'Content-Type: application/json'
+  -u "TALENTNEST_API_KEY:"
+```
+
+> The above command takes a JSON request, structured like this:
+
+```json
+{
+  "from_step_id": 2041,
+  "to_step_id": 2044,
+  "rating": 5,
+  "note": "Completing this step and jumping few steps forward!"
+}
+```
+
+> The above returns JSON, structured like this:
+
+```json
+{
+  "application": {
+    "id": 3060537,
+    "current_step": {
+      "id": 2044,
+      "sequence": 4,
+      "step_name": "Interview",
+      "status": "Active",
+      "rating": null,
+      "activated_at": "2019-03-12T17:04:26Z",
+      "completed_at": null,
+      "invited_at": null,
+      "deselected_at": null
+    }
+  }
+}
+```
+
+Moves this application to an arbitrary step ahead in the employment process. The old
+`current_step` will be `Completed` and the new `current_step` will be `Activated`. The response contains the new 
+`current_step`'s information.
+
+Only `Active` applications can be moved. 
+
+The move is not allowed if there are any required steps in-between the two steps.
+
+### HTTP Request
+
+`POST https://subodmain.talentnest.com/api/v1/applications/{id}/move`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the application to move
+
+### JSON Body Parameters
+
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+from_step_id | Yes | Integer | The ID of the application's `current_step`.
+to_step_id | Yes | Integer | The ID of the step the application should be moved to.
+rating | No | Integer | Rating the candidate received at `current_step`. Range `1` to `5`. Applies only to `rated` steps.
+note | No | String | Optional note to store when completing the `current_step`.
 
 ## GET: Specific Step for Application
 
