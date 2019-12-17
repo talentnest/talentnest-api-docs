@@ -228,6 +228,37 @@ curl "http://subdomain.talentnest.com/api/v1/applications/{id}"
         "invited_at": null,
         "deselected_at": null
       }
+    ],
+    "assessments": [
+      {
+        "id": 617257,
+        "name": "ContactCenterScreen 2.0",
+        "url": "https://assessment-report-url...",
+        "scores": [
+          {
+            "type": "sales",
+            "score": "2.8",
+            "recommendation": "caution"
+          },
+          {
+            "type": "service",
+            "score": "3.1",
+            "recommendation": "proceed"
+          }
+        ] 
+      },
+      {
+        "id": 660573,
+        "name": "POP Screen",
+        "url": "https://assessment-report-url...",
+        "scores": [
+          {
+            "type": "overall",
+            "score": "2.38",
+            "recommendation": "redirect"
+          }
+        ] 
+      }
     ]
   }
 }
