@@ -1,5 +1,5 @@
 _
-# Applications
+# Employees
 
 ## GET: All Employees
 
@@ -121,6 +121,10 @@ hired_after | Return only employees that have a hired date after this timestamp.
 ```shell
 curl "http://subdomain.talentnest.com/api/v1/employees/{id}"
   -u "TALENTNEST_API_KEY:"
+
+
+curl "http://subdomain.talentnest.com/api/v1/employees/{email}"
+  -u "TALENTNEST_API_KEY:"
 ```
 
 > The above command returns JSON structured like this:
@@ -171,6 +175,7 @@ Retrieve a specific employee by `id` or `email`.
 ### HTTP Request
 
 `GET https://subodmain.talentnest.com/api/v1/employees/{id}`
+
 `GET https://subodmain.talentnest.com/api/v1/employees/{email}`
 
 
