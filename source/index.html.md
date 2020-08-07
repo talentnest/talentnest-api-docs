@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
   - jobs
@@ -17,6 +17,8 @@ includes:
   - webhooks
 
 search: true
+
+code_clipboard: true
 ---
 
 # Introduction
