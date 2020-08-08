@@ -13,7 +13,8 @@ X-Event-Name: applicant_hired
 
 Event | Description
 ---------- | -------
-applicant_hired | Notification when a candidate job application is hired
+new_application | Notification when a candidate applies to a job.
+applicant_hired | Notification when a candidate job application is hired.
 
 The name of the event will be sent as the `X-Event-Name` header.
 
