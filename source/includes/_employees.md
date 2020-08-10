@@ -1,4 +1,3 @@
-_
 # Employees
 
 ## GET: All Employees
