@@ -17,6 +17,7 @@ curl "http://subdomain.talentnest.com/api/v1/employees"
     "business_unit_id": 56,
     "manager_id": null,
     "hired_on": "2020-05-14",
+    "started_on": "2020-05-14",
     "verified_on": "2020-08-07",
     "termination_date": "2020-07-17",
     "user": {
@@ -41,6 +42,7 @@ curl "http://subdomain.talentnest.com/api/v1/employees"
     "business_unit_id": 871,
     "manager_id": null,
     "hired_on": "2020-07-08",
+    "started_on": "2020-07-08",
     "verified_on": "2020-08-07",
     "termination_date": "2020-07-16",
     "user": {
@@ -65,6 +67,7 @@ curl "http://subdomain.talentnest.com/api/v1/employees"
     "business_unit_id": 128,
     "manager_id": null,
     "hired_on": "2020-08-06",
+    "started_on": "2020-08-06",
     "verified_on": "2020-08-06",
     "termination_date": null,
     "user": {
@@ -136,6 +139,7 @@ curl "http://subdomain.talentnest.com/api/v1/employees/{email}"
     "business_unit_id": 119,
     "manager_id": null,
     "hired_on": "2020-07-08",
+    "started_on": "2020-07-08",
     "verified_on": "2020-07-08",
     "termination_date": "2020-07-24",
     "user": {
@@ -353,6 +357,7 @@ curl -X POST "https://subdomain.talentnest.com/api/v1/employees/{id}/terminate"
     "business_unit_id": 257,
     "manager_id": null,
     "hired_on": "2020-03-23",
+    "started_on": "2020-03-23",
     "verified_on": "2020-03-23",
     "termination_date": "2020-08-06",
     "user": {
