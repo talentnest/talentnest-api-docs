@@ -10,54 +10,56 @@ curl "http://subdomain.talentnest.com/api/v1/jobs"
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 22625,
-    "title": "F&I Manager – Automotive",
-    "job_status": "Open",
-    "opens_at": "2017-09-05",
-    "closes_at": null,
-    "status_changed_at": "2015-12-16T14:31:30Z",
-    "last_application_at": "2017-11-25T13:38:19Z",
-    "created_at": "2015-12-16T14:31:18Z",
-    "updated_at": "2017-09-08T13:55:24Z",
-    "job_url": "https://subdomain.talentnest.com/en/posting/18502/location/22625",
-    "apply_url": "https://subdomain.talentnest.com/en/posting/18502/apply/22625",
-    "business_unit": {
-      "id": 7366,
-      "location": {
-        "country": "United States",
-        "address": null,
-        "postal": null,
-        "state": "Texas",
-        "city": "Austin"
+{
+  "jobs": [
+    {
+      "id": 22625,
+      "title": "F&I Manager – Automotive",
+      "job_status": "Open",
+      "opens_at": "2017-09-05",
+      "closes_at": null,
+      "status_changed_at": "2015-12-16T14:31:30Z",
+      "last_application_at": "2017-11-25T13:38:19Z",
+      "created_at": "2015-12-16T14:31:18Z",
+      "updated_at": "2017-09-08T13:55:24Z",
+      "job_url": "https://subdomain.talentnest.com/en/posting/18502/location/22625",
+      "apply_url": "https://subdomain.talentnest.com/en/posting/18502/apply/22625",
+      "business_unit": {
+        "id": 7366,
+        "location": {
+          "country": "United States",
+          "address": null,
+          "postal": null,
+          "state": "Texas",
+          "city": "Austin"
         }
-    }
-  },
-  {
-    "id": 23032,
-    "title": "Financial Services",
-    "job_status": "Closed",
-    "opens_at": "2017-01-13",
-    "closes_at": null,
-    "status_changed_at": "2017-02-03T13:58:05Z",
-    "last_application_at": null,
-    "created_at": "2017-01-13T19:39:14Z",
-    "updated_at": "2017-02-03T13:58:05Z",
-    "job_url": "https://subdomain.talentnest.com/en/posting/18801/location/23032",
-    "apply_url": "https://subdomain.talentnest.com/en/posting/18801/apply/23032",
-    "business_unit": {
-      "id": 2009,
-      "location": {
-        "country": "Canada",
-        "address": "3300 Bloor Street West",
-        "postal": "M9B 2C5",
-        "state": "Ontario",
-        "city": "Toronto"
+      }
+    },
+    {
+      "id": 23032,
+      "title": "Financial Services",
+      "job_status": "Closed",
+      "opens_at": "2017-01-13",
+      "closes_at": null,
+      "status_changed_at": "2017-02-03T13:58:05Z",
+      "last_application_at": null,
+      "created_at": "2017-01-13T19:39:14Z",
+      "updated_at": "2017-02-03T13:58:05Z",
+      "job_url": "https://subdomain.talentnest.com/en/posting/18801/location/23032",
+      "apply_url": "https://subdomain.talentnest.com/en/posting/18801/apply/23032",
+      "business_unit": {
+        "id": 2009,
+        "location": {
+          "country": "Canada",
+          "address": "3300 Bloor Street West",
+          "postal": "M9B 2C5",
+          "state": "Ontario",
+          "city": "Toronto"
+        }
       }
     }
-  }
-]
+  ]
+}
 ```
 
 List all jobs.
@@ -86,36 +88,38 @@ curl "http://subdomain.talentnest.com/api/v1/jobs/{id}"
 
 ```json
 {
-  "id": 23819,
-  "title": "Program Manager",
-  "job_status": "Open",
-  "opens_at": "2017-02-03",
-  "closes_at": "2017-02-10",
-  "status_changed_at": "2017-02-03T21:46:57Z",
-  "last_application_at": null,
-  "created_at": "2017-02-03T21:46:16Z",
-  "updated_at": "2017-02-03T21:46:16Z",
-  "job_url": "https://subdomain.talentnest.com/en/posting/19252/location/23819",
-  "apply_url": "https://subdomain.talentnest.com/en/posting/19252/apply/23819",
-  "business_unit": {
-    "id": 2446,
-    "location": {
-      "country": "Canada",
-      "address": null,
-      "postal": null,
-      "state": "Alberta",
-      "city": "Edmonton"
+  "job": {
+    "id": 23819,
+    "title": "Program Manager",
+    "job_status": "Open",
+    "opens_at": "2017-02-03",
+    "closes_at": "2017-02-10",
+    "status_changed_at": "2017-02-03T21:46:57Z",
+    "last_application_at": null,
+    "created_at": "2017-02-03T21:46:16Z",
+    "updated_at": "2017-02-03T21:46:16Z",
+    "job_url": "https://subdomain.talentnest.com/en/posting/19252/location/23819",
+    "apply_url": "https://subdomain.talentnest.com/en/posting/19252/apply/23819",
+    "business_unit": {
+      "id": 2446,
+      "location": {
+        "country": "Canada",
+        "address": null,
+        "postal": null,
+        "state": "Alberta",
+        "city": "Edmonton"
       }
-  },
-  "description": "Detailed job description",
-  "employment_type": null,
-  "posting_type": "External",
-  "job_applications_count": 30,
-  "completed_applications_count": 25,
-  "unreviewed_applications_count": 5,
-  "hires_count": 0,
-  "vacancies_count": 0,
-  "assessment": null
+    },
+    "description": "Detailed job description",
+    "employment_type": null,
+    "posting_type": "External",
+    "job_applications_count": 30,
+    "completed_applications_count": 25,
+    "unreviewed_applications_count": 5,
+    "hires_count": 0,
+    "vacancies_count": 0,
+    "assessment": null
+  }
 }
 ```
 

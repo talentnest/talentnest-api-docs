@@ -10,96 +10,98 @@ curl "http://subdomain.talentnest.com/api/v1/employees"
 > The above command returns JSON structured like this:
 
 ```json
- "employees": [
-  {
-    "id": 122345,
-    "employee_number": null,
-    "business_unit_id": 56,
-    "manager_id": null,
-    "hired_on": "2020-05-14",
-    "started_on": "2020-05-14",
-    "verified_on": "2020-08-07",
-    "termination_date": "2020-07-17",
-    "user": {
-      "first_name": "Nadia",
-      "middle_initial": "J",
-      "last_name": "Smith",
-      "email": "nadiasmith@talentnest.com",
-      "primary_phone": "14167460444",
-      "location": {
-        "country": "Canada",
-        "address": " 3300 Bloor Street West",
-        "postal": "M8X 2X2",
-        "state": "Ontario",
-        "city": "Toronto"
-      }
-    },
-    "current_position": null
-  },
-  {
-    "id": 122354,
-    "employee_number": null,
-    "business_unit_id": 871,
-    "manager_id": null,
-    "hired_on": "2020-07-08",
-    "started_on": "2020-07-08",
-    "verified_on": "2020-08-07",
-    "termination_date": "2020-07-16",
-    "user": {
-      "first_name": "Vanessa",
-      "middle_initial": null,
-      "last_name": "Squid",
-      "email": "vsquid@talentnest.com",
-      "primary_phone": "14167460444",
-      "location": {
-          "country": "Canada",
-          "address": " 3300 Bloor Street West",
-          "postal": "M8X 2X2",
-          "state": "Ontario",
-          "city": "Toronto"
-      }
-    },
-    "current_position": null
-  },
-  {
-    "id": 125458,
-    "employee_number": null,
-    "business_unit_id": 128,
-    "manager_id": null,
-    "hired_on": "2020-08-06",
-    "started_on": "2020-08-06",
-    "verified_on": "2020-08-06",
-    "termination_date": null,
-    "user": {
-      "first_name": "Jake",
-      "middle_initial": null,
-      "last_name": "Williams",
-      "email": "jake.williams@talentnest.com",
-      "primary_phone": "14167460444",
-      "location": null
-    },
-    "current_position": {
-      "id": 115427,
-      "status_id": 388,
-      "job_title": "Full-Time Customer Support",
-      "started_on": "2020-08-06",
-      "ended_on": null,
-      "position_end_reason_id": null,
-      "business_unit_id": 10228,
-      "application_id": 5179944
-    },
-    "other_position": {
-      "id": 102427,
-      "status_id": 312,
-      "job_title": "Full-Time Front Desk",
-      "started_on": "2020-01-31",
-      "ended_on": "2020-08-06,
-      "position_end_reason_id": 41,
-      "business_unit_id": 10228,
-      "application_id": 5079944
-    }
-  }
-]
+ {
+   "employees": [
+     {
+       "id": 122345,
+       "employee_number": null,
+       "business_unit_id": 56,
+       "manager_id": null,
+       "hired_on": "2020-05-14",
+       "started_on": "2020-05-14",
+       "verified_on": "2020-08-07",
+       "termination_date": "2020-07-17",
+       "user": {
+         "first_name": "Nadia",
+         "middle_initial": "J",
+         "last_name": "Smith",
+         "email": "nadiasmith@talentnest.com",
+         "primary_phone": "14167460444",
+         "location": {
+           "country": "Canada",
+           "address": " 3300 Bloor Street West",
+           "postal": "M8X 2X2",
+           "state": "Ontario",
+           "city": "Toronto"
+         }
+       },
+       "current_position": null
+     },
+     {
+       "id": 122354,
+       "employee_number": null,
+       "business_unit_id": 871,
+       "manager_id": null,
+       "hired_on": "2020-07-08",
+       "started_on": "2020-07-08",
+       "verified_on": "2020-08-07",
+       "termination_date": "2020-07-16",
+       "user": {
+         "first_name": "Vanessa",
+         "middle_initial": null,
+         "last_name": "Squid",
+         "email": "vsquid@talentnest.com",
+         "primary_phone": "14167460444",
+         "location": {
+           "country": "Canada",
+           "address": " 3300 Bloor Street West",
+           "postal": "M8X 2X2",
+           "state": "Ontario",
+           "city": "Toronto"
+         }
+       },
+       "current_position": null
+     },
+     {
+       "id": 125458,
+       "employee_number": null,
+       "business_unit_id": 128,
+       "manager_id": null,
+       "hired_on": "2020-08-06",
+       "started_on": "2020-08-06",
+       "verified_on": "2020-08-06",
+       "termination_date": null,
+       "user": {
+         "first_name": "Jake",
+         "middle_initial": null,
+         "last_name": "Williams",
+         "email": "jake.williams@talentnest.com",
+         "primary_phone": "14167460444",
+         "location": null
+       },
+       "current_position": {
+         "id": 115427,
+         "status_id": 388,
+         "job_title": "Full-Time Customer Support",
+         "started_on": "2020-08-06",
+         "ended_on": null,
+         "position_end_reason_id": null,
+         "business_unit_id": 10228,
+         "application_id": 5179944
+       },
+       "other_position": {
+         "id": 102427,
+         "status_id": 312,
+         "job_title": "Full-Time Front Desk",
+         "started_on": "2020-01-31",
+         "ended_on": "2020-08-06",
+         "position_end_reason_id": 41,
+         "business_unit_id": 10228,
+         "application_id": 5079944
+       }
+     }
+   ]
+}
 
 ```
 

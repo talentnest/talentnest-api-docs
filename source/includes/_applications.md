@@ -10,40 +10,42 @@ curl "http://subdomain.talentnest.com/api/v1/applications"
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1765253,
-    "candidate_id": 1148,
-    "job_id": 25668,
-    "job_title": "Parts Manager - Automotive",
-    "first_name": "Jake",
-    "last_name": "Joseph",
-    "email": "jj@talentnest.com",
-    "application_step": "Review Candidate",
-    "application_status": "Deselected",
-    "application_url": "https://subdomain.talentnest.com/en/job/25668/candidate/1148",
-    "status_changed_at": "2017-11-29T19:41:33Z",
-    "completed_at": "2017-10-28T17:47:15Z",
-    "created_at": "2017-09-23T20:31:53Z",
-    "updated_at": "2017-12-01T07:00:10Z"
-  },
-  {
-    "id": 1769005,
-    "candidate_id": 876140,
-    "job_id": 29696,
-    "job_title": "General Agent",
-    "first_name": "Lori",
-    "last_name": "Ham",
-    "email": "lori.ham@talentnest.com",
-    "application_step": "Review Candidate",
-    "application_status": "Deselected",
-    "application_url": "https://subdomain.talentnest.com/en/job/29696/candidate/876140",
-    "status_changed_at": "2017-11-11T15:16:25Z",
-    "completed_at": "2017-09-26T17:20:27Z",
-    "created_at": "2017-09-26T17:20:25Z",
-    "updated_at": "2017-11-11T15:16:25Z"
-  }
-]
+{
+  "applications": [
+    {
+      "id": 1765253,
+      "candidate_id": 1148,
+      "job_id": 25668,
+      "job_title": "Parts Manager - Automotive",
+      "first_name": "Jake",
+      "last_name": "Joseph",
+      "email": "jj@talentnest.com",
+      "application_step": "Review Candidate",
+      "application_status": "Deselected",
+      "application_url": "https://subdomain.talentnest.com/en/job/25668/candidate/1148",
+      "status_changed_at": "2017-11-29T19:41:33Z",
+      "completed_at": "2017-10-28T17:47:15Z",
+      "created_at": "2017-09-23T20:31:53Z",
+      "updated_at": "2017-12-01T07:00:10Z"
+    },
+    {
+      "id": 1769005,
+      "candidate_id": 876140,
+      "job_id": 29696,
+      "job_title": "General Agent",
+      "first_name": "Lori",
+      "last_name": "Ham",
+      "email": "lori.ham@talentnest.com",
+      "application_step": "Review Candidate",
+      "application_status": "Deselected",
+      "application_url": "https://subdomain.talentnest.com/en/job/29696/candidate/876140",
+      "status_changed_at": "2017-11-11T15:16:25Z",
+      "completed_at": "2017-09-26T17:20:27Z",
+      "created_at": "2017-09-26T17:20:25Z",
+      "updated_at": "2017-11-11T15:16:25Z"
+    }
+  ]
+}
 ```
 
 Retrieves all job applications
@@ -75,7 +77,8 @@ curl "http://subdomain.talentnest.com/api/v1/applications/{id}"
 > The above command returns JSON structured like this:
 
 ```json
-{ "application": {
+{ 
+  "application": {
     "id": 1765253,
     "candidate_id": 1148,
     "job_id": 25668,

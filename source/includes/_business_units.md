@@ -17,50 +17,52 @@ curl "http://subdomain.talentnest.com/api/v1/business_units"
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 2,
-    "name": "XYZ Corp",
-    "description": "XYZ Corp is a world leader in widgets.",
-    "parent_id": null,
-    "major_unit_id": null,
-    "location": {
-      "country": "Canada",
-      "address": "3300 Bloor Street West",
-      "postal": "M8X 2X3",
-      "state": "Ontario",
-      "city": "Toronto"
+{
+  "business_units": [
+    {
+      "id": 2,
+      "name": "XYZ Corp",
+      "description": "XYZ Corp is a world leader in widgets.",
+      "parent_id": null,
+      "major_unit_id": null,
+      "location": {
+        "country": "Canada",
+        "address": "3300 Bloor Street West",
+        "postal": "M8X 2X3",
+        "state": "Ontario",
+        "city": "Toronto"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Finance",
+      "description": null,
+      "parent_id": 2,
+      "major_unit_id": null,
+      "location": {
+        "country": "Canada",
+        "address": "3300 Bloor Street West",
+        "postal": "M8X 2X3",
+        "state": "Ontario",
+        "city": "Toronto"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Accounting",
+      "description": null,
+      "parent_id": 4,
+      "major_unit_id": 4,
+      "location": {
+        "country": "Canada",
+        "address": null,
+        "postal": null,
+        "state": null,
+        "city": null
+      }
     }
-  },
-  {
-    "id": 4,
-    "name": "Finance",
-    "description": null,
-    "parent_id": 2,
-    "major_unit_id": null,
-    "location": {
-      "country": "Canada",
-      "address": "3300 Bloor Street West",
-      "postal": "M8X 2X3",
-      "state": "Ontario",
-      "city": "Toronto"
-    }
-  },
-  {
-    "id": 5,
-    "name": "Accounting",
-    "description": null,
-    "parent_id": 4,
-    "major_unit_id": 4,
-    "location": {
-      "country": "Canada",
-      "address": null,
-      "postal": null,
-      "state": null,
-      "city": null
-    }
-  }
-]
+  ]
+}
 ```
 ### HTTP Request
 
@@ -69,8 +71,8 @@ curl "http://subdomain.talentnest.com/api/v1/business_units"
 ## GET: Specific Business Unit
 
 ```json
-[
-  {
+{ 
+  "business_unit": {
     "id": 2,
     "name": "XYZ Corp",
     "description": "XYZ Corp is a world leader in widgets.",
@@ -84,7 +86,7 @@ curl "http://subdomain.talentnest.com/api/v1/business_units"
       "city": "Toronto"
     }
   }
-]
+}
 ```
 
 ### HTTP Request

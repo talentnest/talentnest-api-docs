@@ -11,6 +11,7 @@ includes:
   - jobs
   - applications
   - business_units
+  - candidates
   - employees
   - verbs
   - response_codes
