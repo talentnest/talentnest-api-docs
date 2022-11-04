@@ -3,7 +3,7 @@
 ## GET: All Job Applications
 
 ```shell
-curl "http://subdomain.talentnest.com/api/v1/applications"
+curl "https://subdomain.talentnest.com/api/v1/applications"
   -u "TALENTNEST_API_KEY:"
 ```
 
@@ -70,7 +70,7 @@ status_changed_after | Return only applications whose status was changed after t
 ## GET: Specific Application
 
 ```shell
-curl "http://subdomain.talentnest.com/api/v1/applications/{id}"
+curl "https://subdomain.talentnest.com/api/v1/applications/{id}"
   -u "TALENTNEST_API_KEY:"
 ```
 
@@ -283,7 +283,7 @@ id | The ID of the application to retrieve
 ## POST: Advance Application
 
 ```shell
-curl -X POST "http://subdomain.talentnest.com/api/v1/applications/{id}/advance"
+curl -X POST "https://subdomain.talentnest.com/api/v1/applications/{id}/advance"
   -H 'Content-Type: application/json'
   -u "TALENTNEST_API_KEY:"
 ```
@@ -346,7 +346,7 @@ note | No | String | Optional note to store when completing the `current_step`.
 ## POST: Move Application
 
 ```shell
-curl -X POST "http://subdomain.talentnest.com/api/v1/applications/{id}/move"
+curl -X POST "https://subdomain.talentnest.com/api/v1/applications/{id}/move"
   -H 'Content-Type: application/json'
   -u "TALENTNEST_API_KEY:"
 ```
@@ -413,7 +413,7 @@ note | No | String | Optional note to store when completing the `current_step`.
 ## GET: Specific Step for Application
 
 ```shell
-curl "http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}"
+curl "https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}"
   -u "TALENTNEST_API_KEY:"
 ```
 
@@ -452,7 +452,7 @@ step_id | The ID of the step to retrieve
 ## PUT: Activate Step for Application
 
 ```shell
-curl -X PUT "http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/activate"
+curl -X PUT "https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/activate"
   -u "TALENTNEST_API_KEY:"
 ```
 
@@ -491,7 +491,7 @@ step_id | The ID of the step to activate
 ## PUT: Complete Step for Application
 
 ```shell
-curl -X PUT "http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/complete"
+curl -X PUT "https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/complete"
   -u "TALENTNEST_API_KEY:"
 ```
 

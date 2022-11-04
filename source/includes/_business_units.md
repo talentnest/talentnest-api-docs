@@ -10,7 +10,7 @@ major_unit_id *if available* | If major divisions are setup, the `ID` of the maj
 ## GET: All Business Units
 
 ```shell
-curl "http://subdomain.talentnest.com/api/v1/business_units"
+curl "https://subdomain.talentnest.com/api/v1/business_units"
   -u "TALENTNEST_API_KEY:"
 ```
 

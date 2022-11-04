@@ -3,7 +3,7 @@
 ## GET: All Jobs
 
 ```shell
-curl "http://subdomain.talentnest.com/api/v1/jobs"
+curl "https://subdomain.talentnest.com/api/v1/jobs"
   -u "TALENTNEST_API_KEY:"
 ```
 
@@ -80,7 +80,7 @@ updated_after | Return only jobs that were updated after this timestamp. Timesta
 ## GET: Specific Job
 
 ```shell
-curl "http://subdomain.talentnest.com/api/v1/jobs/{id}"
+curl "https://subdomain.talentnest.com/api/v1/jobs/{id}"
   -u "TALENTNEST_API_KEY:"
 ```
 
@@ -136,7 +136,7 @@ id | The ID of the job to retrieve
 ## GET: Job's Employment Process
 
 ```shell
-curl "http://subdomain.talentnest.com/api/v1/jobs/{id}/employment_process"
+curl "https://subdomain.talentnest.com/api/v1/jobs/{id}/employment_process"
   -u "TALENTNEST_API_KEY:"
 ```
 

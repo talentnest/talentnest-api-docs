@@ -3,7 +3,7 @@
 ## GET: All Employees
 
 ```shell
-curl "http://subdomain.talentnest.com/api/v1/employees"
+curl "https://subdomain.talentnest.com/api/v1/employees"
   -u "TALENTNEST_API_KEY:"
 ```
 
@@ -123,11 +123,11 @@ hired_after | Return only employees that have a hired date after this timestamp.
 ## GET: A specific Employee
 
 ```shell
-curl "http://subdomain.talentnest.com/api/v1/employees/{id}"
+curl "https://subdomain.talentnest.com/api/v1/employees/{id}"
   -u "TALENTNEST_API_KEY:"
 
 
-curl "http://subdomain.talentnest.com/api/v1/employees/{email}"
+curl "https://subdomain.talentnest.com/api/v1/employees/{email}"
   -u "TALENTNEST_API_KEY:"
 ```
 
@@ -194,7 +194,7 @@ email | The email address of the employee to retrieve
 ## GET: Employee Statuses
 
 ```shell
-curl "http://subdomain.talentnest.com/api/v1/employees/statuses"
+curl "https://subdomain.talentnest.com/api/v1/employees/statuses"
   -u "TALENTNEST_API_KEY:"
 ```
 
@@ -241,7 +241,7 @@ Employee Statuses are client-defined phrases used to identify an employee's curr
 ## GET: Employees for a Specific Status
 
 ```shell
-curl "http://subdomain.talentnest.com/api/v1/employees/statuses/{id}"
+curl "https://subdomain.talentnest.com/api/v1/employees/statuses/{id}"
   -u "TALENTNEST_API_KEY:"
 ```
 
@@ -283,7 +283,7 @@ id | The ID of the employee status to return
 ## GET: Position End (Termination) Reasons
 
 ```shell
-curl "http://subdomain.talentnest.com/api/v1/position_end_reasons"
+curl "https://subdomain.talentnest.com/api/v1/position_end_reasons"
   -u "TALENTNEST_API_KEY:"
 ```
 

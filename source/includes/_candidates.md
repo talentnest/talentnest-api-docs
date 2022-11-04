@@ -3,7 +3,7 @@
 ## GET: All Candidates
 
 ```shell
-curl "http://subdomain.talentnest.com/api/v1/candidates"
+curl "https://subdomain.talentnest.com/api/v1/candidates"
   -u "TALENTNEST_API_KEY:"
 ```
 
@@ -54,7 +54,7 @@ updated_after | Return only candidates that were updated after this timestamp. T
 ## GET: Specific Candidate
 
 ```shell
-curl "http://subdomain.talentnest.com/api/v1/candidates/{id}"
+curl "https://subdomain.talentnest.com/api/v1/candidates/{id}"
   -u "TALENTNEST_API_KEY:"
 ```
 
