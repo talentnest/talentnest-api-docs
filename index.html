@@ -569,7 +569,7 @@ of the TalentNest. Any data that is accidentally or inadvertently lost due to Ta
 be restored. Any destructive request can use the <code>dry_run=true</code> querystring parameter to try out a request
 without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=true</code>).
 </aside>
-<h1 id='jobs'>Jobs</h1><h2 id='get-all-jobs'>GET: All Jobs</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/jobs"</span>
+<h1 id='jobs'>Jobs</h1><h2 id='get-all-jobs'>GET: All Jobs</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/jobs"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
 <blockquote>
@@ -653,7 +653,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 <td>Return only jobs that were updated after this timestamp. Timestamp must be ISO 8601 format.</td>
 </tr>
 </tbody></table>
-<h2 id='get-specific-job'>GET: Specific Job</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/jobs/{id}"</span>
+<h2 id='get-specific-job'>GET: Specific Job</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/jobs/{id}"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
 <blockquote>
@@ -707,7 +707,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 <td>The ID of the job to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='get-job-39-s-employment-process'>GET: Job&#39;s Employment Process</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/jobs/{id}/employment_process"</span>
+<h2 id='get-job-39-s-employment-process'>GET: Job&#39;s Employment Process</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/jobs/{id}/employment_process"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
 <blockquote>
@@ -778,7 +778,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 <td>The ID of the job to use</td>
 </tr>
 </tbody></table>
-<h1 id='applications'>Applications</h1><h2 id='get-all-job-applications'>GET: All Job Applications</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/applications"</span>
+<h1 id='applications'>Applications</h1><h2 id='get-all-job-applications'>GET: All Job Applications</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/applications"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
 <blockquote>
@@ -864,7 +864,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 <td>Return only applications whose status was changed after this timestamp. Timestamp must be ISO 8601 format.</td>
 </tr>
 </tbody></table>
-<h2 id='get-specific-application'>GET: Specific Application</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}"</span>
+<h2 id='get-specific-application'>GET: Specific Application</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/applications/{id}"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
 <blockquote>
@@ -1075,7 +1075,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 <td>The ID of the application to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='post-advance-application'>POST: Advance Application</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/advance"</span>
+<h2 id='post-advance-application'>POST: Advance Application</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://subdomain.talentnest.com/api/v1/applications/{id}/advance"</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
@@ -1155,7 +1155,7 @@ applications can be advanced.</p>
 <td>Optional note to store when completing the <code>current_step</code>.</td>
 </tr>
 </tbody></table>
-<h2 id='post-move-application'>POST: Move Application</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/move"</span>
+<h2 id='post-move-application'>POST: Move Application</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://subdomain.talentnest.com/api/v1/applications/{id}/move"</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
@@ -1244,7 +1244,7 @@ applications can be advanced.</p>
 <td>Optional note to store when completing the <code>current_step</code>.</td>
 </tr>
 </tbody></table>
-<h2 id='get-specific-step-for-application'>GET: Specific Step for Application</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}"</span>
+<h2 id='get-specific-step-for-application'>GET: Specific Step for Application</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
 <blockquote>
@@ -1284,7 +1284,7 @@ applications can be advanced.</p>
 <td>The ID of the step to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='put-activate-step-for-application'>PUT: Activate Step for Application</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/activate"</span>
+<h2 id='put-activate-step-for-application'>PUT: Activate Step for Application</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/activate"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
 <blockquote>
@@ -1324,7 +1324,7 @@ applications can be advanced.</p>
 <td>The ID of the step to activate</td>
 </tr>
 </tbody></table>
-<h2 id='put-complete-step-for-application'>PUT: Complete Step for Application</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"http://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/complete"</span>
+<h2 id='put-complete-step-for-application'>PUT: Complete Step for Application</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/complete"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
 <blockquote>
@@ -1382,7 +1382,7 @@ applications can be advanced.</p>
 <td>If major divisions are setup, the <code>ID</code> of the major division that this business unit belongs to.</td>
 </tr>
 </tbody></table>
-<h2 id='get-all-business-units'>GET: All Business Units</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/business_units"</span>
+<h2 id='get-all-business-units'>GET: All Business Units</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/business_units"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
 <blockquote>
@@ -1466,7 +1466,7 @@ applications can be advanced.</p>
 <td>The ID of the business unit to retrieve</td>
 </tr>
 </tbody></table>
-<h1 id='candidates'>Candidates</h1><h2 id='get-all-candidates'>GET: All Candidates</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/candidates"</span>
+<h1 id='candidates'>Candidates</h1><h2 id='get-all-candidates'>GET: All Candidates</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/candidates"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
 <blockquote>
@@ -1524,7 +1524,7 @@ applications can be advanced.</p>
 <td>Return only candidates that were updated after this timestamp. Timestamp must be ISO 8601 format.</td>
 </tr>
 </tbody></table>
-<h2 id='get-specific-candidate'>GET: Specific Candidate</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/candidates/{id}"</span>
+<h2 id='get-specific-candidate'>GET: Specific Candidate</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/candidates/{id}"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
 <blockquote>
@@ -1567,7 +1567,7 @@ applications can be advanced.</p>
 <td>The ID of the candidate to retrieve</td>
 </tr>
 </tbody></table>
-<h1 id='employees'>Employees</h1><h2 id='get-all-employees'>GET: All Employees</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/employees"</span>
+<h1 id='employees'>Employees</h1><h2 id='get-all-employees'>GET: All Employees</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
 <blockquote>
@@ -1694,11 +1694,11 @@ applications can be advanced.</p>
 <td>Return only employees that have a hired date after this timestamp. Timestamp must be ISO 8601 format.</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-employee'>GET: A specific Employee</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/employees/{id}"</span>
+<h2 id='get-a-specific-employee'>GET: A specific Employee</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{id}"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 
 
-curl <span class="s2">"http://subdomain.talentnest.com/api/v1/employees/{email}"</span>
+curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
 <blockquote>
@@ -1765,7 +1765,7 @@ curl <span class="s2">"http://subdomain.talentnest.com/api/v1/employees/{email}"
 <td>The email address of the employee to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='get-employee-statuses'>GET: Employee Statuses</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/employees/statuses"</span>
+<h2 id='get-employee-statuses'>GET: Employee Statuses</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/statuses"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
 <blockquote>
@@ -1804,7 +1804,7 @@ curl <span class="s2">"http://subdomain.talentnest.com/api/v1/employees/{email}"
 <p>Employee Statuses are client-defined phrases used to identify an employee&#39;s current status (e.g. Active or On Leave). Employee Statuses may contain translations.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET https://subodmain.talentnest.com/api/v1/employees/statuses</code></p>
-<h2 id='get-employees-for-a-specific-status'>GET: Employees for a Specific Status</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/employees/statuses/{id}"</span>
+<h2 id='get-employees-for-a-specific-status'>GET: Employees for a Specific Status</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/statuses/{id}"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
 <blockquote>
@@ -1844,7 +1844,7 @@ curl <span class="s2">"http://subdomain.talentnest.com/api/v1/employees/{email}"
 <td>The ID of the employee status to return</td>
 </tr>
 </tbody></table>
-<h2 id='get-position-end-termination-reasons'>GET: Position End (Termination) Reasons</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://subdomain.talentnest.com/api/v1/position_end_reasons"</span>
+<h2 id='get-position-end-termination-reasons'>GET: Position End (Termination) Reasons</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/position_end_reasons"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
 <blockquote>
