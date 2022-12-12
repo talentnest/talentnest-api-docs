@@ -410,6 +410,58 @@ to_step_id | Yes | Integer | The ID of the step the application should be moved 
 rating | No | Integer | Rating the candidate received at `current_step`. Range `1` to `5`. Applies only to `rated` steps.
 note | No | String | Optional note to store when completing the `current_step`.
 
+## POST: Deselect Application
+
+```shell
+curl -X POST "https://subdomain.talentnest.com/api/v1/applications/{id}/deselect"
+  -H 'Content-Type: application/json'
+  -u "TALENTNEST_API_KEY:"
+```
+
+> The above command takes a JSON request, structured like this:
+
+```json
+{
+  "send_deselect_email": true,
+  "deselect_reason_id": 1001,
+  "note": "Reasons for deselection"
+}
+```
+
+> The above returns JSON, structured like this:
+
+```json
+{
+  "application": {
+    "id": 3060537,
+    "application_status": "Deselected"
+  }
+}
+```
+
+Deselects the application at the current step. Only `Active` applications can be deselected.
+
+The `current_step` will be `Deselected` and the application will also be marked as `Deselected`. If optional
+parameters are provided, TalentNest can process a deselection reason and custom note.
+
+### HTTP Request
+
+`POST https://subodmain.talentnest.com/api/v1/applications/{id}/deselect`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the application to advance
+
+### JSON Body Parameters
+
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+send_deselect_email | No| Boolean | `True` or `False` to send a system deselection email to the candidate. Default: `False`
+deselect_reaason_id | No | Integer | Optional reason ID for why the candidate was deselected.
+note | No | String | Optional note to store why the candidate was deselected.
+
 ## GET: Specific Step for Application
 
 ```shell
@@ -428,7 +480,7 @@ curl "https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}"
     "step_name": "POP7",
     "status": "Active",
     "rating": null,
-    "activated_at": "2019-01-07T17:04:26Z",
+    "activated_at": "2022-01-07T17:04:26Z",
     "completed_at": null,
     "invited_at": null,
     "deselected_at": null

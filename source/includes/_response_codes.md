@@ -7,7 +7,7 @@ following codes with the given circumstances:
 
 Code | Meaning
 ---------- | -------
-200 | OK -- Requet was successful
+200 | OK -- Request was successful
 201 | Created -- POST request completed sucessfully
 400 | Bad Request -- The request was invalid or malformed
 401 | Unauthorized -- Your API key is invalid
