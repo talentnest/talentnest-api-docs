@@ -641,11 +641,15 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 </thead><tbody>
 <tr>
 <td>per_page</td>
-<td>The requested number of results per page. <code>Default is 50</code> and the allowed <code>Maximum is 100</code>.</td>
+<td>The requested number of results per page. <code>Default is 50</code> and the allowed <code>Maximum is 300</code>.</td>
 </tr>
 <tr>
 <td>page</td>
 <td>The specific page requested.</td>
+</tr>
+<tr>
+<td>job_status</td>
+<td>Filters based on job status. Allowed values are <code>open</code>, <code>paused</code>, <code>closed</code>.</td>
 </tr>
 <tr>
 <td>created_after</td>
