@@ -72,8 +72,9 @@ List all jobs.
 
 Parameter | Description
 --------- | -----------
-per_page | The requested number of results per page. `Default is 50` and the allowed `Maximum is 100`.
+per_page | The requested number of results per page. `Default is 50` and the allowed `Maximum is 300`.
 page | The specific page requested.
+job_status | Filters based on job status. Allowed values are `open`, `paused`, `closed`.
 created_after | Return only jobs that were created after this timestamp. Timestamp must be ISO 8601 format.
 updated_after | Return only jobs that were updated after this timestamp. Timestamp must be ISO 8601 format.
 
