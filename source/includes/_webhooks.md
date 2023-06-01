@@ -11,10 +11,10 @@ To subscribe to an event, contact us at support@talentnest.com.
 X-Event-Name: applicant_hired
 ```
 
-Event | Description
----------- | -------
-new_application | Notification when a candidate applies to a job.
-applicant_hired | Notification when a candidate job application is hired.
+| Event           | Description                                             |
+|-----------------|---------------------------------------------------------|
+| new_application | Notification when a candidate applies to a job.         |
+| applicant_hired | Notification when a candidate job application is hired. |
 
 The name of the event will be sent as the `X-Event-Name` header.
 
@@ -45,6 +45,36 @@ The reqeusts from TalentNest to your system will be signed. The secret key is as
 
 The `X-Event-Signature` header contains: the SHA algorithm used to generate the signature, a space, and the signature. To verify the request came from TalentNest, compute the HMAC digest using your secret key and the body and compare it to the signature portion (after the space) contained in the header. If they match, you can be sure the web hook was sent from TalentNest.
 
+## New Application Webhook
+
+```json
+{
+  "application_id": 1765253,
+  "job": {
+    "id": 25668,
+    "name": "Parts Manager - Automotive",
+    "employment_type": "Full time"
+  },
+  "candidate": {
+    "email": "jj@talentnest.com",
+    "first_name": "Jake",
+    "last_name": "Joseph",
+    "phone": "416-123-5555",
+    "language_preference": "en",
+    "location": {
+      "address": "3300 Bloor Street West",
+      "city": "Toronto",
+      "state": "Ontario",
+      "postal": "M8X 2X3",
+      "country": "Canada"
+    }
+  }
+}
+```
+
+The New Application webhook will be sent every time a candidate successfully applies to a job in TalentNest.
+
+
 ## Applicant Hired Webhook
 
 ```json
@@ -70,6 +100,6 @@ The `X-Event-Signature` header contains: the SHA algorithm used to generate the 
 }
 ```
 
-The Applicant Hired webhook will be sent evey time a job candidate has been successfully hired in TalentNest.
+The Applicant Hired webhook will be sent every time a job candidate has been successfully hired in TalentNest.
 
 

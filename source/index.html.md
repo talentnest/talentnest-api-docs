@@ -81,31 +81,31 @@ X-Total: 814
 
 API methods that return a collection of results are always paginated. Paginated results will include a Link (see [RFC-5988](https://tools.ietf.org/html/rfc5988)) response header with the following information.
 
-Link | Description
---------- | -----------
-next | The corresponding URL is the link to the next page.
-prev | The corresponding URL is the link to the previous page.
-last | The corresponding URL is the link to the last page.
+| Link | Description                                             |
+|------|---------------------------------------------------------|
+| next | The corresponding URL is the link to the next page.     |
+| prev | The corresponding URL is the link to the previous page. |
+| last | The corresponding URL is the link to the last page.     |
 
 <aside class="notice">When this header is not set, there is only one page, the first page, of results.
 </aside>
 
 Paginated results will also include the following in the response header:
 
-Field | Description
------ | -----------
-X-Page | The current page of results returned.
-X-Per-Page | The number of results per page. `Default is 50`.
-X-Total | The total number of results available.
+| Field      | Description                                      |
+|------------|--------------------------------------------------|
+| X-Page     | The current page of results returned.            |
+| X-Per-Page | The number of results per page. `Default is 50`. |
+| X-Total    | The total number of results available.           |
 
 ### Query string parameters
 
 API methods that return a collection of results accept the following query parameters:
 
-Parameter | Description
---------- | -----------
-per_page *optional* | The requested number of results per page. `Default is 50` and the allowed `Maximum is 100`.
-page *optional* | The specific page requested.
+| Parameter           | Description                                                                                 |
+|---------------------|---------------------------------------------------------------------------------------------|
+| per_page *optional* | The requested number of results per page. `Default is 50` and the allowed `Maximum is 100`. |
+| page *optional*     | The specific page requested.                                                                |
 
 # Endpoints
 
