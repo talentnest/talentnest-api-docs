@@ -427,6 +427,9 @@
                     <a href="#encryption" class="toc-h2 toc-link" data-title="Encryption">Encryption</a>
                   </li>
                   <li>
+                    <a href="#new-application-webhook" class="toc-h2 toc-link" data-title="New Application Webhook">New Application Webhook</a>
+                  </li>
+                  <li>
                     <a href="#applicant-hired-webhook" class="toc-h2 toc-link" data-title="Applicant Hired Webhook">Applicant Hired Webhook</a>
                   </li>
               </ul>
@@ -2179,6 +2182,30 @@ signature <span class="o">=</span> OpenSSL::HMAC.hexdigest<span class="o">(</spa
 <p>The reqeusts from TalentNest to your system will be signed. The secret key is assigned when the webhook subscription is created. The algorithm used for creating the signature is HMAC SHA256 on the body of the request and the signature itself is sent as the <code>X-Event-Signature</code> header.</p>
 
 <p>The <code>X-Event-Signature</code> header contains: the SHA algorithm used to generate the signature, a space, and the signature. To verify the request came from TalentNest, compute the HMAC digest using your secret key and the body and compare it to the signature portion (after the space) contained in the header. If they match, you can be sure the web hook was sent from TalentNest.</p>
+<h2 id='new-application-webhook'>New Application Webhook</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1765253</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"job"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25668</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parts Manager - Automotive"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"employment_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Full time"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"candidate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jj@talentnest.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jake"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joseph"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"416-123-5555"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"language_preference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3300 Bloor Street West"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toronto"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ontario"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"postal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M8X 2X3"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>The New Application webhook will be sent every time a candidate successfully applies to a job in TalentNest.</p>
 <h2 id='applicant-hired-webhook'>Applicant Hired Webhook</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"employee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3234124</span><span class="p">,</span><span class="w">
   </span><span class="nl">"employee_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -2200,7 +2227,7 @@ signature <span class="o">=</span> OpenSSL::HMAC.hexdigest<span class="o">(</spa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>The Applicant Hired webhook will be sent evey time a job candidate has been successfully hired in TalentNest.</p>
+<p>The Applicant Hired webhook will be sent every time a job candidate has been successfully hired in TalentNest.</p>
 
       </div>
       <div class="dark-box">
