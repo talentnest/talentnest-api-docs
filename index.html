@@ -655,6 +655,10 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 <td>Filters based on job status. Allowed values are <code>open</code>, <code>paused</code>, <code>closed</code>.</td>
 </tr>
 <tr>
+<td>business_unit_id</td>
+<td>Return jobs belonging to this business unit or any of its sub-units. To exclude sub-unit jobs, add the optional parameter <code>sub_units=false</code>.</td>
+</tr>
+<tr>
 <td>created_after</td>
 <td>Return only jobs that were created after this timestamp. Timestamp must be ISO 8601 format.</td>
 </tr>
@@ -1766,7 +1770,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 </tr>
 <tr>
 <td>business_unit_id</td>
-<td>Return only employees belonging to this business unit.</td>
+<td>Return employees belonging to this business unit or any of its sub-units. To exclude sub-unit employees, add the optional parameter <code>sub_units=false</code>.</td>
 </tr>
 <tr>
 <td>hired_after</td>
