@@ -117,7 +117,7 @@ Parameter | Description
 --------- | -----------
 per_page | The requested number of results per page. `Default is 50` and the allowed `Maximum is 100`.
 page | The specific page requested.
-business_unit_id | Return only employees belonging to this business unit.
+business_unit_id | Return employees belonging to this business unit or any of its sub-units. To exclude sub-unit employees, add the optional parameter `sub_units=false`.
 hired_after | Return only employees that have a hired date after this timestamp. Timestamp must be ISO 8601 format.
 
 ## GET: A specific Employee

@@ -75,6 +75,7 @@ Parameter | Description
 per_page | The requested number of results per page. `Default is 50` and the allowed `Maximum is 300`.
 page | The specific page requested.
 job_status | Filters based on job status. Allowed values are `open`, `paused`, `closed`.
+business_unit_id | Return jobs belonging to this business unit or any of its sub-units. To exclude sub-unit jobs, add the optional parameter `sub_units=false`.
 created_after | Return only jobs that were created after this timestamp. Timestamp must be ISO 8601 format.
 updated_after | Return only jobs that were updated after this timestamp. Timestamp must be ISO 8601 format.
 
