@@ -280,6 +280,111 @@ Parameter | Description
 --------- | -----------
 id | The ID of the application to retrieve
 
+## GET: An Application's Notes
+
+```shell
+curl "https://subdomain.talentnest.com/api/v1/applications/{id}/notes"
+  -u "TALENTNEST_API_KEY:"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "notes": [
+        {
+            "id": 34118320,
+            "title": "New application submitted",
+            "body": "New application submitted",
+            "created_at": "2023-01-31T17:41:59Z",
+            "updated_at": "2023-01-31T17:41:59Z"
+        },
+        {
+            "id": 34118408,
+            "title": "Test",
+            "body": "Had a great interview. ",
+            "created_at": "2023-01-31T17:48:09Z",
+            "updated_at": "2023-01-31T17:48:09Z"
+        },
+        {
+            "id": 34147229,
+            "title": "Review Candidate completed",
+            "body": "Review Candidate completed",
+            "created_at": "2023-02-02T20:19:05Z",
+            "updated_at": "2023-02-02T20:19:05Z"
+        },
+        {
+            "id": 34147230,
+            "title": "Phone Interview started",
+            "body": "Phone Interview started",
+            "created_at": "2023-02-02T20:19:19Z",
+            "updated_at": "2023-02-02T20:19:19Z"
+        },
+        {
+            "id": 34147299,
+            "title": "Phone Interview completed",
+            "body": "Phone Interview completed",
+            "created_at": "2023-02-02T20:19:31Z",
+            "updated_at": "2023-02-02T20:19:31Z"
+        },
+        {
+            "id": 34147300,
+            "title": "Interview started",
+            "body": "Interview started",
+            "created_at": "2023-02-02T20:19:34Z",
+            "updated_at": "2023-02-02T20:19:34Z"
+        },
+        {
+            "id": 34147302,
+            "title": "Interview completed",
+            "body": "Interview completed",
+            "created_at": "2023-02-02T20:19:42Z",
+            "updated_at": "2023-02-02T20:19:42Z"
+        },
+        {
+            "id": 34431535,
+            "title": "Employment Offer started",
+            "body": "Employment Offer started",
+            "created_at": "2023-02-14T20:25:13Z",
+            "updated_at": "2023-02-14T20:25:13Z"
+        },
+        {
+            "id": 34431537,
+            "title": "Employment Offer completed",
+            "body": "Employment Offer completed",
+            "created_at": "2023-02-14T20:25:16Z",
+            "updated_at": "2023-02-14T20:25:16Z"
+        },
+        {
+            "id": 34431538,
+            "title": "This candidate has been hired",
+            "body": "This candidate has been hired",
+            "created_at": "2023-02-14T20:25:16Z",
+            "updated_at": "2023-02-14T20:25:16Z"
+        },
+        {
+            "id": 34431557,
+            "title": "Onboarding process started",
+            "body": "Onboarding process started",
+            "created_at": "2023-02-14T20:25:44Z",
+            "updated_at": "2023-02-14T20:25:44Z"
+        }
+    ]
+}
+```
+
+Retrieve a notes for a specific application by its application `id`.
+
+### HTTP Request
+
+`GET https://subodmain.talentnest.com/api/v1/applications/{id}/notes`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the application to retrieve notes for
+
 ## POST: Advance Application
 
 ```shell
