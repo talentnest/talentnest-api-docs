@@ -95,3 +95,51 @@ Retrieve a specific candidate by its `id`.
 Parameter | Description
 --------- | -----------
 id | The ID of the candidate to retrieve
+
+## POST: Email Candidate
+
+```shell
+curl -X POST "https://subdomain.talentnest.com/api/v1/candidates/{id}/email"
+  -H 'Content-Type: application/json'
+  -u "TALENTNEST_API_KEY:"
+```
+
+> The above command takes a JSON request, structured like this:
+
+```json
+{
+  "subject": "Test subject",
+  "body":"Test body <br> <a href='https://talentnest.com'>https://talentnest.com</a>"
+}
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+   "from":"notifications@talentnest.com",
+   "to":"<candidate-email>",
+   "subject":"<sanitized-subject>",
+   "body":"<sanitized-body>"
+}
+```
+
+Sends an email using the client's brand directly to a specific candidate specified `id`.
+
+### HTTP Request
+
+`POST https://subodmain.talentnest.com/api/v1/candidates/{id}/email`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the candidate to email
+
+### JSON Body Parameters
+
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+subject | Yes| Text | Subject line for email.
+body | Yes | Text | Body of email. Some HTML is allowed, no javascript.
+dry_run | No | Boolean | Set to `True` to simulate sending an email. An email will not be sent in this case. Default: `False`
