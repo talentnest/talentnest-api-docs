@@ -389,6 +389,9 @@
                   <li>
                     <a href="#get-specific-candidate" class="toc-h2 toc-link" data-title="GET: Specific Candidate">GET: Specific Candidate</a>
                   </li>
+                  <li>
+                    <a href="#post-email-candidate" class="toc-h2 toc-link" data-title="POST: Email Candidate">POST: Email Candidate</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1754,6 +1757,71 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 <tr>
 <td>id</td>
 <td>The ID of the candidate to retrieve</td>
+</tr>
+</tbody></table>
+<h2 id='post-email-candidate'>POST: Email Candidate</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://subdomain.talentnest.com/api/v1/candidates/{id}/email"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+  <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command takes a JSON request, structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test subject"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"body"</span><span class="p">:</span><span class="s2">"Test body &lt;br&gt; &lt;a href='https://talentnest.com'&gt;https://talentnest.com&lt;/a&gt;"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"notifications@talentnest.com"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"&lt;candidate-email&gt;"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"subject"</span><span class="p">:</span><span class="s2">"&lt;sanitized-subject&gt;"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"body"</span><span class="p">:</span><span class="s2">"&lt;sanitized-body&gt;"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Sends an email using the client&#39;s brand directly to a specific candidate specified <code>id</code>.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://subodmain.talentnest.com/api/v1/candidates/{id}/email</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the candidate to email</td>
+</tr>
+</tbody></table>
+<h3 id='json-body-parameters'>JSON Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subject</td>
+<td>Yes</td>
+<td>Text</td>
+<td>Subject line for email.</td>
+</tr>
+<tr>
+<td>body</td>
+<td>Yes</td>
+<td>Text</td>
+<td>Body of email. Some HTML is allowed, no javascript.</td>
+</tr>
+<tr>
+<td>dry_run</td>
+<td>No</td>
+<td>Boolean</td>
+<td>Set to <code>True</code> to simulate sending an email. An email will not be sent in this case. Default: <code>False</code></td>
 </tr>
 </tbody></table>
 <h1 id='employees'>Employees</h1><h2 id='get-all-employees'>GET: All Employees</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees"</span>
