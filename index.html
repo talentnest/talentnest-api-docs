@@ -392,6 +392,9 @@
                   <li>
                     <a href="#post-email-candidate" class="toc-h2 toc-link" data-title="POST: Email Candidate">POST: Email Candidate</a>
                   </li>
+                  <li>
+                    <a href="#post-send-sms-to-candidate" class="toc-h2 toc-link" data-title="POST: Send SMS to Candidate">POST: Send SMS to Candidate</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1828,6 +1831,66 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 <td>No</td>
 <td>Boolean</td>
 <td>Set to <code>True</code> to simulate sending an email. An email will not be sent in this case. Default: <code>False</code></td>
+</tr>
+</tbody></table>
+<h2 id='post-send-sms-to-candidate'>POST: Send SMS to Candidate</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://subdomain.talentnest.com/api/v1/candidates/{id}/sms"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+  <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command takes a JSON request, structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test message"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"message"</span><span class="p">:</span><span class="s2">"Test message"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"&lt;candidate-phone-number&gt;"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Sends a text message (SMS) to a specific candidate. Allows communication with candidates directly via their primary phone number.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://subodmain.talentnest.com/api/v1/candidates/{id}/sms</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the candidate to send SMS to</td>
+</tr>
+</tbody></table>
+<h3 id='json-body-parameters-2'>JSON Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>message</td>
+<td>Yes</td>
+<td>Text</td>
+<td>UTF-8 encoded text message to send. Emojis are supported, no HTML.</td>
+</tr>
+<tr>
+<td>job_id</td>
+<td>No</td>
+<td>Integer</td>
+<td>Include the ID of the job the candidate applied for if the SMS is related to their application.</td>
+</tr>
+<tr>
+<td>dry_run</td>
+<td>No</td>
+<td>Boolean</td>
+<td>Set to <code>True</code> to simulate sending SMS. SMS will not be sent in this case. Default: <code>False</code></td>
 </tr>
 </tbody></table>
 <h1 id='employees'>Employees</h1><h2 id='get-all-employees'>GET: All Employees</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees"</span>
