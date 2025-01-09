@@ -142,4 +142,5 @@ Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 subject | Yes| Text | Subject line for email.
 body | Yes | Text | Body of email. Some HTML is allowed, no javascript.
+job_id | No | Integer | Include the ID of the job the candidate applied for if the email is related to their application.
 dry_run | No | Boolean | Set to `True` to simulate sending an email. An email will not be sent in this case. Default: `False`
