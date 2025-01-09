@@ -144,3 +144,46 @@ subject | Yes| Text | Subject line for email.
 body | Yes | Text | Body of email. Some HTML is allowed, no javascript.
 job_id | No | Integer | Include the ID of the job the candidate applied for if the email is related to their application.
 dry_run | No | Boolean | Set to `True` to simulate sending an email. An email will not be sent in this case. Default: `False`
+
+## POST: Send SMS to Candidate
+
+```shell
+curl -X POST "https://subdomain.talentnest.com/api/v1/candidates/{id}/sms"
+  -H 'Content-Type: application/json'
+  -u "TALENTNEST_API_KEY:"
+```
+
+> The above command takes a JSON request, structured like this:
+
+```json
+{ "message": "Test message" }
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+   "message":"Test message",
+   "to":"<candidate-phone-number>"
+}
+```
+
+Sends a text message (SMS) to a specific candidate. Allows communication with candidates directly via their primary phone number.
+
+### HTTP Request
+
+`POST https://subodmain.talentnest.com/api/v1/candidates/{id}/sms`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the candidate to send SMS to
+
+### JSON Body Parameters
+
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+message | Yes | Text | UTF-8 encoded text message to send. Emojis are supported, no HTML.
+job_id | No | Integer | Include the ID of the job the candidate applied for if the SMS is related to their application.
+dry_run | No | Boolean | Set to `True` to simulate sending SMS. SMS will not be sent in this case. Default: `False`
