@@ -33,6 +33,11 @@ curl "https://subdomain.talentnest.com/api/v1/jobs"
           "state": "Texas",
           "city": "Austin"
         }
+      },
+      "recruiter": {
+        "email": "john.smith@talentnest.com",
+        "first_name": "John",
+        "last_name": "Smith"
       }
     },
     {
@@ -56,6 +61,11 @@ curl "https://subdomain.talentnest.com/api/v1/jobs"
           "state": "Ontario",
           "city": "Toronto"
         }
+      },
+      "recruiter": {
+        "email": "jane.doe@talentnest.com",
+        "first_name": "Jane",
+        "last_name": "Doe"
       }
     }
   ]
@@ -111,6 +121,11 @@ curl "https://subdomain.talentnest.com/api/v1/jobs/{id}"
         "state": "Alberta",
         "city": "Edmonton"
       }
+    },
+    "recruiter": {
+      "email": "john.smith@talentnest.com",
+      "first_name": "John",
+      "last_name": "Smith"
     },
     "description": "Detailed job description",
     "employment_type": null,
