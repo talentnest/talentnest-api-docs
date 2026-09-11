@@ -17,10 +17,10 @@ curl "https://subdomain.talentnest.com/api/v1/employees"
        "employee_number": null,
        "business_unit_id": 56,
        "manager_id": null,
-       "hired_on": "2020-05-14",
-       "started_on": "2020-05-14",
-       "verified_on": "2020-08-07",
-       "termination_date": "2020-07-17",
+       "hired_on": "2026-05-14",
+       "started_on": "2026-05-14",
+       "verified_on": "2026-05-14",
+       "termination_date": "2026-07-17",
        "user": {
          "first_name": "Nadia",
          "middle_initial": "J",
@@ -42,10 +42,10 @@ curl "https://subdomain.talentnest.com/api/v1/employees"
        "employee_number": null,
        "business_unit_id": 871,
        "manager_id": null,
-       "hired_on": "2020-07-08",
-       "started_on": "2020-07-08",
-       "verified_on": "2020-08-07",
-       "termination_date": "2020-07-16",
+       "hired_on": "2026-07-08",
+       "started_on": "2026-07-08",
+       "verified_on": "2026-07-08",
+       "termination_date": "2026-07-16",
        "user": {
          "first_name": "Vanessa",
          "middle_initial": null,
@@ -67,9 +67,9 @@ curl "https://subdomain.talentnest.com/api/v1/employees"
        "employee_number": null,
        "business_unit_id": 128,
        "manager_id": null,
-       "hired_on": "2020-08-06",
-       "started_on": "2020-08-06",
-       "verified_on": "2020-08-06",
+       "hired_on": "2026-08-06",
+       "started_on": "2026-08-06",
+       "verified_on": "2026-08-06",
        "termination_date": null,
        "user": {
          "first_name": "Jake",
@@ -83,7 +83,7 @@ curl "https://subdomain.talentnest.com/api/v1/employees"
          "id": 115427,
          "status_id": 388,
          "job_title": "Full-Time Customer Support",
-         "started_on": "2020-08-06",
+         "started_on": "2026-08-06",
          "ended_on": null,
          "position_end_reason_id": null,
          "business_unit_id": 10228,
@@ -93,8 +93,8 @@ curl "https://subdomain.talentnest.com/api/v1/employees"
          "id": 102427,
          "status_id": 312,
          "job_title": "Full-Time Front Desk",
-         "started_on": "2020-01-31",
-         "ended_on": "2020-08-06",
+         "started_on": "2026-01-31",
+         "ended_on": "2026-08-06",
          "position_end_reason_id": 41,
          "business_unit_id": 10228,
          "application_id": 5079944
@@ -141,10 +141,10 @@ curl "https://subdomain.talentnest.com/api/v1/employees/{email}"
     "employee_number": null,
     "business_unit_id": 119,
     "manager_id": null,
-    "hired_on": "2020-07-08",
-    "started_on": "2020-07-08",
-    "verified_on": "2020-07-08",
-    "termination_date": "2020-07-24",
+    "hired_on": "2026-07-08",
+    "started_on": "2026-07-08",
+    "verified_on": "2026-07-08",
+    "termination_date": "2026-07-24",
     "user": {
       "first_name": "Dan",
       "middle_initial": null,
@@ -165,8 +165,8 @@ curl "https://subdomain.talentnest.com/api/v1/employees/{email}"
         "id": 123455,
         "status_id": 500,
         "job_title": "Associate",
-        "started_on": "2020-07-08",
-        "ended_on": "2020-07-24",
+        "started_on": "2026-07-08",
+        "ended_on": "2026-07-24",
         "position_end_reason_id": 23,
         "business_unit_id": 119,
         "application_id": 5032461
@@ -442,7 +442,7 @@ curl -X POST "https://subdomain.talentnest.com/api/v1/employees/{id}/terminate"
 ```json
 {
   "position_end_reason_id": 55,
-  "termination_date": "2020-08-06"
+  "termination_date": "2026-08-06"
 }
 ```
 
@@ -455,10 +455,10 @@ curl -X POST "https://subdomain.talentnest.com/api/v1/employees/{id}/terminate"
     "employee_number": null,
     "business_unit_id": 257,
     "manager_id": null,
-    "hired_on": "2020-03-23",
-    "started_on": "2020-03-23",
-    "verified_on": "2020-03-23",
-    "termination_date": "2020-08-06",
+    "hired_on": "2026-03-23",
+    "started_on": "2026-03-23",
+    "verified_on": "2026-03-23",
+    "termination_date": "2026-08-06",
     "user": {
       "first_name": "Sam",
       "middle_initial": null,
@@ -479,8 +479,8 @@ curl -X POST "https://subdomain.talentnest.com/api/v1/employees/{id}/terminate"
         "id": 2341231,
         "status_id": 372,
         "job_title": "Outbound Call Center Agent",
-        "started_on": "2020-03-23",
-        "ended_on": "2020-08-06",
+        "started_on": "2026-03-23",
+        "ended_on": "2026-08-06",
         "position_end_reason_id": 55,
         "business_unit_id": 257,
         "application_id": 432425

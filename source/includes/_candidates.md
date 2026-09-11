@@ -19,8 +19,8 @@ curl "https://subdomain.talentnest.com/api/v1/candidates"
       "last_name": "Noteab",
       "email": "snn@talentnest.com",
       "primary_phone": "4161234444",
-      "created_at": "2010-05-11T20:08:44Z",
-      "updated_at": "2021-04-29T20:31:30Z"
+      "created_at": "2026-05-11T20:08:44Z",
+      "updated_at": "2026-09-01T20:31:30Z"
     },
     {
       "id": 12,
@@ -29,8 +29,8 @@ curl "https://subdomain.talentnest.com/api/v1/candidates"
       "last_name": "Reith",
       "email": "dunr@talentnest.com",
       "primary_phone": "14164444444",
-      "created_at": "2010-05-26T19:39:48Z",
-      "updated_at": "2014-06-25T18:27:08Z"
+      "created_at": "2026-05-26T19:39:48Z",
+      "updated_at": "2026-06-25T18:27:08Z"
     }
   ]
 }
@@ -69,8 +69,8 @@ curl "https://subdomain.talentnest.com/api/v1/candidates/{id}"
     "last_name": "Reith",
     "email": "dunr@talentnest.com",
     "primary_phone": "14164444444",
-    "created_at": "2010-05-26T19:39:48Z",
-    "updated_at": "2014-06-25T18:27:08Z",
+    "created_at": "2026-05-26T19:39:48Z",
+    "updated_at": "2026-06-25T18:27:08Z",
     "location": {
       "country": "Canada",
       "address": "155 Rexdale Boulevard",

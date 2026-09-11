@@ -84,7 +84,7 @@ Sent when a candidate finishes applying. Fetch the full application with `GET /a
   "business_unit_id": 422342,
   "business_unit_name": "Marketing Department",
   "job_title": "Manager - Social Media",
-  "hired_on": "2017-12-12",
+  "hired_on": "2026-09-01",
   "manager_id": 98644,
   "first_name": "Samantha",
   "last_name": "Murphy",
@@ -114,7 +114,7 @@ Sent when a candidate is hired. `employee_id` is the new employee. Fetch `GET /a
     "first_name": "Jane",
     "last_name": "Doe"
   },
-  "reviewed_at": "2017-10-28T17:47:15Z"
+  "reviewed_at": "2026-09-08T17:47:15Z"
 }
 ```
 
