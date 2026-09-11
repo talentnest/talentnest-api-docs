@@ -12,8 +12,8 @@ X-Event-Name: applicant_hired
 
 | Event | When |
 |-------|------|
-| new_application | A candidate successfully applies to a job. |
-| applicant_hired | A candidate is hired. The payload is the new employee record (use this for payroll / HRIS). |
+| [`new_application`](#new-application-webhook) | A candidate successfully applies to a job. |
+| [`applicant_hired`](#applicant-hired-webhook) | A candidate is hired. The payload is the new employee record (use this for payroll / HRIS). |
 
 The event name is sent in the `X-Event-Name` header.
 
@@ -44,7 +44,7 @@ Each request is signed with HMAC-SHA256 of the **raw body** and your secret. The
 
 Compute the digest the same way and compare it to the hex portion after the space. If they match, the POST came from TalentNest.
 
-## New application
+## New application webhook
 
 ```json
 {
@@ -73,7 +73,7 @@ Compute the digest the same way and compare it to the hex portion after the spac
 
 Sent when a candidate finishes applying. Fetch the full application with `GET /api/v1/applications/{application_id}` if you need more than this payload.
 
-## Applicant hired
+## Applicant hired webhook
 
 ```json
 {

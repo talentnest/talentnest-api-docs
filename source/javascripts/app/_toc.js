@@ -37,26 +37,23 @@
 
       $toc.find(tocLinkSelector).each(function() {
         var targetId = $(this).attr('href');
-        if (targetId[0] === "#") {
-          headerHeights[targetId] = $("#" + $.escapeSelector(targetId.substring(1))).offset().top;
-        }
+        if (!targetId || targetId.charAt(0) !== "#") return;
+        var $el = $(targetId);
+        if (!$el.length || !$el.offset()) return;
+        headerHeights[targetId] = $el.offset().top;
       });
     };
 
     var refreshToc = function() {
       var currentTop = $(document).scrollTop() + scrollOffset;
 
-      if (currentTop + windowHeight >= pageHeight) {
-        // at bottom of page, so just select last header by making currentTop very large
-        // this fixes the problem where the last header won't ever show as active if its content
-        // is shorter than the window height
-        currentTop = pageHeight + 1000;
-      }
-
       var best = null;
+      var bestTop = -1;
       for (var name in headerHeights) {
-        if ((headerHeights[name] < currentTop && headerHeights[name] > headerHeights[best]) || best === null) {
+        var top = headerHeights[name];
+        if (top < currentTop && top > bestTop) {
           best = name;
+          bestTop = top;
         }
       }
 
@@ -101,11 +98,23 @@
       $(".page-wrapper").click(closeToc);
       $(".toc-link").click(closeToc);
 
-      // reload immediately after scrolling on toc click
       $toc.find(tocLinkSelector).click(function() {
+        var href = $(this).attr('href');
+        var $clicked = $(this);
+        $toc.find(".active").removeClass("active");
+        $toc.find(".active-parent").removeClass("active-parent");
+        $clicked.addClass("active");
+        $clicked.parents(tocListSelector).addClass("active").siblings(tocLinkSelector).addClass("active-parent");
+        $clicked.siblings(tocListSelector).addClass("active");
+        $toc.find(tocListSelector).filter(":not(.active)").slideUp(150);
+        $toc.find(tocListSelector).filter(".active").slideDown(150);
         setTimeout(function() {
+          recacheHeights();
           refreshToc();
-        }, 0);
+        }, 100);
+        if (href && href.charAt(0) === "#" && window.history.replaceState) {
+          window.history.replaceState(null, "", href);
+        }
       });
 
       $(window).scroll(debounce(refreshToc, 200));
