@@ -14,6 +14,8 @@ X-Event-Name: applicant_hired
 |-------|------|
 | [`new_application`](#new-application-webhook) | A candidate successfully applies to a job. |
 | [`applicant_hired`](#applicant-hired-webhook) | A candidate is hired. The payload is the new employee record (use this for payroll / HRIS). |
+| [`applicant_review_completed`](#applicant-review-completed-webhook) | The New Application (review candidate) step is completed. |
+| [`applicant_deselected`](#applicant-deselected-webhook) | An application is deselected. |
 
 The event name is sent in the `X-Event-Name` header.
 
@@ -99,3 +101,31 @@ Sent when a candidate finishes applying. Fetch the full application with `GET /a
 ```
 
 Sent when a candidate is hired. `employee_id` is the new employee. Fetch `GET /api/v1/employees/{employee_id}` for the full record.
+
+## Applicant review completed webhook
+
+```json
+{
+  "application_id": 1765253,
+  "rating": 4.0,
+  "note": "Strong communication skills.",
+  "reviewed_by": {
+    "email": "recruiter@example.com",
+    "first_name": "Jane",
+    "last_name": "Doe"
+  },
+  "reviewed_at": "2017-10-28T17:47:15Z"
+}
+```
+
+Sent when the **New Application** (review candidate) step is completed — not when later interview steps complete. `rating` is present only if that step is rated. Fetch `GET /api/v1/applications/{application_id}` for the full application.
+
+## Applicant deselected webhook
+
+```json
+{
+  "application_id": 1765253
+}
+```
+
+Sent when an application is deselected. The body is the application id. Fetch `GET /api/v1/applications/{application_id}` for status and deselect reason.

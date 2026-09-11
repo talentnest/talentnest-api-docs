@@ -4,5 +4,6 @@ Changes that affect integrators. Generator (Slate) version bumps do not belong h
 
 ## 2026-09-11
 
+* Documented `applicant_review_completed` and `applicant_deselected` webhooks.
 * Documented employee create, PUT, and PATCH; application notes create; step invite; invite-to-assessment; employment process step statuses; job `external_id` and business-unit name/abbreviation; employee `sort`; step activate/complete body params.
 * Corrected HTTP request URLs that used `subodmain` instead of `subdomain`.
