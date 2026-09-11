@@ -280,9 +280,9 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-59d9eea1.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-8bb7398a.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-9540ba7a.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all-e9bde216.js"></script>
+      <script src="javascripts/all-920c3076.js"></script>
 
     <script>
       $(function() { setupCodeCopy(); });
@@ -421,7 +421,7 @@
               </ul>
           </li>
           <li>
-            <a href="#interacting-with-the-api" class="toc-h1 toc-link" data-title="Interacting with the API">Interacting with the API</a>
+            <a href="#http-verbs" class="toc-h1 toc-link" data-title="HTTP verbs">HTTP verbs</a>
           </li>
           <li>
             <a href="#response-codes" class="toc-h1 toc-link" data-title="Response Codes">Response Codes</a>
@@ -430,70 +430,66 @@
             <a href="#webhooks" class="toc-h1 toc-link" data-title="Webhooks">Webhooks</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#available-webhooks" class="toc-h2 toc-link" data-title="Available Webhooks">Available Webhooks</a>
+                    <a href="#available-events" class="toc-h2 toc-link" data-title="Available events">Available events</a>
                   </li>
                   <li>
-                    <a href="#encryption" class="toc-h2 toc-link" data-title="Encryption">Encryption</a>
+                    <a href="#signature" class="toc-h2 toc-link" data-title="Signature">Signature</a>
                   </li>
                   <li>
-                    <a href="#new-application-webhook" class="toc-h2 toc-link" data-title="New Application Webhook">New Application Webhook</a>
+                    <a href="#new-application-webhook" class="toc-h2 toc-link" data-title="New application webhook">New application webhook</a>
                   </li>
                   <li>
-                    <a href="#applicant-hired-webhook" class="toc-h2 toc-link" data-title="Applicant Hired Webhook">Applicant Hired Webhook</a>
+                    <a href="#applicant-hired-webhook" class="toc-h2 toc-link" data-title="Applicant hired webhook">Applicant hired webhook</a>
                   </li>
               </ul>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://api.talentnest.com'>api.talentnest.com</a></li>
+            <li><a href='mailto:support@talentnest.com'>support@talentnest.com</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the TalentNest API! Our API allows you to perform queries (both safe and destructive) without having to interface with the TalentNest website. You can obtain an API key which will provide you with access to data belonging to your client.</p>
+<p>The TalentNest API lets you read and update your client&#39;s TalentNest data without using the website.</p>
 
-<p>The API is accessible through https://subdomain.talentnest.com/api/v1, where subdomain is the subdomain of your client on the TalentNest website. All API requests must be made via SSL (HTTPS). Non-SSL requests will be ignored. As well, all requests must be authenticated to succeed (see the <a href="#authentication">Authentication section</a>).</p>
+<p>Base URL: <code>https://{subdomain}.talentnest.com/api/v1</code></p>
 
-<p>The API accepts resources and provides responses using JSON. The format may be specified by the URI extension (ie. https://subdomain.talentnest.com/api/v1/employees.json), but is not required. If transmitting a JSON representation of a resource, the Content‐Type header must be set to application/json.</p>
+<p>Replace <code>{subdomain}</code> with your client&#39;s TalentNest subdomain. All requests must use HTTPS. HTTP is ignored. Every request must be authenticated.</p>
 
-<p>The API is RESTful. Each request has an associated HTTP verb which must be used. Certain endpoints accept resources as a part of the request.</p>
+<p>Send and receive JSON. You may append <code>.json</code> to a path (for example <code>/api/v1/employees.json</code>); it is optional. When you send a JSON body, set <code>Content-Type: application/json</code>.</p>
+
+<p>Use the HTTP verb documented for each endpoint.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>API key as the Basic Auth username (note the trailing colon):</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Note the trailing colon(:) after the username (API token)</span>
-<span class="nv">$ </span>curl https://subdomain.talentnest.com/api/v1/employees <span class="nt">-u</span> TALENTNEST_API_KEY:
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Trailing colon after the API key; password is empty</span>
+curl https://subdomain.talentnest.com/api/v1/employees <span class="nt">-u</span> TALENTNEST_API_KEY:
 </code></pre></div>
 <blockquote>
-<p>Alternatively, pass your API key within an Authorization header. Make sure to Base64 encode the token with the colon (:) appended.</p>
+<p>Or an Authorization header. Base64-encode <code>YOUR_API_KEY:</code> (key plus colon):</p>
 </blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://subdomain.talentnest.com/api/v1/employees <span class="nt">-H</span> <span class="s1">'Authorization: Basic VEFMRU5UTkVTVF9BUElfS0VZOg=='</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://subdomain.talentnest.com/api/v1/employees <span class="nt">-H</span> <span class="s1">'Authorization: Basic VEFMRU5UTkVTVF9BUElfS0VZOg=='</span>
 </code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>TALENTNEST_API_KEY</code> with your API key and <code>subdomain</code> with your TalentNest subdomain.</p>
-</blockquote>
+<p>Replace <code>TALENTNEST_API_KEY</code> with your API key and <code>subdomain</code> with your TalentNest subdomain.</p>
 
-<p>Authentication to TalentNest&#39;s API is done with your API key.</p>
+<p>Authentication uses <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Auth</a>. The username is your API key. Leave the password empty.</p>
 
-<p>Requests are authenticated using <a href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic Auth</a>. Provide your API key as the basic auth username. You do not need to provide a password.</p>
-
-<p>Alternatively, you can also pass your API key in an Authorization header.</p>
+<p>You can instead send:</p>
 
 <p><code>Authorization: Basic &lt;base64(&quot;TALENTNEST_API_KEY:&quot;)&gt;</code></p>
 
-<p>Since we only require an API key within the username portion of the basic auth, simply append a <code>:</code> to your TalentNest API token and then Base64 encode the resulting string.</p>
-
 <aside class="notice">
-You must replace <code>TALENTNEST_API_KEY</code> with your personal API key.
+Replace <code>TALENTNEST_API_KEY</code> with your API key. The key is scoped to one TalentNest client.
 </aside>
 <h1 id='pagination'>Pagination</h1>
 <blockquote>
-<p>An example pagination response header</p>
+<p>Example pagination response headers</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>HTTP/1.1 200 OK
-Status: 200 OK
 Link: &lt;https://subdomain.talentnest.com/api/v1/applications?page<span class="o">=</span>1&gt;<span class="p">;</span> <span class="nv">rel</span><span class="o">=</span><span class="s2">"first"</span>,
   &lt;https://subdomain.talentnest.com/api/v1/applications?page<span class="o">=</span>2&gt;<span class="p">;</span> <span class="nv">rel</span><span class="o">=</span><span class="s2">"prev"</span>,
   &lt;https://subdomain.talentnest.com/api/v1/applications?page<span class="o">=</span>17&gt;<span class="p">;</span> <span class="nv">rel</span><span class="o">=</span><span class="s2">"last"</span>,
@@ -502,55 +498,57 @@ X-Page: 3
 X-Per-Page: 50
 X-Total: 814
 </code></pre></div>
-<p>API methods that return a collection of results are always paginated. Paginated results will include a Link (see <a href="https://tools.ietf.org/html/rfc5988">RFC-5988</a>) response header with the following information.</p>
+<p>List endpoints are paginated. Responses include a <code>Link</code> header (<a href="https://tools.ietf.org/html/rfc5988">RFC 5988</a>):</p>
 
 <table><thead>
 <tr>
-<th>Link</th>
+<th>Rel</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
+<td>first</td>
+<td>First page</td>
+</tr>
+<tr>
 <td>next</td>
-<td>The corresponding URL is the link to the next page.</td>
+<td>Next page</td>
 </tr>
 <tr>
 <td>prev</td>
-<td>The corresponding URL is the link to the previous page.</td>
+<td>Previous page</td>
 </tr>
 <tr>
 <td>last</td>
-<td>The corresponding URL is the link to the last page.</td>
+<td>Last page</td>
 </tr>
 </tbody></table>
 
-<aside class="notice">When this header is not set, there is only one page, the first page, of results.
+<aside class="notice">If <code>Link</code> is omitted, there is only one page.
 </aside>
 
-<p>Paginated results will also include the following in the response header:</p>
+<p>Also:</p>
 
 <table><thead>
 <tr>
-<th>Field</th>
+<th>Header</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>X-Page</td>
-<td>The current page of results returned.</td>
+<td>Current page</td>
 </tr>
 <tr>
 <td>X-Per-Page</td>
-<td>The number of results per page. <code>Default is 50</code>.</td>
+<td>Page size. Default <code>50</code>.</td>
 </tr>
 <tr>
 <td>X-Total</td>
-<td>The total number of results available.</td>
+<td>Total number of matching records</td>
 </tr>
 </tbody></table>
 <h3 id='query-string-parameters'>Query string parameters</h3>
-<p>API methods that return a collection of results accept the following query parameters:</p>
-
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -559,30 +557,24 @@ X-Total: 814
 </thead><tbody>
 <tr>
 <td>per_page <em>optional</em></td>
-<td>The requested number of results per page. <code>Default is 50</code> and the allowed <code>Maximum is 100</code>.</td>
+<td>Page size. Default <code>50</code>. Maximum <code>100</code>, except <code>GET /jobs</code> which allows <code>300</code>.</td>
 </tr>
 <tr>
 <td>page <em>optional</em></td>
-<td>The specific page requested.</td>
+<td>Page number.</td>
 </tr>
 </tbody></table>
 <h1 id='endpoints'>Endpoints</h1>
-<p>All API requests should be made to the <code>https://subdomain.talentnest.com</code> base domain (where
-subdomain is your client&#39;s subdomain on TalentNest).</p>
+<p>All requests go to <code>https://{subdomain}.talentnest.com</code>.</p>
 
-<p>In any case that an endpoint is not constructed properly, or points to an invalid resource, the result will
-contain an InvalidParameter or ResourceNotFound error JSON object, which may refer to a specific
-parameter within the endpoint URL. These parameters are of the form <code>:parameter</code> (ie. a name preceded by
-a colon), as seen in the table below.</p>
+<p>A malformed path or missing resource returns an <code>InvalidParameter</code> or <code>ResourceNotFound</code> error. Path placeholders look like <code>{id}</code>.</p>
 
-<aside class="notice">In all cases of resources that have non-<code>GET</code> endpoints, only the parameters returned by a <code>GET</code> request
-for that resource are exposed for a <code>POST</code>, <code>PUT</code> or <code>PATCH</code> request.
+<aside class="notice">
+For resources that allow writes, the JSON fields you may send on <code>POST</code>, <code>PUT</code>, or <code>PATCH</code> are the fields returned by <code>GET</code> for that resource, unless an endpoint documents extra body parameters.
 </aside>
 
-<aside class="warning">Destructive requests (ie. requests that modify or delete a resource) are the responsibility of the user
-of the TalentNest. Any data that is accidentally or inadvertently lost due to TalentNest API usage cannot
-be restored. Any destructive request can use the <code>dry_run=true</code> querystring parameter to try out a request
-without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=true</code>).
+<aside class="warning">
+Writes and deletes are your responsibility. TalentNest cannot restore data lost through the API. Pass <code>dry_run=true</code> on a mutating request to validate it without committing (for example <code>POST /api/v1/employees/123/terminate?dry_run=true</code>).
 </aside>
 <h1 id='jobs'>Jobs</h1><h2 id='get-all-jobs'>GET: All Jobs</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/jobs"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
@@ -651,7 +643,9 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>List all jobs.</p>
+<p>Returns jobs for the authenticated client.</p>
+
+<p>The <code>id</code> in this API is the job (location) id. Career-site <code>job_url</code> and <code>apply_url</code> also include a posting id in the path (<code>/en/posting/{posting_id}/location/{id}</code>). Use the API <code>id</code> with <code>/api/v1/jobs/{id}</code>.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://subdomain.talentnest.com/api/v1/jobs</code></p>
 <h3 id='query-string-parameters'>Query string parameters</h3>
@@ -663,7 +657,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 </thead><tbody>
 <tr>
 <td>per_page</td>
-<td>The requested number of results per page. <code>Default is 50</code> and the allowed <code>Maximum is 300</code>.</td>
+<td>Page size. Default <code>50</code>. Maximum <code>300</code> on this endpoint.</td>
 </tr>
 <tr>
 <td>page</td>
@@ -813,7 +807,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>The ID of the job to use</td>
+<td>The ID of the job</td>
 </tr>
 </tbody></table>
 <h1 id='applications'>Applications</h1><h2 id='get-all-job-applications'>GET: All Job Applications</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/applications"</span>
@@ -859,9 +853,9 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Retrieves all job applications</p>
+<p>Returns job applications for the authenticated client.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://subdomain.talentnest.com/api/v1/applications/</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/applications</code></p>
 <h3 id='query-string-parameters'>Query string parameters</h3>
 <table><thead>
 <tr>
@@ -1201,7 +1195,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Retrieve a notes for a specific application by its application <code>id</code>.</p>
+<p>Returns notes for an application.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET https://subdomain.talentnest.com/api/v1/applications/{id}/notes</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
@@ -1423,7 +1417,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 </thead><tbody>
 <tr>
 <td>id</td>
-<td>The ID of the application to advance</td>
+<td>The ID of the application to deselect</td>
 </tr>
 </tbody></table>
 <h3 id='json-body-parameters-3'>JSON Body Parameters</h3>
@@ -1439,10 +1433,10 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 <td>send_deselect_email</td>
 <td>No</td>
 <td>Boolean</td>
-<td><code>True</code> or <code>False</code> to send a system deselection email to the candidate. Default: <code>False</code></td>
+<td>If <code>true</code>, send the system deselection email to the candidate. Default: <code>false</code>.</td>
 </tr>
 <tr>
-<td>deselect_reaason_id</td>
+<td>deselect_reason_id</td>
 <td>No</td>
 <td>Integer</td>
 <td>Optional reason ID for why the candidate was deselected.</td>
@@ -1645,8 +1639,14 @@ parameters are provided, TalentNest can process a deselection reason and custom 
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://subdomain.talentnest.com/api/v1/business_units/</code></p>
-<h2 id='get-specific-business-unit'>GET: Specific Business Unit</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
+<p><code>GET https://subdomain.talentnest.com/api/v1/business_units</code></p>
+<h2 id='get-specific-business-unit'>GET: Specific Business Unit</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/business_units/{id}"</span>
+  <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
   </span><span class="nl">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ Corp"</span><span class="p">,</span><span class="w">
@@ -1707,9 +1707,9 @@ parameters are provided, TalentNest can process a deselection reason and custom 
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Retrieves all candidates</p>
+<p>Returns candidates for the authenticated client.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://subdomain.talentnest.com/api/v1/candidates/</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/candidates</code></p>
 <h3 id='query-string-parameters'>Query string parameters</h3>
 <table><thead>
 <tr>
@@ -1799,7 +1799,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
    </span><span class="nl">"body"</span><span class="p">:</span><span class="s2">"&lt;sanitized-body&gt;"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Sends an email using the client&#39;s brand directly to a specific candidate specified <code>id</code>.</p>
+<p>Sends an email, using the client&#39;s brand, to the candidate.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST https://subdomain.talentnest.com/api/v1/candidates/{id}/email</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
@@ -1845,7 +1845,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 <td>dry_run</td>
 <td>No</td>
 <td>Boolean</td>
-<td>Set to <code>True</code> to simulate sending an email. An email will not be sent in this case. Default: <code>False</code></td>
+<td>If <code>true</code>, validate the request without sending. Default: <code>false</code>.</td>
 </tr>
 </tbody></table>
 <h2 id='post-send-sms-to-candidate'>POST: Send SMS to Candidate</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://subdomain.talentnest.com/api/v1/candidates/{id}/sms"</span>
@@ -1865,7 +1865,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
    </span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"&lt;candidate-phone-number&gt;"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Sends a text message (SMS) to a specific candidate. Allows communication with candidates directly via their primary phone number.</p>
+<p>Sends an SMS to the candidate&#39;s primary phone number.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>POST https://subdomain.talentnest.com/api/v1/candidates/{id}/sms</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
@@ -1905,7 +1905,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 <td>dry_run</td>
 <td>No</td>
 <td>Boolean</td>
-<td>Set to <code>True</code> to simulate sending SMS. SMS will not be sent in this case. Default: <code>False</code></td>
+<td>If <code>true</code>, validate the request without sending. Default: <code>false</code>.</td>
 </tr>
 </tbody></table>
 <h1 id='employees'>Employees</h1><h2 id='get-all-employees'>GET: All Employees</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees"</span>
@@ -2008,7 +2008,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
-<p>Retrieves all employees</p>
+<p>Returns employees for the authenticated client.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://subdomain.talentnest.com/api/v1/employees</code></p>
 <h3 id='query-string-parameters'>Query string parameters</h3>
@@ -2122,7 +2122,7 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">145</span><span class="p">,</span><span class="w">
       </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"On Leave"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Empoyment status for employees on leave"</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Employment status for employees on leave"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">157</span><span class="p">,</span><span class="w">
@@ -2172,7 +2172,7 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
 </span></code></pre></div>
 <p>Returns details for a specific employee status and a list of employee IDs that have this status.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST https://subdomain.talentnest.com/api/v1/employees/statuses/{id}</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/employees/statuses/{id}</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2226,12 +2226,12 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Returns a list of position end (termination) reasons and their associated IDs. If ther are translations, those will be returned as well.</p>
+<p>Returns position end (termination) reasons and their IDs. Translations are included when present.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>POST https://subdomain.talentnest.com/api/v1/position_end_reasons</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/position_end_reasons</code></p>
 <h2 id='post-terminate-an-employee'>POST: Terminate an Employee</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{id}/terminate"</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
-  <span class="nt">-u</span> <span class="s1">'TALENTNEST_API_KEY'</span>
+  <span class="nt">-u</span> <span class="s1">'TALENTNEST_API_KEY:'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command takes a JSON request, structured like this:</p>
@@ -2284,7 +2284,7 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Terminates an employee with optional position end (termination) reason and termination date.</p>
+<p>Terminates the employee. Optional reason, status, and date.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
 <p><code>POST https://subdomain.talentnest.com/api/v1/employees/{id}/terminate</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
@@ -2312,18 +2312,23 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
 <td>position_end_reason_id</td>
 <td>No</td>
 <td>Integer</td>
-<td>The ID of the position end (termination) reason.</td>
+<td>ID of a position end (termination) reason from <code>GET /position_end_reasons</code>.</td>
+</tr>
+<tr>
+<td>status_id</td>
+<td>No</td>
+<td>Integer</td>
+<td>Employee status to apply after termination.</td>
 </tr>
 <tr>
 <td>termination_date</td>
 <td>No</td>
 <td>Date</td>
-<td>The date that the employee was terminated in ISO 8601 format. If a date is not provide, the current date will be used.</td>
+<td>Termination date (ISO 8601 date). Defaults to today if omitted. Must not be before the current position start date.</td>
 </tr>
 </tbody></table>
-<h1 id='interacting-with-the-api'>Interacting with the API</h1>
-<p>Five HTTP verbs are supported by the API: <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>PATCH</code> and <code>DELETE</code>, though not every verb is
-accepted by every type of resource.</p>
+<h1 id='http-verbs'>HTTP verbs</h1>
+<p>The API supports <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>PATCH</code>, and <code>DELETE</code>. Not every resource accepts every verb.</p>
 
 <table><thead>
 <tr>
@@ -2368,7 +2373,7 @@ following codes with the given circumstances:</p>
 </tr>
 <tr>
 <td>201</td>
-<td>Created -- POST request completed sucessfully</td>
+<td>Created -- POST request completed successfully</td>
 </tr>
 <tr>
 <td>400</td>
@@ -2403,48 +2408,49 @@ description, and more specific details as applicable.</p>
 <p>You should not receive <code>500 Internal Server Errors</code> from the API. Please contact TalentNest support if
 this occurs.</p>
 <h1 id='webhooks'>Webhooks</h1>
-<p>TalentNest webhooks are events that you can subscribe to. When that event occurs, TalentNest will automatically notify you with a JSON <code>POST</code> request to a client specified target URL.</p>
+<p>TalentNest can POST JSON to a URL you provide when certain events occur.</p>
 
-<p>To subscribe to an event, contact us at support@talentnest.com.</p>
-<h2 id='available-webhooks'>Available Webhooks</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>X-Event-Name: applicant_hired
+<p>To subscribe, contact <a href="mailto:support@talentnest.com">support@talentnest.com</a>. You will receive a secret key used to verify signatures.</p>
+<h2 id='available-events'>Available events</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>X-Event-Name: applicant_hired
 </code></pre></div>
 <table><thead>
 <tr>
 <th>Event</th>
-<th>Description</th>
+<th>When</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>new_application</td>
-<td>Notification when a candidate applies to a job.</td>
+<td><a href="#new-application-webhook"><code>new_application</code></a></td>
+<td>A candidate successfully applies to a job.</td>
 </tr>
 <tr>
-<td>applicant_hired</td>
-<td>Notification when a candidate job application is hired.</td>
+<td><a href="#applicant-hired-webhook"><code>applicant_hired</code></a></td>
+<td>A candidate is hired. The payload is the new employee record (use this for payroll / HRIS).</td>
 </tr>
 </tbody></table>
 
-<p>The name of the event will be sent as the <code>X-Event-Name</code> header.</p>
-<h2 id='encryption'>Encryption</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>X-Event-Signature: sha256 417a453d456ff29aabcdd5b68afdfbf8b2d160b8dd4818fdf34dc4940d509703
+<p>The event name is sent in the <code>X-Event-Name</code> header.</p>
+<h2 id='signature'>Signature</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>X-Event-Signature: sha256 417a453d456ff29aabcdd5b68afdfbf8b2d160b8dd4818fdf34dc4940d509703
 </code></pre></div>
 <blockquote>
-<p>To compute the HMAC digest in Ruby:</p>
+<p>HMAC in Ruby:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>digest <span class="o">=</span> OpenSSL::Digest.new<span class="o">(</span><span class="s1">'sha256'</span><span class="o">)</span>
 signature <span class="o">=</span> OpenSSL::HMAC.hexdigest<span class="o">(</span>digest, secret_key, body<span class="o">)</span>
 </code></pre></div>
 <blockquote>
-<p>To compute the HMAC digest in PHP:</p>
+<p>HMAC in PHP:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>&lt;?php
-  // Requires PHP <span class="o">&gt;=</span> 5.1.2 and PECL <span class="nb">hash</span> <span class="o">&gt;=</span> 1.1
   <span class="nv">$signature</span> <span class="o">=</span> hash_hmac<span class="o">(</span><span class="s1">'sha256'</span>, <span class="nv">$body</span>, <span class="nv">$secret_key</span><span class="o">)</span><span class="p">;</span>
 ?&gt;
 </code></pre></div>
-<p>The requests from TalentNest to your system will be signed. The secret key is assigned when the webhook subscription is created. The algorithm used for creating the signature is HMAC SHA256 on the body of the request and the signature itself is sent as the <code>X-Event-Signature</code> header.</p>
+<p>Each request is signed with HMAC-SHA256 of the <strong>raw body</strong> and your secret. The header is:</p>
 
-<p>The <code>X-Event-Signature</code> header contains: the SHA algorithm used to generate the signature, a space, and the signature. To verify the request came from TalentNest, compute the HMAC digest using your secret key and the body and compare it to the signature portion (after the space) contained in the header. If they match, you can be sure the web hook was sent from TalentNest.</p>
-<h2 id='new-application-webhook'>New Application Webhook</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<p><code>X-Event-Signature: sha256 &lt;hex digest&gt;</code></p>
+
+<p>Compute the digest the same way and compare it to the hex portion after the space. If they match, the POST came from TalentNest.</p>
+<h2 id='new-application-webhook'>New application webhook</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1765253</span><span class="p">,</span><span class="w">
   </span><span class="nl">"job"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25668</span><span class="p">,</span><span class="w">
@@ -2467,8 +2473,8 @@ signature <span class="o">=</span> OpenSSL::HMAC.hexdigest<span class="o">(</spa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>The New Application webhook will be sent every time a candidate successfully applies to a job in TalentNest.</p>
-<h2 id='applicant-hired-webhook'>Applicant Hired Webhook</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<p>Sent when a candidate finishes applying. Fetch the full application with <code>GET /api/v1/applications/{application_id}</code> if you need more than this payload.</p>
+<h2 id='applicant-hired-webhook'>Applicant hired webhook</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"employee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3234124</span><span class="p">,</span><span class="w">
   </span><span class="nl">"employee_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
   </span><span class="nl">"business_unit_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">422342</span><span class="p">,</span><span class="w">
@@ -2489,7 +2495,7 @@ signature <span class="o">=</span> OpenSSL::HMAC.hexdigest<span class="o">(</spa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>The Applicant Hired webhook will be sent every time a job candidate has been successfully hired in TalentNest.</p>
+<p>Sent when a candidate is hired. <code>employee_id</code> is the new employee. Fetch <code>GET /api/v1/employees/{employee_id}</code> for the full record.</p>
 
       </div>
       <div class="dark-box">
