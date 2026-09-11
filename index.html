@@ -653,7 +653,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 </span></code></pre></div>
 <p>List all jobs.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://subodmain.talentnest.com/api/v1/jobs</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/jobs</code></p>
 <h3 id='query-string-parameters'>Query string parameters</h3>
 <table><thead>
 <tr>
@@ -732,7 +732,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://subodmain.talentnest.com/api/v1/jobs/{id}</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/jobs/{id}</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -803,7 +803,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://subodmain.talentnest.com/api/v1/jobs/{id}/employment_process</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/jobs/{id}/employment_process</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -861,7 +861,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 </span></code></pre></div>
 <p>Retrieves all job applications</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://subodmain.talentnest.com/api/v1/applications/</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/applications/</code></p>
 <h3 id='query-string-parameters'>Query string parameters</h3>
 <table><thead>
 <tr>
@@ -1100,7 +1100,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 </span></code></pre></div>
 <p>Retrieve a specific application by its <code>id</code>.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://subodmain.talentnest.com/api/v1/applications/{id}</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/applications/{id}</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1203,7 +1203,7 @@ without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=t
 </span></code></pre></div>
 <p>Retrieve a notes for a specific application by its application <code>id</code>.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://subodmain.talentnest.com/api/v1/applications/{id}/notes</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/applications/{id}/notes</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1255,7 +1255,7 @@ applications can be advanced.</p>
 <p>The <code>current_step</code> will be <code>Completed</code> and the next step will be <code>Activated</code>. This newly activated step becomes the new 
 <code>current_step</code>. The response contains the new <code>current_step</code>&#39;s information.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST https://subodmain.talentnest.com/api/v1/applications/{id}/advance</code></p>
+<p><code>POST https://subdomain.talentnest.com/api/v1/applications/{id}/advance</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1338,7 +1338,7 @@ applications can be advanced.</p>
 
 <p>The move is not allowed if there are any required steps in-between the two steps.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>POST https://subodmain.talentnest.com/api/v1/applications/{id}/move</code></p>
+<p><code>POST https://subdomain.talentnest.com/api/v1/applications/{id}/move</code></p>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1413,7 +1413,7 @@ applications can be advanced.</p>
 <p>The <code>current_step</code> will be <code>Deselected</code> and the application will also be marked as <code>Deselected</code>. If optional
 parameters are provided, TalentNest can process a deselection reason and custom note.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
-<p><code>POST https://subodmain.talentnest.com/api/v1/applications/{id}/deselect</code></p>
+<p><code>POST https://subdomain.talentnest.com/api/v1/applications/{id}/deselect</code></p>
 <h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1477,7 +1477,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 </span></code></pre></div>
 <p>Retrieve a specific step of an application.</p>
 <h3 id='http-request-7'>HTTP Request</h3>
-<p><code>GET https://subodmain.talentnest.com/api/v1/applications/{id}/step/{step_id}</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}</code></p>
 <h3 id='url-parameters-6'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1517,7 +1517,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 </span></code></pre></div>
 <p>Activate a specific step of an application.</p>
 <h3 id='http-request-8'>HTTP Request</h3>
-<p><code>PUT https://subodmain.talentnest.com/api/v1/applications/{id}/step/{step_id}/activate</code></p>
+<p><code>PUT https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/activate</code></p>
 <h3 id='url-parameters-7'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1557,7 +1557,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 </span></code></pre></div>
 <p>Complete a specific step of an application.</p>
 <h3 id='http-request-9'>HTTP Request</h3>
-<p><code>PUT https://subodmain.talentnest.com/api/v1/applications/{id}/step/{step_id}/complete</code></p>
+<p><code>PUT https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/complete</code></p>
 <h3 id='url-parameters-8'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1645,7 +1645,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://subodmain.talentnest.com/api/v1/business_units/</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/business_units/</code></p>
 <h2 id='get-specific-business-unit'>GET: Specific Business Unit</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
   </span><span class="nl">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -1663,7 +1663,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://subodmain.talentnest.com/api/v1/business_units/{id}</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/business_units/{id}</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1709,7 +1709,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 </span></code></pre></div>
 <p>Retrieves all candidates</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://subodmain.talentnest.com/api/v1/candidates/</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/candidates/</code></p>
 <h3 id='query-string-parameters'>Query string parameters</h3>
 <table><thead>
 <tr>
@@ -1764,7 +1764,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 </span></code></pre></div>
 <p>Retrieve a specific candidate by its <code>id</code>.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://subodmain.talentnest.com/api/v1/candidates/{id}</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/candidates/{id}</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1801,7 +1801,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 </span></code></pre></div>
 <p>Sends an email using the client&#39;s brand directly to a specific candidate specified <code>id</code>.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>POST https://subodmain.talentnest.com/api/v1/candidates/{id}/email</code></p>
+<p><code>POST https://subdomain.talentnest.com/api/v1/candidates/{id}/email</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1867,7 +1867,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 </span></code></pre></div>
 <p>Sends a text message (SMS) to a specific candidate. Allows communication with candidates directly via their primary phone number.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST https://subodmain.talentnest.com/api/v1/candidates/{id}/sms</code></p>
+<p><code>POST https://subdomain.talentnest.com/api/v1/candidates/{id}/sms</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2010,7 +2010,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 </span></code></pre></div>
 <p>Retrieves all employees</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://subodmain.talentnest.com/api/v1/employees</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/employees</code></p>
 <h3 id='query-string-parameters'>Query string parameters</h3>
 <table><thead>
 <tr>
@@ -2087,9 +2087,9 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
 </span></code></pre></div>
 <p>Retrieve a specific employee by <code>id</code> or <code>email</code>.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://subodmain.talentnest.com/api/v1/employees/{id}</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/employees/{id}</code></p>
 
-<p><code>GET https://subodmain.talentnest.com/api/v1/employees/{email}</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/employees/{email}</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2144,7 +2144,7 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
 </span></code></pre></div>
 <p>Employee Statuses are client-defined phrases used to identify an employee&#39;s current status (e.g. Active or On Leave). Employee Statuses may contain translations.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://subodmain.talentnest.com/api/v1/employees/statuses</code></p>
+<p><code>GET https://subdomain.talentnest.com/api/v1/employees/statuses</code></p>
 <h2 id='get-employees-for-a-specific-status'>GET: Employees for a Specific Status</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/statuses/{id}"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
@@ -2172,7 +2172,7 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
 </span></code></pre></div>
 <p>Returns details for a specific employee status and a list of employee IDs that have this status.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST https://subodmain.talentnest.com/api/v1/employees/statuses/{id}</code></p>
+<p><code>POST https://subdomain.talentnest.com/api/v1/employees/statuses/{id}</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2228,7 +2228,7 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
 </span></code></pre></div>
 <p>Returns a list of position end (termination) reasons and their associated IDs. If ther are translations, those will be returned as well.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>POST https://subodmain.talentnest.com/api/v1/position_end_reasons</code></p>
+<p><code>POST https://subdomain.talentnest.com/api/v1/position_end_reasons</code></p>
 <h2 id='post-terminate-an-employee'>POST: Terminate an Employee</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{id}/terminate"</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
   <span class="nt">-u</span> <span class="s1">'TALENTNEST_API_KEY'</span>
@@ -2286,7 +2286,7 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
 </span></code></pre></div>
 <p>Terminates an employee with optional position end (termination) reason and termination date.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
-<p><code>POST https://subodmain.talentnest.com/api/v1/employees/{id}/terminate</code></p>
+<p><code>POST https://subdomain.talentnest.com/api/v1/employees/{id}/terminate</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -2441,7 +2441,7 @@ signature <span class="o">=</span> OpenSSL::HMAC.hexdigest<span class="o">(</spa
   <span class="nv">$signature</span> <span class="o">=</span> hash_hmac<span class="o">(</span><span class="s1">'sha256'</span>, <span class="nv">$body</span>, <span class="nv">$secret_key</span><span class="o">)</span><span class="p">;</span>
 ?&gt;
 </code></pre></div>
-<p>The reqeusts from TalentNest to your system will be signed. The secret key is assigned when the webhook subscription is created. The algorithm used for creating the signature is HMAC SHA256 on the body of the request and the signature itself is sent as the <code>X-Event-Signature</code> header.</p>
+<p>The requests from TalentNest to your system will be signed. The secret key is assigned when the webhook subscription is created. The algorithm used for creating the signature is HMAC SHA256 on the body of the request and the signature itself is sent as the <code>X-Event-Signature</code> header.</p>
 
 <p>The <code>X-Event-Signature</code> header contains: the SHA algorithm used to generate the signature, a space, and the signature. To verify the request came from TalentNest, compute the HMAC digest using your secret key and the body and compare it to the signature portion (after the space) contained in the header. If they match, you can be sure the web hook was sent from TalentNest.</p>
 <h2 id='new-application-webhook'>New Application Webhook</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
