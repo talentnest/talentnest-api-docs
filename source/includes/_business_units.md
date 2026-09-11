@@ -66,7 +66,7 @@ curl "https://subdomain.talentnest.com/api/v1/business_units"
 ```
 ### HTTP Request
 
-`GET https://subodmain.talentnest.com/api/v1/business_units/`
+`GET https://subdomain.talentnest.com/api/v1/business_units/`
 
 ## GET: Specific Business Unit
 
@@ -91,7 +91,7 @@ curl "https://subdomain.talentnest.com/api/v1/business_units"
 
 ### HTTP Request
 
-`GET https://subodmain.talentnest.com/api/v1/business_units/{id}`
+`GET https://subdomain.talentnest.com/api/v1/business_units/{id}`
 
 ### URL Parameters
 

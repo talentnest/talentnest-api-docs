@@ -76,7 +76,7 @@ List all jobs.
 
 ### HTTP Request
 
-`GET https://subodmain.talentnest.com/api/v1/jobs`
+`GET https://subdomain.talentnest.com/api/v1/jobs`
 
 ### Query string parameters
 
@@ -142,7 +142,7 @@ curl "https://subdomain.talentnest.com/api/v1/jobs/{id}"
 
 ### HTTP Request
 
-`GET https://subodmain.talentnest.com/api/v1/jobs/{id}`
+`GET https://subdomain.talentnest.com/api/v1/jobs/{id}`
 
 ### URL Parameters
 
@@ -215,7 +215,7 @@ curl "https://subdomain.talentnest.com/api/v1/jobs/{id}/employment_process"
 
 ### HTTP Request
 
-`GET https://subodmain.talentnest.com/api/v1/jobs/{id}/employment_process`
+`GET https://subdomain.talentnest.com/api/v1/jobs/{id}/employment_process`
 
 ### URL Parameters
 

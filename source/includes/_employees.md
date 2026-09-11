@@ -109,7 +109,7 @@ Retrieves all employees
 
 ### HTTP Request
 
-`GET https://subodmain.talentnest.com/api/v1/employees`
+`GET https://subdomain.talentnest.com/api/v1/employees`
 
 ### Query string parameters
 
@@ -179,9 +179,9 @@ Retrieve a specific employee by `id` or `email`.
 
 ### HTTP Request
 
-`GET https://subodmain.talentnest.com/api/v1/employees/{id}`
+`GET https://subdomain.talentnest.com/api/v1/employees/{id}`
 
-`GET https://subodmain.talentnest.com/api/v1/employees/{email}`
+`GET https://subdomain.talentnest.com/api/v1/employees/{email}`
 
 
 ### URL Parameters
@@ -236,7 +236,7 @@ Employee Statuses are client-defined phrases used to identify an employee's curr
 
 ### HTTP Request
 
-`GET https://subodmain.talentnest.com/api/v1/employees/statuses`
+`GET https://subdomain.talentnest.com/api/v1/employees/statuses`
 
 ## GET: Employees for a Specific Status
 
@@ -272,7 +272,7 @@ Returns details for a specific employee status and a list of employee IDs that h
 
 ### HTTP Request
 
-`POST https://subodmain.talentnest.com/api/v1/employees/statuses/{id}`
+`POST https://subdomain.talentnest.com/api/v1/employees/statuses/{id}`
 
 ### URL Parameters
 
@@ -330,7 +330,7 @@ Returns a list of position end (termination) reasons and their associated IDs. I
 
 ### HTTP Request
 
-`POST https://subodmain.talentnest.com/api/v1/position_end_reasons`
+`POST https://subdomain.talentnest.com/api/v1/position_end_reasons`
 
 ## POST: Terminate an Employee
 
@@ -397,7 +397,7 @@ Terminates an employee with optional position end (termination) reason and termi
 
 ### HTTP Request
 
-`POST https://subodmain.talentnest.com/api/v1/employees/{id}/terminate`
+`POST https://subdomain.talentnest.com/api/v1/employees/{id}/terminate`
 
 ### URL Parameters
 

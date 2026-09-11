@@ -40,7 +40,7 @@ Retrieves all candidates
 
 ### HTTP Request
 
-`GET https://subodmain.talentnest.com/api/v1/candidates/`
+`GET https://subdomain.talentnest.com/api/v1/candidates/`
 
 ### Query string parameters
 
@@ -88,7 +88,7 @@ Retrieve a specific candidate by its `id`.
 
 ### HTTP Request
 
-`GET https://subodmain.talentnest.com/api/v1/candidates/{id}`
+`GET https://subdomain.talentnest.com/api/v1/candidates/{id}`
 
 ### URL Parameters
 
@@ -128,7 +128,7 @@ Sends an email using the client's brand directly to a specific candidate specifi
 
 ### HTTP Request
 
-`POST https://subodmain.talentnest.com/api/v1/candidates/{id}/email`
+`POST https://subdomain.talentnest.com/api/v1/candidates/{id}/email`
 
 ### URL Parameters
 
@@ -172,7 +172,7 @@ Sends a text message (SMS) to a specific candidate. Allows communication with ca
 
 ### HTTP Request
 
-`POST https://subodmain.talentnest.com/api/v1/candidates/{id}/sms`
+`POST https://subdomain.talentnest.com/api/v1/candidates/{id}/sms`
 
 ### URL Parameters
 

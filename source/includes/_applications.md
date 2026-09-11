@@ -52,7 +52,7 @@ Retrieves all job applications
 
 ### HTTP Request
 
-`GET https://subodmain.talentnest.com/api/v1/applications/`
+`GET https://subdomain.talentnest.com/api/v1/applications/`
 
 ### Query string parameters
 
@@ -272,7 +272,7 @@ Retrieve a specific application by its `id`.
 
 ### HTTP Request
 
-`GET https://subodmain.talentnest.com/api/v1/applications/{id}`
+`GET https://subdomain.talentnest.com/api/v1/applications/{id}`
 
 ### URL Parameters
 
@@ -377,7 +377,7 @@ Retrieve a notes for a specific application by its application `id`.
 
 ### HTTP Request
 
-`GET https://subodmain.talentnest.com/api/v1/applications/{id}/notes`
+`GET https://subdomain.talentnest.com/api/v1/applications/{id}/notes`
 
 ### URL Parameters
 
@@ -432,7 +432,7 @@ The `current_step` will be `Completed` and the next step will be `Activated`. Th
 
 ### HTTP Request
 
-`POST https://subodmain.talentnest.com/api/v1/applications/{id}/advance`
+`POST https://subdomain.talentnest.com/api/v1/applications/{id}/advance`
 
 ### URL Parameters
 
@@ -498,7 +498,7 @@ The move is not allowed if there are any required steps in-between the two steps
 
 ### HTTP Request
 
-`POST https://subodmain.talentnest.com/api/v1/applications/{id}/move`
+`POST https://subdomain.talentnest.com/api/v1/applications/{id}/move`
 
 ### URL Parameters
 
@@ -551,7 +551,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 
 ### HTTP Request
 
-`POST https://subodmain.talentnest.com/api/v1/applications/{id}/deselect`
+`POST https://subdomain.talentnest.com/api/v1/applications/{id}/deselect`
 
 ### URL Parameters
 
@@ -597,7 +597,7 @@ Retrieve a specific step of an application.
 
 ### HTTP Request
 
-`GET https://subodmain.talentnest.com/api/v1/applications/{id}/step/{step_id}`
+`GET https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}`
 
 ### URL Parameters
 
@@ -636,7 +636,7 @@ Activate a specific step of an application.
 
 ### HTTP Request
 
-`PUT https://subodmain.talentnest.com/api/v1/applications/{id}/step/{step_id}/activate`
+`PUT https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/activate`
 
 ### URL Parameters
 
@@ -675,7 +675,7 @@ Complete a specific step of an application.
 
 ### HTTP Request
 
-`PUT https://subodmain.talentnest.com/api/v1/applications/{id}/step/{step_id}/complete`
+`PUT https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/complete`
 
 ### URL Parameters
 
