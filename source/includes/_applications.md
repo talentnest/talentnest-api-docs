@@ -48,11 +48,11 @@ curl "https://subdomain.talentnest.com/api/v1/applications"
 }
 ```
 
-Retrieves all job applications
+Returns job applications for the authenticated client.
 
 ### HTTP Request
 
-`GET https://subdomain.talentnest.com/api/v1/applications/`
+`GET https://subdomain.talentnest.com/api/v1/applications`
 
 ### Query string parameters
 
@@ -373,7 +373,7 @@ curl "https://subdomain.talentnest.com/api/v1/applications/{id}/notes"
 }
 ```
 
-Retrieve a notes for a specific application by its application `id`.
+Returns notes for an application.
 
 ### HTTP Request
 
@@ -557,14 +557,14 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 
 Parameter | Description
 --------- | -----------
-id | The ID of the application to advance
+id | The ID of the application to deselect
 
 ### JSON Body Parameters
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-send_deselect_email | No| Boolean | `True` or `False` to send a system deselection email to the candidate. Default: `False`
-deselect_reaason_id | No | Integer | Optional reason ID for why the candidate was deselected.
+send_deselect_email | No | Boolean | If `true`, send the system deselection email to the candidate. Default: `false`.
+deselect_reason_id | No | Integer | Optional reason ID for why the candidate was deselected.
 note | No | String | Optional note to store why the candidate was deselected.
 
 ## GET: Specific Step for Application

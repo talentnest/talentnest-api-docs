@@ -66,9 +66,16 @@ curl "https://subdomain.talentnest.com/api/v1/business_units"
 ```
 ### HTTP Request
 
-`GET https://subdomain.talentnest.com/api/v1/business_units/`
+`GET https://subdomain.talentnest.com/api/v1/business_units`
 
 ## GET: Specific Business Unit
+
+```shell
+curl "https://subdomain.talentnest.com/api/v1/business_units/{id}"
+  -u "TALENTNEST_API_KEY:"
+```
+
+> The above command returns JSON structured like this:
 
 ```json
 { 

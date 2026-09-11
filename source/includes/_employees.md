@@ -105,7 +105,7 @@ curl "https://subdomain.talentnest.com/api/v1/employees"
 
 ```
 
-Retrieves all employees
+Returns employees for the authenticated client.
 
 ### HTTP Request
 
@@ -211,7 +211,7 @@ curl "https://subdomain.talentnest.com/api/v1/employees/statuses"
     {
       "id": 145,
       "status": "On Leave",
-      "description": "Empoyment status for employees on leave"
+      "description": "Employment status for employees on leave"
     },
     {
       "id": 157,
@@ -272,7 +272,7 @@ Returns details for a specific employee status and a list of employee IDs that h
 
 ### HTTP Request
 
-`POST https://subdomain.talentnest.com/api/v1/employees/statuses/{id}`
+`GET https://subdomain.talentnest.com/api/v1/employees/statuses/{id}`
 
 ### URL Parameters
 
@@ -326,18 +326,18 @@ curl "https://subdomain.talentnest.com/api/v1/position_end_reasons"
 }
 ```
 
-Returns a list of position end (termination) reasons and their associated IDs. If ther are translations, those will be returned as well.
+Returns position end (termination) reasons and their IDs. Translations are included when present.
 
 ### HTTP Request
 
-`POST https://subdomain.talentnest.com/api/v1/position_end_reasons`
+`GET https://subdomain.talentnest.com/api/v1/position_end_reasons`
 
 ## POST: Terminate an Employee
 
 ```shell
 curl -X POST "https://subdomain.talentnest.com/api/v1/employees/{id}/terminate"
   -H 'Content-Type: application/json'
-  -u 'TALENTNEST_API_KEY'
+  -u 'TALENTNEST_API_KEY:'
 ```
 
 > The above command takes a JSON request, structured like this:
@@ -393,7 +393,7 @@ curl -X POST "https://subdomain.talentnest.com/api/v1/employees/{id}/terminate"
 }
 ```
 
-Terminates an employee with optional position end (termination) reason and termination date.
+Terminates the employee. Optional reason, status, and date.
 
 ### HTTP Request
 
@@ -409,5 +409,6 @@ id | The ID of the employee to terminate
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-position_end_reason_id | No | Integer | The ID of the position end (termination) reason.
-termination_date | No | Date | The date that the employee was terminated in ISO 8601 format. If a date is not provide, the current date will be used.
+position_end_reason_id | No | Integer | ID of a position end (termination) reason from `GET /position_end_reasons`.
+status_id | No | Integer | Employee status to apply after termination.
+termination_date | No | Date | Termination date (ISO 8601 date). Defaults to today if omitted. Must not be before the current position start date.

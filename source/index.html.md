@@ -5,7 +5,8 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+  - <a href='https://api.talentnest.com'>api.talentnest.com</a>
+  - <a href='mailto:support@talentnest.com'>support@talentnest.com</a>
 
 includes:
   - jobs
@@ -24,52 +25,49 @@ code_clipboard: true
 
 # Introduction
 
-Welcome to the TalentNest API! Our API allows you to perform queries (both safe and destructive) without having to interface with the TalentNest website. You can obtain an API key which will provide you with access to data belonging to your client.
+The TalentNest API lets you read and update your client's TalentNest data without using the website.
 
-The API is accessible through https://subdomain.talentnest.com/api/v1, where subdomain is the subdomain of your client on the TalentNest website. All API requests must be made via SSL (HTTPS). Non-SSL requests will be ignored. As well, all requests must be authenticated to succeed (see the [Authentication section](#authentication)).
+Base URL: `https://{subdomain}.talentnest.com/api/v1`
 
-The API accepts resources and provides responses using JSON. The format may be specified by the URI extension (ie. https://subdomain.talentnest.com/api/v1/employees.json), but is not required. If transmitting a JSON representation of a resource, the Content‐Type header must be set to application/json.
+Replace `{subdomain}` with your client's TalentNest subdomain. All requests must use HTTPS. HTTP is ignored. Every request must be authenticated.
 
-The API is RESTful. Each request has an associated HTTP verb which must be used. Certain endpoints accept resources as a part of the request.
+Send and receive JSON. You may append `.json` to a path (for example `/api/v1/employees.json`); it is optional. When you send a JSON body, set `Content-Type: application/json`.
+
+Use the HTTP verb documented for each endpoint.
 
 # Authentication
 
-> To authorize, use this code:
+> API key as the Basic Auth username (note the trailing colon):
 
 ```shell
-# Note the trailing colon(:) after the username (API token)
-$ curl https://subdomain.talentnest.com/api/v1/employees -u TALENTNEST_API_KEY:
+# Trailing colon after the API key; password is empty
+curl https://subdomain.talentnest.com/api/v1/employees -u TALENTNEST_API_KEY:
 ```
 
-> Alternatively, pass your API key within an Authorization header. Make sure to Base64 encode the token with the colon (:) appended.
+> Or an Authorization header. Base64-encode `YOUR_API_KEY:` (key plus colon):
 
 ```shell
-$ curl https://subdomain.talentnest.com/api/v1/employees -H 'Authorization: Basic VEFMRU5UTkVTVF9BUElfS0VZOg=='
+curl https://subdomain.talentnest.com/api/v1/employees -H 'Authorization: Basic VEFMRU5UTkVTVF9BUElfS0VZOg=='
 ```
 
-> Make sure to replace `TALENTNEST_API_KEY` with your API key and `subdomain` with your TalentNest subdomain.
+Replace `TALENTNEST_API_KEY` with your API key and `subdomain` with your TalentNest subdomain.
 
-Authentication to TalentNest's API is done with your API key.
+Authentication uses [HTTP Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication). The username is your API key. Leave the password empty.
 
-Requests are authenticated using [HTTP Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication). Provide your API key as the basic auth username. You do not need to provide a password.
+You can instead send:
 
-Alternatively, you can also pass your API key in an Authorization header.
-
-<code>Authorization: Basic \<base64("TALENTNEST_API_KEY:")></code>
-
-Since we only require an API key within the username portion of the basic auth, simply append a `:` to your TalentNest API token and then Base64 encode the resulting string.
+`Authorization: Basic <base64("TALENTNEST_API_KEY:")>`
 
 <aside class="notice">
-You must replace <code>TALENTNEST_API_KEY</code> with your personal API key.
+Replace <code>TALENTNEST_API_KEY</code> with your API key. The key is scoped to one TalentNest client.
 </aside>
 
 # Pagination
 
-> An example pagination response header
+> Example pagination response headers
 
 ```shell
 HTTP/1.1 200 OK
-Status: 200 OK
 Link: <https://subdomain.talentnest.com/api/v1/applications?page=1>; rel="first",
   <https://subdomain.talentnest.com/api/v1/applications?page=2>; rel="prev",
   <https://subdomain.talentnest.com/api/v1/applications?page=17>; rel="last",
@@ -79,50 +77,43 @@ X-Per-Page: 50
 X-Total: 814
 ```
 
-API methods that return a collection of results are always paginated. Paginated results will include a Link (see [RFC-5988](https://tools.ietf.org/html/rfc5988)) response header with the following information.
+List endpoints are paginated. Responses include a `Link` header ([RFC 5988](https://tools.ietf.org/html/rfc5988)):
 
-| Link | Description                                             |
-|------|---------------------------------------------------------|
-| next | The corresponding URL is the link to the next page.     |
-| prev | The corresponding URL is the link to the previous page. |
-| last | The corresponding URL is the link to the last page.     |
+| Rel | Description |
+|-----|-------------|
+| first | First page |
+| next | Next page |
+| prev | Previous page |
+| last | Last page |
 
-<aside class="notice">When this header is not set, there is only one page, the first page, of results.
+<aside class="notice">If <code>Link</code> is omitted, there is only one page.
 </aside>
 
-Paginated results will also include the following in the response header:
+Also:
 
-| Field      | Description                                      |
-|------------|--------------------------------------------------|
-| X-Page     | The current page of results returned.            |
-| X-Per-Page | The number of results per page. `Default is 50`. |
-| X-Total    | The total number of results available.           |
+| Header | Description |
+|--------|-------------|
+| X-Page | Current page |
+| X-Per-Page | Page size. Default `50`. |
+| X-Total | Total number of matching records |
 
 ### Query string parameters
 
-API methods that return a collection of results accept the following query parameters:
-
-| Parameter           | Description                                                                                 |
-|---------------------|---------------------------------------------------------------------------------------------|
-| per_page *optional* | The requested number of results per page. `Default is 50` and the allowed `Maximum is 100`. |
-| page *optional*     | The specific page requested.                                                                |
+| Parameter | Description |
+|-----------|-------------|
+| per_page *optional* | Page size. Default `50`. Maximum `100`, except `GET /jobs` which allows `300`. |
+| page *optional* | Page number. |
 
 # Endpoints
 
-All API requests should be made to the `https://subdomain.talentnest.com` base domain (where
-subdomain is your client's subdomain on TalentNest).
+All requests go to `https://{subdomain}.talentnest.com`.
 
-In any case that an endpoint is not constructed properly, or points to an invalid resource, the result will
-contain an InvalidParameter or ResourceNotFound error JSON object, which may refer to a specific
-parameter within the endpoint URL. These parameters are of the form `:parameter` (ie. a name preceded by
-a colon), as seen in the table below.
+A malformed path or missing resource returns an `InvalidParameter` or `ResourceNotFound` error. Path placeholders look like `{id}`.
 
-<aside class="notice">In all cases of resources that have non-<code>GET</code> endpoints, only the parameters returned by a <code>GET</code> request
-for that resource are exposed for a <code>POST</code>, <code>PUT</code> or <code>PATCH</code> request.
+<aside class="notice">
+For resources that allow writes, the JSON fields you may send on <code>POST</code>, <code>PUT</code>, or <code>PATCH</code> are the fields returned by <code>GET</code> for that resource, unless an endpoint documents extra body parameters.
 </aside>
 
-<aside class="warning">Destructive requests (ie. requests that modify or delete a resource) are the responsibility of the user
-of the TalentNest. Any data that is accidentally or inadvertently lost due to TalentNest API usage cannot
-be restored. Any destructive request can use the <code>dry_run=true</code> querystring parameter to try out a request
-without committing the results (ie. <code>DELETE /api/v1/employees/123?dry_run=true</code>).
+<aside class="warning">
+Writes and deletes are your responsibility. TalentNest cannot restore data lost through the API. Pass <code>dry_run=true</code> on a mutating request to validate it without committing (for example <code>POST /api/v1/employees/123/terminate?dry_run=true</code>).
 </aside>

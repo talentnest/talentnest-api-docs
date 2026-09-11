@@ -36,11 +36,11 @@ curl "https://subdomain.talentnest.com/api/v1/candidates"
 }
 ```
 
-Retrieves all candidates
+Returns candidates for the authenticated client.
 
 ### HTTP Request
 
-`GET https://subdomain.talentnest.com/api/v1/candidates/`
+`GET https://subdomain.talentnest.com/api/v1/candidates`
 
 ### Query string parameters
 
@@ -124,7 +124,7 @@ curl -X POST "https://subdomain.talentnest.com/api/v1/candidates/{id}/email"
 }
 ```
 
-Sends an email using the client's brand directly to a specific candidate specified `id`.
+Sends an email, using the client's brand, to the candidate.
 
 ### HTTP Request
 
@@ -143,7 +143,7 @@ Parameter | Required | Type | Description
 subject | Yes| Text | Subject line for email.
 body | Yes | Text | Body of email. Some HTML is allowed, no javascript.
 job_id | No | Integer | Include the ID of the job the candidate applied for if the email is related to their application.
-dry_run | No | Boolean | Set to `True` to simulate sending an email. An email will not be sent in this case. Default: `False`
+dry_run | No | Boolean | If `true`, validate the request without sending. Default: `false`.
 
 ## POST: Send SMS to Candidate
 
@@ -168,7 +168,7 @@ curl -X POST "https://subdomain.talentnest.com/api/v1/candidates/{id}/sms"
 }
 ```
 
-Sends a text message (SMS) to a specific candidate. Allows communication with candidates directly via their primary phone number.
+Sends an SMS to the candidate's primary phone number.
 
 ### HTTP Request
 
@@ -186,4 +186,4 @@ Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 message | Yes | Text | UTF-8 encoded text message to send. Emojis are supported, no HTML.
 job_id | No | Integer | Include the ID of the job the candidate applied for if the SMS is related to their application.
-dry_run | No | Boolean | Set to `True` to simulate sending SMS. SMS will not be sent in this case. Default: `False`
+dry_run | No | Boolean | If `true`, validate the request without sending. Default: `false`.

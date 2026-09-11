@@ -72,7 +72,9 @@ curl "https://subdomain.talentnest.com/api/v1/jobs"
 }
 ```
 
-List all jobs.
+Returns jobs for the authenticated client.
+
+The `id` in this API is the job (location) id. Career-site `job_url` and `apply_url` also include a posting id in the path (`/en/posting/{posting_id}/location/{id}`). Use the API `id` with `/api/v1/jobs/{id}`.
 
 ### HTTP Request
 
@@ -82,7 +84,7 @@ List all jobs.
 
 Parameter | Description
 --------- | -----------
-per_page | The requested number of results per page. `Default is 50` and the allowed `Maximum is 300`.
+per_page | Page size. Default `50`. Maximum `300` on this endpoint.
 page | The specific page requested.
 job_status | Filters based on job status. Allowed values are `open`, `paused`, `closed`.
 business_unit_id | Return jobs belonging to this business unit or any of its sub-units. To exclude sub-unit jobs, add the optional parameter `sub_units=false`.
@@ -221,4 +223,4 @@ curl "https://subdomain.talentnest.com/api/v1/jobs/{id}/employment_process"
 
 Parameter | Description
 --------- | -----------
-id | The ID of the job to use
+id | The ID of the job

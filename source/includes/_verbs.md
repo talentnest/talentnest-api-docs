@@ -1,8 +1,6 @@
-# Interacting with the API
+# HTTP verbs
 
-
-Five HTTP verbs are supported by the API: `GET`, `POST`, `PUT`, `PATCH` and `DELETE`, though not every verb is
-accepted by every type of resource.
+The API supports `GET`, `POST`, `PUT`, `PATCH`, and `DELETE`. Not every resource accepts every verb.
 
 
 Verb | Description
