@@ -26,6 +26,8 @@ curl "https://subdomain.talentnest.com/api/v1/jobs"
       "apply_url": "https://subdomain.talentnest.com/en/posting/18502/apply/22625",
       "business_unit": {
         "id": 7366,
+        "name": "Austin",
+        "abbreviation": "ATX",
         "location": {
           "country": "United States",
           "address": null,
@@ -54,6 +56,8 @@ curl "https://subdomain.talentnest.com/api/v1/jobs"
       "apply_url": "https://subdomain.talentnest.com/en/posting/18801/apply/23032",
       "business_unit": {
         "id": 2009,
+        "name": "Toronto",
+        "abbreviation": "YYZ",
         "location": {
           "country": "Canada",
           "address": "3300 Bloor Street West",
@@ -75,6 +79,8 @@ curl "https://subdomain.talentnest.com/api/v1/jobs"
 Returns jobs for the authenticated client.
 
 The `id` in this API is the job (location) id. Career-site `job_url` and `apply_url` also include a posting id in the path (`/en/posting/{posting_id}/location/{id}`). Use the API `id` with `/api/v1/jobs/{id}`.
+
+`external_id` is included when the client stores an external posting id. List responses omit description and counts; `GET /jobs/{id}` returns the full job.
 
 ### HTTP Request
 
@@ -116,6 +122,8 @@ curl "https://subdomain.talentnest.com/api/v1/jobs/{id}"
     "apply_url": "https://subdomain.talentnest.com/en/posting/19252/apply/23819",
     "business_unit": {
       "id": 2446,
+      "name": "Edmonton Branch",
+      "abbreviation": "EDM",
       "location": {
         "country": "Canada",
         "address": null,

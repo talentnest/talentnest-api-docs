@@ -117,8 +117,9 @@ Parameter | Description
 --------- | -----------
 per_page | The requested number of results per page. `Default is 50` and the allowed `Maximum is 100`.
 page | The specific page requested.
-business_unit_id | Return employees belonging to this business unit or any of its sub-units. To exclude sub-unit employees, add the optional parameter `sub_units=false`.
-hired_after | Return only employees that have a hired date after this timestamp. Timestamp must be ISO 8601 format.
+business_unit_id | Return employees belonging to this business unit or any of its sub-units. To exclude sub-unit employees, add `sub_units=false`.
+hired_after | Return only employees whose start/hire date is after this date (ISO 8601). Filters `started_on`.
+sort | Optional. `hired_on` or `started_on` (both sort on start date, descending). Default is `created_at` descending.
 
 ## GET: A specific Employee
 
@@ -190,6 +191,102 @@ Parameter | Description
 --------- | -----------
 id | The ID of the employee to retrieve
 email | The email address of the employee to retrieve
+
+## POST: Create an employee
+
+```shell
+curl -X POST "https://subdomain.talentnest.com/api/v1/employees"
+  -H 'Content-Type: application/json'
+  -u "TALENTNEST_API_KEY:"
+```
+
+> JSON body:
+
+```json
+{
+  "employee": {
+    "employee_number": "E-1001",
+    "business_unit_id": 56,
+    "manager_id": 98,
+    "started_on": "2026-09-11",
+    "verified_on": "2026-09-11",
+    "user": {
+      "first_name": "Sam",
+      "last_name": "Edwards",
+      "email": "sam.edwards@example.com",
+      "primary_phone": "14165550100",
+      "location": {
+        "country": "Canada",
+        "state": "Ontario",
+        "city": "Toronto",
+        "address": "3300 Bloor Street West",
+        "postal": "M8X 2X2"
+      }
+    }
+  }
+}
+```
+
+Creates an employee. Wrap fields in `employee`. `user` is the person record (name, email, phone, location). Location `country` and `state` are names, not ids. `started_on` is the hire/start date (`hired_on` in responses is the same date).
+
+### HTTP Request
+
+`POST https://subdomain.talentnest.com/api/v1/employees`
+
+### JSON Body Parameters
+
+All keys sit under `employee`. Unknown keys are rejected.
+
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+employee_number | No | String | Client employee number.
+business_unit_id | No | Integer | Business unit.
+manager_id | No | Integer | Manager employee id.
+started_on | No | Date | Start/hire date (ISO 8601 date).
+verified_on | No | Date | Verified date.
+terminated_at | No | Date | If set, the employee is created already terminated.
+user | No | Object | `first_name`, `middle_initial`, `last_name`, `email`, `primary_phone`, `location`.
+dry_run | No | Boolean | If `true`, validate without saving. Default: `false`.
+
+## PUT: Replace an employee
+
+```shell
+curl -X PUT "https://subdomain.talentnest.com/api/v1/employees/{id}"
+  -H 'Content-Type: application/json'
+  -u "TALENTNEST_API_KEY:"
+```
+
+Same `employee` object as create. PUT resets omitted loadable fields to defaults, then applies the body. You may also send `business_unit_id` and `employee_status_id`.
+
+### HTTP Request
+
+`PUT https://subdomain.talentnest.com/api/v1/employees/{id}`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the employee
+
+## PATCH: Update an employee
+
+```shell
+curl -X PATCH "https://subdomain.talentnest.com/api/v1/employees/{id}"
+  -H 'Content-Type: application/json'
+  -u "TALENTNEST_API_KEY:"
+```
+
+Partial update. Same `employee` wrapper; only included keys change.
+
+### HTTP Request
+
+`PATCH https://subdomain.talentnest.com/api/v1/employees/{id}`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the employee
 
 ## GET: Employee Statuses
 

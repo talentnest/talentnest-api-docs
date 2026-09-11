@@ -385,6 +385,49 @@ Parameter | Description
 --------- | -----------
 id | The ID of the application to retrieve notes for
 
+### Query string parameters
+
+Parameter | Description
+--------- | -----------
+note_type | Optional. Return only notes of this type. Omit to return all notes.
+
+## POST: Add a note
+
+```shell
+curl -X POST "https://subdomain.talentnest.com/api/v1/applications/{id}/notes"
+  -H 'Content-Type: application/json'
+  -u "TALENTNEST_API_KEY:"
+```
+
+> JSON body:
+
+```json
+{
+  "note": "Spoke with the hiring manager.",
+  "note_type": "chat_transcript"
+}
+```
+
+Adds a note on the application. `note_type` is optional; the only type accepted on create is `chat_transcript`.
+
+### HTTP Request
+
+`POST https://subdomain.talentnest.com/api/v1/applications/{id}/notes`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the application
+
+### JSON Body Parameters
+
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+note | Yes | String | Note text. HTML is sanitized. For `chat_transcript`, a stricter sanitizer is used.
+note_type | No | String | Must be `chat_transcript` if set.
+dry_run | No | Boolean | If `true`, validate without saving. Default: `false`.
+
 ## POST: Advance Application
 
 ```shell
@@ -447,6 +490,7 @@ Parameter | Required | Type | Description
 from_step_id | Yes | Integer | The ID of the application's `current_step`.
 rating | No | Integer | Rating the candidate received at `current_step`. Range `1` to `5`. Applies only to `rated` steps.
 note | No | String | Optional note to store when completing the `current_step`.
+dry_run | No | Boolean | If `true`, validate without committing. Default: `false`.
 
 ## POST: Move Application
 
@@ -514,6 +558,58 @@ from_step_id | Yes | Integer | The ID of the application's `current_step`.
 to_step_id | Yes | Integer | The ID of the step the application should be moved to.
 rating | No | Integer | Rating the candidate received at `current_step`. Range `1` to `5`. Applies only to `rated` steps.
 note | No | String | Optional note to store when completing the `current_step`.
+dry_run | No | Boolean | If `true`, validate without committing. Default: `false`.
+
+## POST: Invite to assessment
+
+```shell
+curl -X POST "https://subdomain.talentnest.com/api/v1/applications/{id}/invite_to_assessment"
+  -H 'Content-Type: application/json'
+  -u "TALENTNEST_API_KEY:"
+```
+
+> Optional JSON body:
+
+```json
+{
+  "note": "Sending the assessment now.",
+  "dry_run": false
+}
+```
+
+> The above returns JSON structured like this:
+
+```json
+{
+  "to": "jj@talentnest.com",
+  "subject": "Please complete your assessment",
+  "body": "...",
+  "email_template_id": 12,
+  "step_id": 2042,
+  "assessment_url": "https://..."
+}
+```
+
+Invites the candidate to the first assessment step on this application. The application must be `Active`. The candidate must have an email. The job's employment process must include an assessment step that is not already invited or completed. TalentNest picks the assessment email template from the job's business unit (then ancestors).
+
+If the assessment step is not yet `Active`, it is activated first. `dry_run` returns a fake `assessment_url` and does not send email.
+
+### HTTP Request
+
+`POST https://subdomain.talentnest.com/api/v1/applications/{id}/invite_to_assessment`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the application
+
+### JSON Body Parameters
+
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+note | No | String | Note stored when inviting.
+dry_run | No | Boolean | If `true`, do not send email or persist. Default: `false`.
 
 ## POST: Deselect Application
 
@@ -632,7 +728,7 @@ curl -X PUT "https://subdomain.talentnest.com/api/v1/applications/{id}/step/{ste
 }
 ```
 
-Activate a specific step of an application.
+Activate a specific step of an application. Preceding required steps must already be completed.
 
 ### HTTP Request
 
@@ -643,7 +739,51 @@ Activate a specific step of an application.
 Parameter | Description
 --------- | -----------
 id | The ID of the application
-step_id | The ID of the step to activate
+step_id | Employment process step ID (same ids as `GET /jobs/{id}/employment_process`)
+
+### JSON Body Parameters
+
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+dry_run | No | Boolean | If `true`, validate without committing. Default: `false`.
+
+## PUT: Invite to an assessment step
+
+```shell
+curl -X PUT "https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/invite"
+  -H 'Content-Type: application/json'
+  -u "TALENTNEST_API_KEY:"
+```
+
+> JSON body:
+
+```json
+{
+  "email_template_id": 12
+}
+```
+
+Sends an assessment invite for **this** step. The step must be an assessment step. The candidate must have an email. `email_template_id` is required.
+
+Prefer this when you already know the step. Use `POST /applications/{id}/invite_to_assessment` to invite the first assessment step and let TalentNest choose the template.
+
+### HTTP Request
+
+`PUT https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/invite`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+id | The ID of the application
+step_id | Employment process step ID
+
+### JSON Body Parameters
+
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+email_template_id | Yes | Integer | Email template to send.
+dry_run | No | Boolean | If `true`, do not send email or persist. Default: `false`.
 
 ## PUT: Complete Step for Application
 
@@ -682,4 +822,12 @@ Complete a specific step of an application.
 Parameter | Description
 --------- | -----------
 id | The ID of the application
-step_id | The ID of the step to complete
+step_id | Employment process step ID
+
+### JSON Body Parameters
+
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+rating | No | Integer | Rating `1` to `5`. Only for `rated` steps.
+note | No | String | Note stored when completing the step.
+dry_run | No | Boolean | If `true`, validate without committing. Default: `false`.
