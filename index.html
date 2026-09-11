@@ -350,10 +350,16 @@
                     <a href="#get-an-application-39-s-notes" class="toc-h2 toc-link" data-title="GET: An Application's Notes">GET: An Application's Notes</a>
                   </li>
                   <li>
+                    <a href="#post-add-a-note" class="toc-h2 toc-link" data-title="POST: Add a note">POST: Add a note</a>
+                  </li>
+                  <li>
                     <a href="#post-advance-application" class="toc-h2 toc-link" data-title="POST: Advance Application">POST: Advance Application</a>
                   </li>
                   <li>
                     <a href="#post-move-application" class="toc-h2 toc-link" data-title="POST: Move Application">POST: Move Application</a>
+                  </li>
+                  <li>
+                    <a href="#post-invite-to-assessment" class="toc-h2 toc-link" data-title="POST: Invite to assessment">POST: Invite to assessment</a>
                   </li>
                   <li>
                     <a href="#post-deselect-application" class="toc-h2 toc-link" data-title="POST: Deselect Application">POST: Deselect Application</a>
@@ -363,6 +369,9 @@
                   </li>
                   <li>
                     <a href="#put-activate-step-for-application" class="toc-h2 toc-link" data-title="PUT: Activate Step for Application">PUT: Activate Step for Application</a>
+                  </li>
+                  <li>
+                    <a href="#put-invite-to-an-assessment-step" class="toc-h2 toc-link" data-title="PUT: Invite to an assessment step">PUT: Invite to an assessment step</a>
                   </li>
                   <li>
                     <a href="#put-complete-step-for-application" class="toc-h2 toc-link" data-title="PUT: Complete Step for Application">PUT: Complete Step for Application</a>
@@ -407,6 +416,15 @@
                     <a href="#get-a-specific-employee" class="toc-h2 toc-link" data-title="GET: A specific Employee">GET: A specific Employee</a>
                   </li>
                   <li>
+                    <a href="#post-create-an-employee" class="toc-h2 toc-link" data-title="POST: Create an employee">POST: Create an employee</a>
+                  </li>
+                  <li>
+                    <a href="#put-replace-an-employee" class="toc-h2 toc-link" data-title="PUT: Replace an employee">PUT: Replace an employee</a>
+                  </li>
+                  <li>
+                    <a href="#patch-update-an-employee" class="toc-h2 toc-link" data-title="PATCH: Update an employee">PATCH: Update an employee</a>
+                  </li>
+                  <li>
                     <a href="#get-employee-statuses" class="toc-h2 toc-link" data-title="GET: Employee Statuses">GET: Employee Statuses</a>
                   </li>
                   <li>
@@ -417,6 +435,14 @@
                   </li>
                   <li>
                     <a href="#post-terminate-an-employee" class="toc-h2 toc-link" data-title="POST: Terminate an Employee">POST: Terminate an Employee</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#employment-process-step-statuses" class="toc-h1 toc-link" data-title="Employment process step statuses">Employment process step statuses</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-step-statuses" class="toc-h2 toc-link" data-title="GET: All step statuses">GET: All step statuses</a>
                   </li>
               </ul>
           </li>
@@ -440,6 +466,12 @@
                   </li>
                   <li>
                     <a href="#applicant-hired-webhook" class="toc-h2 toc-link" data-title="Applicant hired webhook">Applicant hired webhook</a>
+                  </li>
+                  <li>
+                    <a href="#applicant-review-completed-webhook" class="toc-h2 toc-link" data-title="Applicant review completed webhook">Applicant review completed webhook</a>
+                  </li>
+                  <li>
+                    <a href="#applicant-deselected-webhook" class="toc-h2 toc-link" data-title="Applicant deselected webhook">Applicant deselected webhook</a>
                   </li>
               </ul>
           </li>
@@ -598,6 +630,8 @@ Writes and deletes are your responsibility. TalentNest cannot restore data lost 
       </span><span class="nl">"apply_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://subdomain.talentnest.com/en/posting/18502/apply/22625"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7366</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Austin"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ATX"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -626,6 +660,8 @@ Writes and deletes are your responsibility. TalentNest cannot restore data lost 
       </span><span class="nl">"apply_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://subdomain.talentnest.com/en/posting/18801/apply/23032"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2009</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toronto"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YYZ"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
           </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3300 Bloor Street West"</span><span class="p">,</span><span class="w">
@@ -646,6 +682,8 @@ Writes and deletes are your responsibility. TalentNest cannot restore data lost 
 <p>Returns jobs for the authenticated client.</p>
 
 <p>The <code>id</code> in this API is the job (location) id. Career-site <code>job_url</code> and <code>apply_url</code> also include a posting id in the path (<code>/en/posting/{posting_id}/location/{id}</code>). Use the API <code>id</code> with <code>/api/v1/jobs/{id}</code>.</p>
+
+<p><code>external_id</code> is included when the client stores an external posting id. List responses omit description and counts; <code>GET /jobs/{id}</code> returns the full job.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://subdomain.talentnest.com/api/v1/jobs</code></p>
 <h3 id='query-string-parameters'>Query string parameters</h3>
@@ -701,6 +739,8 @@ Writes and deletes are your responsibility. TalentNest cannot restore data lost 
     </span><span class="nl">"apply_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://subdomain.talentnest.com/en/posting/19252/apply/23819"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"business_unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2446</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Edmonton Branch"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"abbreviation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EDM"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -1210,6 +1250,73 @@ Writes and deletes are your responsibility. TalentNest cannot restore data lost 
 <td>The ID of the application to retrieve notes for</td>
 </tr>
 </tbody></table>
+<h3 id='query-string-parameters-2'>Query string parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>note_type</td>
+<td>Optional. Return only notes of this type. Omit to return all notes.</td>
+</tr>
+</tbody></table>
+<h2 id='post-add-a-note'>POST: Add a note</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://subdomain.talentnest.com/api/v1/applications/{id}/notes"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+  <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
+</code></pre></div>
+<blockquote>
+<p>JSON body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spoke with the hiring manager."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"note_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chat_transcript"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Adds a note on the application. <code>note_type</code> is optional; the only type accepted on create is <code>chat_transcript</code>.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://subdomain.talentnest.com/api/v1/applications/{id}/notes</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the application</td>
+</tr>
+</tbody></table>
+<h3 id='json-body-parameters'>JSON Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>note</td>
+<td>Yes</td>
+<td>String</td>
+<td>Note text. HTML is sanitized. For <code>chat_transcript</code>, a stricter sanitizer is used.</td>
+</tr>
+<tr>
+<td>note_type</td>
+<td>No</td>
+<td>String</td>
+<td>Must be <code>chat_transcript</code> if set.</td>
+</tr>
+<tr>
+<td>dry_run</td>
+<td>No</td>
+<td>Boolean</td>
+<td>If <code>true</code>, validate without saving. Default: <code>false</code>.</td>
+</tr>
+</tbody></table>
 <h2 id='post-advance-application'>POST: Advance Application</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://subdomain.talentnest.com/api/v1/applications/{id}/advance"</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
@@ -1248,9 +1355,9 @@ applications can be advanced.</p>
 
 <p>The <code>current_step</code> will be <code>Completed</code> and the next step will be <code>Activated</code>. This newly activated step becomes the new 
 <code>current_step</code>. The response contains the new <code>current_step</code>&#39;s information.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>POST https://subdomain.talentnest.com/api/v1/applications/{id}/advance</code></p>
-<h3 id='url-parameters-3'>URL Parameters</h3>
+<h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1262,7 +1369,7 @@ applications can be advanced.</p>
 <td>The ID of the application to advance</td>
 </tr>
 </tbody></table>
-<h3 id='json-body-parameters'>JSON Body Parameters</h3>
+<h3 id='json-body-parameters-2'>JSON Body Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1288,6 +1395,12 @@ applications can be advanced.</p>
 <td>No</td>
 <td>String</td>
 <td>Optional note to store when completing the <code>current_step</code>.</td>
+</tr>
+<tr>
+<td>dry_run</td>
+<td>No</td>
+<td>Boolean</td>
+<td>If <code>true</code>, validate without committing. Default: <code>false</code>.</td>
 </tr>
 </tbody></table>
 <h2 id='post-move-application'>POST: Move Application</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://subdomain.talentnest.com/api/v1/applications/{id}/move"</span>
@@ -1331,9 +1444,9 @@ applications can be advanced.</p>
 <p>Only <code>Active</code> applications can be moved. </p>
 
 <p>The move is not allowed if there are any required steps in-between the two steps.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>POST https://subdomain.talentnest.com/api/v1/applications/{id}/move</code></p>
-<h3 id='url-parameters-4'>URL Parameters</h3>
+<h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1345,7 +1458,7 @@ applications can be advanced.</p>
 <td>The ID of the application to move</td>
 </tr>
 </tbody></table>
-<h3 id='json-body-parameters-2'>JSON Body Parameters</h3>
+<h3 id='json-body-parameters-3'>JSON Body Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1378,6 +1491,75 @@ applications can be advanced.</p>
 <td>String</td>
 <td>Optional note to store when completing the <code>current_step</code>.</td>
 </tr>
+<tr>
+<td>dry_run</td>
+<td>No</td>
+<td>Boolean</td>
+<td>If <code>true</code>, validate without committing. Default: <code>false</code>.</td>
+</tr>
+</tbody></table>
+<h2 id='post-invite-to-assessment'>POST: Invite to assessment</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://subdomain.talentnest.com/api/v1/applications/{id}/invite_to_assessment"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+  <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
+</code></pre></div>
+<blockquote>
+<p>Optional JSON body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sending the assessment now."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dry_run"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>The above returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jj@talentnest.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Please complete your assessment"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email_template_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"step_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2042</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"assessment_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://..."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Invites the candidate to the first assessment step on this application. The application must be <code>Active</code>. The candidate must have an email. The job&#39;s employment process must include an assessment step that is not already invited or completed. TalentNest picks the assessment email template from the job&#39;s business unit (then ancestors).</p>
+
+<p>If the assessment step is not yet <code>Active</code>, it is activated first. <code>dry_run</code> returns a fake <code>assessment_url</code> and does not send email.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST https://subdomain.talentnest.com/api/v1/applications/{id}/invite_to_assessment</code></p>
+<h3 id='url-parameters-6'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the application</td>
+</tr>
+</tbody></table>
+<h3 id='json-body-parameters-4'>JSON Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>note</td>
+<td>No</td>
+<td>String</td>
+<td>Note stored when inviting.</td>
+</tr>
+<tr>
+<td>dry_run</td>
+<td>No</td>
+<td>Boolean</td>
+<td>If <code>true</code>, do not send email or persist. Default: <code>false</code>.</td>
+</tr>
 </tbody></table>
 <h2 id='post-deselect-application'>POST: Deselect Application</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://subdomain.talentnest.com/api/v1/applications/{id}/deselect"</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
@@ -1406,9 +1588,9 @@ applications can be advanced.</p>
 
 <p>The <code>current_step</code> will be <code>Deselected</code> and the application will also be marked as <code>Deselected</code>. If optional
 parameters are provided, TalentNest can process a deselection reason and custom note.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-8'>HTTP Request</h3>
 <p><code>POST https://subdomain.talentnest.com/api/v1/applications/{id}/deselect</code></p>
-<h3 id='url-parameters-5'>URL Parameters</h3>
+<h3 id='url-parameters-7'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1420,7 +1602,7 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 <td>The ID of the application to deselect</td>
 </tr>
 </tbody></table>
-<h3 id='json-body-parameters-3'>JSON Body Parameters</h3>
+<h3 id='json-body-parameters-5'>JSON Body Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1470,9 +1652,9 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Retrieve a specific step of an application.</p>
-<h3 id='http-request-7'>HTTP Request</h3>
+<h3 id='http-request-9'>HTTP Request</h3>
 <p><code>GET https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}</code></p>
-<h3 id='url-parameters-6'>URL Parameters</h3>
+<h3 id='url-parameters-8'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1509,10 +1691,10 @@ parameters are provided, TalentNest can process a deselection reason and custom 
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>Activate a specific step of an application.</p>
-<h3 id='http-request-8'>HTTP Request</h3>
+<p>Activate a specific step of an application. Preceding required steps must already be completed.</p>
+<h3 id='http-request-10'>HTTP Request</h3>
 <p><code>PUT https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/activate</code></p>
-<h3 id='url-parameters-7'>URL Parameters</h3>
+<h3 id='url-parameters-9'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1525,7 +1707,77 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 </tr>
 <tr>
 <td>step_id</td>
-<td>The ID of the step to activate</td>
+<td>Employment process step ID (same ids as <code>GET /jobs/{id}/employment_process</code>)</td>
+</tr>
+</tbody></table>
+<h3 id='json-body-parameters-6'>JSON Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>dry_run</td>
+<td>No</td>
+<td>Boolean</td>
+<td>If <code>true</code>, validate without committing. Default: <code>false</code>.</td>
+</tr>
+</tbody></table>
+<h2 id='put-invite-to-an-assessment-step'>PUT: Invite to an assessment step</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/invite"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+  <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
+</code></pre></div>
+<blockquote>
+<p>JSON body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"email_template_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Sends an assessment invite for <strong>this</strong> step. The step must be an assessment step. The candidate must have an email. <code>email_template_id</code> is required.</p>
+
+<p>Prefer this when you already know the step. Use <code>POST /applications/{id}/invite_to_assessment</code> to invite the first assessment step and let TalentNest choose the template.</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>PUT https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/invite</code></p>
+<h3 id='url-parameters-10'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the application</td>
+</tr>
+<tr>
+<td>step_id</td>
+<td>Employment process step ID</td>
+</tr>
+</tbody></table>
+<h3 id='json-body-parameters-7'>JSON Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email_template_id</td>
+<td>Yes</td>
+<td>Integer</td>
+<td>Email template to send.</td>
+</tr>
+<tr>
+<td>dry_run</td>
+<td>No</td>
+<td>Boolean</td>
+<td>If <code>true</code>, do not send email or persist. Default: <code>false</code>.</td>
 </tr>
 </tbody></table>
 <h2 id='put-complete-step-for-application'>PUT: Complete Step for Application</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/complete"</span>
@@ -1550,9 +1802,9 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Complete a specific step of an application.</p>
-<h3 id='http-request-9'>HTTP Request</h3>
+<h3 id='http-request-12'>HTTP Request</h3>
 <p><code>PUT https://subdomain.talentnest.com/api/v1/applications/{id}/step/{step_id}/complete</code></p>
-<h3 id='url-parameters-8'>URL Parameters</h3>
+<h3 id='url-parameters-11'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1565,7 +1817,35 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 </tr>
 <tr>
 <td>step_id</td>
-<td>The ID of the step to complete</td>
+<td>Employment process step ID</td>
+</tr>
+</tbody></table>
+<h3 id='json-body-parameters-8'>JSON Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>rating</td>
+<td>No</td>
+<td>Integer</td>
+<td>Rating <code>1</code> to <code>5</code>. Only for <code>rated</code> steps.</td>
+</tr>
+<tr>
+<td>note</td>
+<td>No</td>
+<td>String</td>
+<td>Note stored when completing the step.</td>
+</tr>
+<tr>
+<td>dry_run</td>
+<td>No</td>
+<td>Boolean</td>
+<td>If <code>true</code>, validate without committing. Default: <code>false</code>.</td>
 </tr>
 </tbody></table>
 <h1 id='business-units'>Business Units</h1>
@@ -2028,11 +2308,15 @@ parameters are provided, TalentNest can process a deselection reason and custom 
 </tr>
 <tr>
 <td>business_unit_id</td>
-<td>Return employees belonging to this business unit or any of its sub-units. To exclude sub-unit employees, add the optional parameter <code>sub_units=false</code>.</td>
+<td>Return employees belonging to this business unit or any of its sub-units. To exclude sub-unit employees, add <code>sub_units=false</code>.</td>
 </tr>
 <tr>
 <td>hired_after</td>
-<td>Return only employees that have a hired date after this timestamp. Timestamp must be ISO 8601 format.</td>
+<td>Return only employees whose start/hire date is after this date (ISO 8601). Filters <code>started_on</code>.</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>Optional. <code>hired_on</code> or <code>started_on</code> (both sort on start date, descending). Default is <code>created_at</code> descending.</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-employee'>GET: A specific Employee</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{id}"</span>
@@ -2106,6 +2390,137 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
 <td>The email address of the employee to retrieve</td>
 </tr>
 </tbody></table>
+<h2 id='post-create-an-employee'>POST: Create an employee</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://subdomain.talentnest.com/api/v1/employees"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+  <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
+</code></pre></div>
+<blockquote>
+<p>JSON body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"employee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"employee_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E-1001"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"business_unit_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"manager_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">98</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"started_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-09-11"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"verified_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-09-11"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sam"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Edwards"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sam.edwards@example.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"primary_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14165550100"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Canada"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ontario"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toronto"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3300 Bloor Street West"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"postal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M8X 2X2"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Creates an employee. Wrap fields in <code>employee</code>. <code>user</code> is the person record (name, email, phone, location). Location <code>country</code> and <code>state</code> are names, not ids. <code>started_on</code> is the hire/start date (<code>hired_on</code> in responses is the same date).</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://subdomain.talentnest.com/api/v1/employees</code></p>
+<h3 id='json-body-parameters'>JSON Body Parameters</h3>
+<p>All keys sit under <code>employee</code>. Unknown keys are rejected.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>employee_number</td>
+<td>No</td>
+<td>String</td>
+<td>Client employee number.</td>
+</tr>
+<tr>
+<td>business_unit_id</td>
+<td>No</td>
+<td>Integer</td>
+<td>Business unit.</td>
+</tr>
+<tr>
+<td>manager_id</td>
+<td>No</td>
+<td>Integer</td>
+<td>Manager employee id.</td>
+</tr>
+<tr>
+<td>started_on</td>
+<td>No</td>
+<td>Date</td>
+<td>Start/hire date (ISO 8601 date).</td>
+</tr>
+<tr>
+<td>verified_on</td>
+<td>No</td>
+<td>Date</td>
+<td>Verified date.</td>
+</tr>
+<tr>
+<td>terminated_at</td>
+<td>No</td>
+<td>Date</td>
+<td>If set, the employee is created already terminated.</td>
+</tr>
+<tr>
+<td>user</td>
+<td>No</td>
+<td>Object</td>
+<td><code>first_name</code>, <code>middle_initial</code>, <code>last_name</code>, <code>email</code>, <code>primary_phone</code>, <code>location</code>.</td>
+</tr>
+<tr>
+<td>dry_run</td>
+<td>No</td>
+<td>Boolean</td>
+<td>If <code>true</code>, validate without saving. Default: <code>false</code>.</td>
+</tr>
+</tbody></table>
+<h2 id='put-replace-an-employee'>PUT: Replace an employee</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{id}"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+  <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
+</code></pre></div>
+<p>Same <code>employee</code> object as create. PUT resets omitted loadable fields to defaults, then applies the body. You may also send <code>business_unit_id</code> and <code>employee_status_id</code>.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>PUT https://subdomain.talentnest.com/api/v1/employees/{id}</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the employee</td>
+</tr>
+</tbody></table>
+<h2 id='patch-update-an-employee'>PATCH: Update an employee</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PATCH <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{id}"</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
+  <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
+</code></pre></div>
+<p>Partial update. Same <code>employee</code> wrapper; only included keys change.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>PATCH https://subdomain.talentnest.com/api/v1/employees/{id}</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>The ID of the employee</td>
+</tr>
+</tbody></table>
 <h2 id='get-employee-statuses'>GET: Employee Statuses</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/statuses"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
 </code></pre></div>
@@ -2143,7 +2558,7 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Employee Statuses are client-defined phrases used to identify an employee&#39;s current status (e.g. Active or On Leave). Employee Statuses may contain translations.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET https://subdomain.talentnest.com/api/v1/employees/statuses</code></p>
 <h2 id='get-employees-for-a-specific-status'>GET: Employees for a Specific Status</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/statuses/{id}"</span>
   <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
@@ -2171,9 +2586,9 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns details for a specific employee status and a list of employee IDs that have this status.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET https://subdomain.talentnest.com/api/v1/employees/statuses/{id}</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2227,7 +2642,7 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Returns position end (termination) reasons and their IDs. Translations are included when present.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request-8'>HTTP Request</h3>
 <p><code>GET https://subdomain.talentnest.com/api/v1/position_end_reasons</code></p>
 <h2 id='post-terminate-an-employee'>POST: Terminate an Employee</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{id}/terminate"</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span>
@@ -2285,9 +2700,9 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Terminates the employee. Optional reason, status, and date.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-9'>HTTP Request</h3>
 <p><code>POST https://subdomain.talentnest.com/api/v1/employees/{id}/terminate</code></p>
-<h3 id='url-parameters-3'>URL Parameters</h3>
+<h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2299,7 +2714,7 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
 <td>The ID of the employee to terminate</td>
 </tr>
 </tbody></table>
-<h3 id='json-body-parameters'>JSON Body Parameters</h3>
+<h3 id='json-body-parameters-2'>JSON Body Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2327,6 +2742,25 @@ curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employees/{email}
 <td>Termination date (ISO 8601 date). Defaults to today if omitted. Must not be before the current position start date.</td>
 </tr>
 </tbody></table>
+<h1 id='employment-process-step-statuses'>Employment process step statuses</h1><h2 id='get-all-step-statuses'>GET: All step statuses</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://subdomain.talentnest.com/api/v1/employment_process_step_statuses"</span>
+  <span class="nt">-u</span> <span class="s2">"TALENTNEST_API_KEY:"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"employment_process_step_statuses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"Inactive"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Completed"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Invited"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Deselected"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Returns the status names used on employment-process steps (<code>Inactive</code>, <code>Active</code>, <code>Completed</code>, <code>Invited</code>, <code>Deselected</code>). Exact strings are those configured for the client.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://subdomain.talentnest.com/api/v1/employment_process_step_statuses</code></p>
 <h1 id='http-verbs'>HTTP verbs</h1>
 <p>The API supports <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>PATCH</code>, and <code>DELETE</code>. Not every resource accepts every verb.</p>
 
@@ -2427,6 +2861,14 @@ this occurs.</p>
 <td><a href="#applicant-hired-webhook"><code>applicant_hired</code></a></td>
 <td>A candidate is hired. The payload is the new employee record (use this for payroll / HRIS).</td>
 </tr>
+<tr>
+<td><a href="#applicant-review-completed-webhook"><code>applicant_review_completed</code></a></td>
+<td>The New Application (review candidate) step is completed.</td>
+</tr>
+<tr>
+<td><a href="#applicant-deselected-webhook"><code>applicant_deselected</code></a></td>
+<td>An application is deselected.</td>
+</tr>
 </tbody></table>
 
 <p>The event name is sent in the <code>X-Event-Name</code> header.</p>
@@ -2496,6 +2938,24 @@ signature <span class="o">=</span> OpenSSL::HMAC.hexdigest<span class="o">(</spa
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Sent when a candidate is hired. <code>employee_id</code> is the new employee. Fetch <code>GET /api/v1/employees/{employee_id}</code> for the full record.</p>
+<h2 id='applicant-review-completed-webhook'>Applicant review completed webhook</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1765253</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Strong communication skills."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reviewed_by"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recruiter@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"reviewed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-28T17:47:15Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Sent when the <strong>New Application</strong> (review candidate) step is completed — not when later interview steps complete. <code>rating</code> is present only if that step is rated. Fetch <code>GET /api/v1/applications/{application_id}</code> for the full application.</p>
+<h2 id='applicant-deselected-webhook'>Applicant deselected webhook</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1765253</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Sent when an application is deselected. The body is the application id. Fetch <code>GET /api/v1/applications/{application_id}</code> for status and deselect reason.</p>
 
       </div>
       <div class="dark-box">
