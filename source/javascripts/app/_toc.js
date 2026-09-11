@@ -98,9 +98,13 @@
       $(".page-wrapper").click(closeToc);
       $(".toc-link").click(closeToc);
 
-      $toc.find(tocLinkSelector).click(function() {
+      $toc.find(tocLinkSelector).click(function(e) {
         var href = $(this).attr('href');
+        if (!href || href.charAt(0) !== "#") return;
+        e.preventDefault();
         var $clicked = $(this);
+        var el = document.getElementById(href.substring(1));
+        if (el) el.scrollIntoView(true);
         $toc.find(".active").removeClass("active");
         $toc.find(".active-parent").removeClass("active-parent");
         $clicked.addClass("active");
@@ -108,11 +112,7 @@
         $clicked.siblings(tocListSelector).addClass("active");
         $toc.find(tocListSelector).filter(":not(.active)").slideUp(150);
         $toc.find(tocListSelector).filter(".active").slideDown(150);
-        setTimeout(function() {
-          recacheHeights();
-          refreshToc();
-        }, 100);
-        if (href && href.charAt(0) === "#" && window.history.replaceState) {
+        if (window.history.replaceState) {
           window.history.replaceState(null, "", href);
         }
       });

@@ -1,9 +1,6 @@
 ---
 title: TalentNest API
 
-language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-
 toc_footers:
   - <a href='https://api.talentnest.com'>api.talentnest.com</a>
   - <a href='mailto:support@talentnest.com'>support@talentnest.com</a>
@@ -18,6 +15,7 @@ includes:
   - verbs
   - response_codes
   - webhooks
+  - support
 
 search: true
 
