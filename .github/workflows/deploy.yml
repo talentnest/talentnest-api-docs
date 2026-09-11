@@ -2,13 +2,15 @@ name: Deploy
 
 on:
   push:
-    branches: [ 'main' ]
+    branches: [ 'master' ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     env:
-      ruby-version: 2.5
+      ruby-version: '2.6'
 
     steps:
     - uses: actions/checkout@v2

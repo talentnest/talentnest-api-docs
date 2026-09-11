@@ -45,7 +45,7 @@ The `Dockerfile` in this repo targets an old Debian/Ruby image and may fail `apt
 
 ## Publish
 
-Pushes that build the site go to GitHub Pages (`gh-pages`) and are served as **api.talentnest.com** (`source/CNAME`). The Actions workflow in `.github/workflows/deploy.yml` is wired to branch `main`; this repo’s default branch is `master` — fix that before relying on CI.
+Pushes to `master` build the site and publish GitHub Pages (`gh-pages`) as **api.talentnest.com** (`source/CNAME`). See `.github/workflows/deploy.yml`.
 
 Manual:
 
