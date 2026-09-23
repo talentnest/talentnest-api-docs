@@ -58,7 +58,7 @@ You can instead send:
 `Authorization: Basic <base64("TALENTNEST_API_KEY:")>`
 
 <aside class="notice">
-Replace <code>TALENTNEST_API_KEY</code> with your API key. The key is scoped to one TalentNest client.
+Replace <code>TALENTNEST_API_KEY</code> with your API key. The key is scoped to one TalentNest client. To request an API key, reach out to your TalentNest Representative or email <a href="mailto:support@talentnest.com">support@talentnest.com</a>.
 </aside>
 
 # Pagination
